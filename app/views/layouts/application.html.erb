@@ -6,11 +6,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+   <%= render partial: "/layouts/dropdown" %>
+   <% if not current_page?(root_url)  %> 
+   <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
+   <% end %>
+   <%= yield %>
+   <%= render partial: "/layouts/footer" %>
   </body>
 </html>

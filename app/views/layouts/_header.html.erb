@@ -1,0 +1,163 @@
+<nav class="navbar navbar-expand-xl navbar-light @@classList">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="./">
+      <img src="/assets/header-logo-s.png" alt="Nature">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDocsTopCollapse" aria-controls="navbarDocsTopCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarDocsTopCollapse">
+      <!-- Nav -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown hovered">
+          <!-- Toggle -->
+          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">Home</a>
+        </li>
+        <div class="nav-item dropdown hovered">
+
+          <!-- Toggle -->
+          <li class="nav-item dropdown hovered">
+            <a class="menu" data-toggle="dropdown" href="#">Services</a>
+            <div class="dropdown-menu">
+              <div class="card card-lg">
+                <div class="card-body">
+                  <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                      <a class="submenu-body" href="/pages/acupuncture">Acupuncture</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="/pages/cupping/">Cupping</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="/pages/herbs/">Herbs & Supplements</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="/pages/">Acupressure & Massage</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./index-boxed.html">Detox Diet</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown hovered">
+
+            <!-- Toggle -->
+            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">Common Illinesses</a>
+
+            <div class="dropdown-menu">
+              <div class="card card-lg">
+                <div class="card-body">
+                  <ul class="list-styled font-size-sm">
+
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./index.html">Men</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./index-classic.html">Women</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+
+          <li class="nav-item dropdown hovered">
+            <!-- Toggle -->
+            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">Food Therapy</a>
+
+            <!-- Menu -->
+            <div class="dropdown-menu">
+              <div class="card card-lg">
+                <div class="card-body">
+                  <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./about.html">Why Food?</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./contact-us.html">Dangers in Foods</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./404.html">Medicine Foods</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </li>
+          <li class="nav-item dropdown hovered">
+            <!-- Toggle -->
+            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">Appointments</a>
+
+            <!-- Menu -->
+            <div class="dropdown-menu">
+              <div class="card card-lg">
+                <div class="card-body">
+                  <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog.html">First Visit</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog-post.html">Appointments</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog-post.html">Online Visit</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown hovered">
+            <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">About</a>
+
+            <div class="dropdown-menu">
+              <div class="card card-lg">
+                <div class="card-body">
+                  <ul class="list-styled font-size-sm">
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog-post.html">Our Treatments</a>
+                    </li>
+
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog.html">Our Missions</a>
+                    </li>
+
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog.html">Testimonials</a>
+                    </li>
+
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog-post.html">Business Hours</a>
+                    </li>
+                    <li class="list-styled-item">
+                      <a class="list-styled-link" href="./blog-post.html">Contact</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+    </div>
+</nav>
+
+<% if current_page?(root_url)  %> 
+  <%= render partial: "/layouts/main_header" %>
+<% else %>
+<% end %>
+
+
+

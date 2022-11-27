@@ -1,0 +1,288 @@
+- id: 100
+  id_no: 10000
+  category: 0
+  name: 'Home'
+  link: '' 
+  active: true 
+  note: 
+
+- id: 200 
+  id_no: 20000
+  category: 0
+  name: 'Services'
+  link: '' 
+  active: true
+  note: 
+
+- id: 201 
+  id_no: 20000
+  category: 'Services'
+  name: 'Acupuncture'
+  link: '' 
+  active: true
+  note: 
+
+- id: 202 
+  id_no: 20000
+  category: 'Services'
+  name: 'Cupping & Massage & Physical Therapy'
+  link: '' 
+  active: true
+  note: 
+  
+- id: 203 
+  id_no: 20000
+  category: 'Services'
+  name: 'Detox & Blance'
+  link: '' 
+  active: true 
+  note: 
+
+
+- id: 204 
+  id_no: 20000
+  category: 'Services'
+  name: 'Health Tests'
+  link: '' 
+  active: true 
+  note: 
+
+- id: 205 
+  id_no: 20000
+  category: 'Services'
+  name: 'Facial Care'
+  link: '' 
+  active: true 
+  note: 
+
+- id: 206 
+  id_no: 20000
+  category: 'Services'
+  name: 'Oncology Supportive Care'
+  link: '' 
+  active: true 
+  note: 
+
+- id: 207 
+  id_no: 20000
+  category: 'Services'
+  name: 'Homeopathic & Natural Supplements'
+  link: '' 
+  active: true 
+  note: 
+
+- id: 208 
+  id_no: 20000
+  category: 'Services'
+  name: 'Health Test'
+  link: '' 
+  active: true 
+  note: 
+
+
+
+
+
+- id: 300 
+  id_no: 10000
+  category: 'Conditions'
+  name: ''
+  link: '' 
+  active: true
+  note: 
+
+- id: 301 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Chronic & Severe Pain'
+  link: '' 
+  active: true
+  note:
+
+- id: 302 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Neurological Disorders'
+  link: '' 
+  active: true
+  note:
+
+- id: 303 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Mood & Emotional Disorders'
+  link: '' 
+  active: true
+  note:
+
+- id: 304 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Autoimmune Disorders'
+  link: '' 
+  active: true
+  note:
+
+- id: 305 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Digestsive Disorders'
+  link: '' 
+  active: true
+  note:
+
+- id: 306 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Oncology Supportive Care'
+  link: '' 
+  active: true
+  note:
+
+- id: 307 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Women''s Health'
+  link: '' 
+  active: true
+  note:
+
+- id: 308 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Pediatric Care'
+  link: '' 
+  active: true
+  note:
+
+- id: 309 
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Skin Conditions'
+  link: '' 
+  active: true
+  note:
+
+- id: 310
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Men''s Health'
+  link: '' 
+  active: true
+  note:
+
+- id: 311
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Addictions'
+  link: '' 
+  active: true
+  note:
+
+- id: 312
+  id_no: 10000
+  category: 'Conditions'
+  name: 'Digestive Disorders'
+  link: '' 
+  active: true
+  note:
+
+
+
+
+- id: 400 
+  id_no: 10000
+  category:
+  name: 'Patient Resources'
+  link: '' 
+  active: true
+  note: 
+
+- id: 500 
+  id_no: 10000
+  category: 
+  name: 'Q & A'
+  link: '' 
+  active: false
+  note: 
+
+- id: 600 
+  id_no: 10000
+  category: 
+  name: 'Appointments & Visits'
+  link: '' 
+  active: false
+  note: 
+
+- id: 601 
+  id_no: 10000
+  category: 'Appointments & Visits'
+  name: 'Appointments' 
+  link: '' 
+  active: false
+  note: 
+
+- id: 602 
+  id_no: 10000
+  category: 'Appointments & Visits'
+  name: 'Visits'
+  link: '' 
+  active: false
+  note: 
+
+- id: 603 
+  id_no: 10000
+  category: 'Appointments & Visits'
+  name: 'Visit'
+  link: '' 
+  active: false
+  note: 
+
+- id: 700 
+  id_no: 10000
+  category: 0
+  name: 'About us'
+  link: '' 
+  active: true
+  note: 
+
+- id: 702 
+  id_no: 10000
+  category: 'About us' 
+  name: 'Meet us'
+  link: '' 
+  active: true
+  note: 
+
+- id: 703 
+  id_no: 10000
+  category: 'About us' 
+  name: 'Testimonials'
+  link: '' 
+  active: true
+  note: 
+
+- id: 704 
+  id_no: 10000
+  category: 'About us' 
+  name: 'Galleries'
+  link: '' 
+  active: true
+  note: 
+
+- id: 701 
+  id_no: 10000
+  category: 'About us' 
+  name: 'Business Hours & Location'
+  link: '' 
+  active: true
+  note: 
+
+- id: 800 
+  id_no: 10000
+  category: 
+  name: 'Price & Insurance'
+  link: '' 
+  active: false
+  note: 
+

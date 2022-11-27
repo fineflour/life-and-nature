@@ -6,6 +6,26 @@ Rails.application.config.assets.version = "1.0"
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap-icons/font")
+Rails.application.config.assets.precompile += %w(application.js)
+Rails.application.config.assets.precompile += %w(application.css)
+
+
+
+ 
+ 
+ 
+    Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
+
+    #config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf)
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts)  
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts/jost)  
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets)  
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/javascripts/)  
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/images)  
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/resources)
+    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/javascript)    
+
+
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

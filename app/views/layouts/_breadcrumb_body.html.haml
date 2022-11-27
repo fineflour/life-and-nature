@@ -1,0 +1,14 @@
+.center.container
+  %div.breadcrumb-box
+    %nav{"aria-label" => "breadcrumb"}
+      %ol.breadcrumb
+        - if @menu_values['category'].present?
+          %li.breadcrumb-item
+            = @menu_values['category'] 
+          %li.breadcrumb-item
+            = '  /  ' + @menu_values['name']
+        %li.breadcrumb-item.active{"aria-current" => "page"} 
+  %div.title-box
+    %h1.page-title
+      = @menu_values['name']
+  

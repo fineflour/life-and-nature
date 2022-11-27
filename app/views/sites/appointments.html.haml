@@ -1,0 +1,116 @@
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    %h2.is-4
+      Appointments can be made by phone, text or email.
+ 
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    
+    #appointmentTable.accordion
+      .accordion-item
+        %h2#heading-1.accordion-header.is-4 
+          %button.accordion-button.collapsed{"aria-controls" => "collapse-1", "aria-expanded" => "false", "data-bs-target" => "#collapse-1", "data-bs-toggle" => "collapse", :type => "button"}
+            Call for Appointments  
+        #collapse-1.accordion-collapse.collapse{"aria-labelledby" => "heading-1", "data-bs-parent" => "#appointmentTable"}
+          .accordion-body
+            .col.is-5            
+              Please call during business hours.              
+              %br
+              Provide the patient's full name, date of birth, call back number and the date and time you would like to visit.
+              %br
+              %br
+                %a.btn.btn-primary.h2.is-4.f-white
+                  CALL: 714-443-1779 
+
+
+      .accordion-item
+        %h2#heading-2.accordion-header.is-4
+          %button.accordion-button.collapsed{"aria-controls" => "collapse-2", "aria-expanded" => "false", "data-bs-target" => "#collapse-2", "data-bs-toggle" => "collapse", :type => "button"}
+            Text or Email for Appointments
+        #collapse-2.accordion-collapse.collapse{"aria-labelledby" => "heading-2", "data-bs-parent" => "#appointmentTable"}
+          .accordion-body
+            .col.is-5            
+              You can text or email us anytime.            
+              %br
+              Please provide us the patient's full name, date of birth, call back number and the date and time you would like to visit.
+              %br
+              We try to respond you as quickly as possible.
+              %br
+              %br
+                %a.btn.btn-primary.h2.is-4.f-white
+                  TEXT: 714-443-1779, 714-660-3117 
+                  %br
+                  EMAIL: info@life-and-nature.com   
+            
+      
+      .accordion-item
+        %h2#heading-4.accordion-header.is-4
+          %button.accordion-button.collapsed{"aria-controls" => "collapse-4", "aria-expanded" => "false", "data-bs-target" => "#collapse-4", "data-bs-toggle" => "collapse", :type => "button"}
+            Cancellation or Reschedule
+        #collapse-4.accordion-collapse.collapse{"aria-labelledby" => "heading-4", "data-bs-parent" => "#appointmentTable"}
+          .accordion-body
+            .col.is-5 
+              To cancel or reschedule your appointment, please contact us by phone or text at least 24 hours prior to your appointment time. 
+              %br Please provide the patient's name and appointment information.
+              %br
+              Please understand that patient rooms are limited, so other patients cannot receive treatment if you are unable to visit without notice. 
+              %br
+              Therefore, if you inform us 24 hours in advance, patients who are waiting for an appointment can take your place.
+              %br
+              %br
+                %a.btn.btn-primary.h2.is-4.f-white.right
+                  CALL or TEXT: 714-443-1779 
+                  %br   
+                  TEXT : 714-660-3117
+
+      .accordion-item
+        %h2#heading-5.accordion-header.is-4
+          %button.accordion-button.collapsed{"aria-controls" => "collapse-5", "aria-expanded" => "false", "data-bs-target" => "#collapse-5", "data-bs-toggle" => "collapse", :type => "button"}
+            First Visit
+        #collapse-5.accordion-collapse.collapse{"aria-labelledby" => "heading-5", "data-bs-parent" => "#appointmentTable"}
+          .accordion-body
+            .col.is-5
+              Patients must arrive 5 minutes prior to the scheduled time to check-in.
+              %br
+              %br 
+              Please note that for the first visit, it takes about 60 to 70 minutes for the initial exam and treatment.
+              %br
+              It will be helpful for diagnosis if you bring the test results, doctor's note, and photos related to the symptoms you want to treat.
+              %br
+              Please read the precautions for treatment registered on the website before coming.
+ 
+ 
+      .accordion-item
+        %h2#heading-6.accordion-header.is-4
+          %button.accordion-button.collapsed{"aria-controls" => "collapse-6", "aria-expanded" => "false", "data-bs-target" => "#collapse-6", "data-bs-toggle" => "collapse", :type => "button"}
+            From the second visit
+        #collapse-6.accordion-collapse.collapse{"aria-labelledby" => "heading-6", "data-bs-parent" => "#appointmentTable"}
+          .accordion-body
+            .col.is-5 
+              Patients must arrive 5 minutes prior to the scheduled time to check-in.
+              %br
+              Acupuncture and Cupping treatment takes about 50 minutes.
+              %br  
+              It is convenient to bring your own loose shirt and short for the treatment.
+              %br
+              %br
+              %li The duration of your massage or skincare treatment depends on the option you choose.
+
+ 
+
+      .accordion-item
+        %h2#heading-7.accordion-header.is-4
+          %button.accordion-button.collapsed{"aria-controls" => "collapse-7", "aria-expanded" => "false", "data-bs-target" => "#collapse-7", "data-bs-toggle" => "collapse", :type => "button"}
+            Precautions during treatment.
+        #collapse-7.accordion-collapse.collapse{"aria-labelledby" => "heading-7", "data-bs-parent" => "#appointmentTable"}
+          .accordion-body
+            .col.is-5 
+              %li
+                Using cell phones is prohibited in the clinic.
+              %li
+                Do not wear precious metals and tight clothing during treatment.
+              %li  
+                It is convenient to bring your own loose shirt and short for the treatment.
+              %li
+                If you have any questions about treatment, please feel free to contact us by phone or text. We try to respond as quickly as possible.
+     
