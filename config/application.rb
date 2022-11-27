@@ -1,6 +1,11 @@
 require_relative "boot"
 
 require "rails/all"
+ 
+ 
+
+require "sprockets/railtie" 
+require 'simple_form'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -10,6 +15,24 @@ module LifeAndNature
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]  
+    config.active_record.legacy_connection_handling = false
+   # config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
+
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf)
+    config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts)  
+    config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts/jost)  
+    config.autoload_paths += %W(#{config.root}/app/builds/assest/stylesheets) 
+    config.autoload_paths += %W(#{config.root}/app/builds/assets/images)  
+    config.autoload_paths += %W(#{config.root}/app/sbuilds/assets/resources)  
+    config.autoload_paths += %W(#{config.root}/app/sbuilds/assets//javascripts)  
+
+    config.generators do |generate|
+      generate.helper false
+      generate.assets false
+    end
+
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -78,3 +78,8 @@ end
 
 gem 'haml-rails'
 gem 'figaro'
+gem 'simple_form'
+
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
+gem 'sass-rails'
