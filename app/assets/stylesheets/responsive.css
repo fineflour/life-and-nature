@@ -1,0 +1,175 @@
+
+@media screen and (max-width: 1023px) {
+  .container {
+    padding-left: 1.4285714286rem;
+    padding-right: 1.4285714286rem;
+  }
+}
+
+
+/* begining of my breakpoints */
+@media screen and (min-width: 1024px) {
+  .container {
+    /*max-width: 960px; */
+  }
+
+
+}
+@media screen and (max-width: 1200px) {
+  .container:not(.is-max-desktop) {
+  }
+  .is-mobile {
+    flex-direction: row-reverse !important;
+  }
+}
+/* end of my breakpoints */
+
+.section {
+  padding: 3rem;
+}
+
+.section {
+  padding: 3rem;
+}
+
+
+
+@media (max-width: 767px) {
+  .section {
+    padding: 1rem;
+  }
+  .footer_priv {
+    text-align: center;
+  }
+  .txt_priv, .list_menu_footer {
+    float: none !important;
+    display: block;
+  }
+  .list_menu_footer {
+    display: none;
+  }
+  [class*="grid_"] {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .img8 {
+    margin-top: 30px;
+  }
+
+
+  .s_logo {
+    width: 80%;
+  }
+
+  .f-green{
+    text-align: center;
+    font-size: 3em;
+  }
+
+  .h4-gray{
+    font-size: 2.5em;
+  } 
+
+  .bottom-right {
+    top:100px;
+  }
+
+  .s-bottom-right {
+    top:200px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+  .f-green{
+    text-align: right;
+    font-size: 4em;
+  }
+
+  .h4-gray{
+    text-align: right;
+    font-size: 3.5em;
+  } 
+  .bottom-right {
+    top: 160px;
+    right: 200px;
+  }
+
+  .s-bottom-right {
+    top: 220px;
+    right: 200px;
+  }
+
+}
+
+@media (min-width: 992px) {
+
+
+  .f-green{
+    text-align: right;
+    font-size: 4em;
+  }
+
+  .h4-gray{
+    font-size: 3.5em;
+    text-align: right;
+  } 
+
+  .bottom-right {
+    top:170px;
+    right: 200px;
+  }
+
+
+  .s-bottom-right {
+    top: 220px;
+    right: 200px;
+  }
+
+}
+
+
+@media (min-width: 1200px) {
+  .f-green{
+    text-align: right;
+    text-shadow: #ddd 6px 0 6px;
+    font-size: 4em;
+  }
+
+  .h4-gray{
+    font-size: 3.5em;
+    text-shadow: #ddd 6px 0 6px;
+    text-align: right;
+  } 
+
+  .bottom-right {
+    bottom:400px;
+    right: 200px;
+  }
+  .s-bottom-right {
+    bottom: 340px;
+    right: 200px;
+  }
+
+}
+
+.footer_priv {
+  display: block;
+  width: 100%;
+}
+
+.col {
+  max-width: 960px!important;
+  min-width: 240px!important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

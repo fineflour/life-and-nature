@@ -1,0 +1,104 @@
+/*
+ * .txt_address {
+ *     font: 18px/20px 'Roboto', Arial, sans-serif;
+ *         margin-top: 15px;
+ *             color: #fff;
+ *             }
+ *
+ * .box-4 {
+ *     background: url(/assets/bg_pic2.jpg) 50% 0 repeat-x #828282;
+ *         margin-top: 4px;
+ *             padding-top: 20px;
+ *                 padding-bottom: 26px;
+ *                     text-align: center;
+ *                         color: #fff;
+ *                         }
+ *= require bootstrap
+ *= require_self    
+ *= require_tree .       
+ *= require font-awesome
+*/
+
+body {
+  font-family:  "Visuelt Pro", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.428571429;
+  font-size: 14px;
+  color: #333333;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+
+}
+
+body, button, input, optgroup, select, textarea {
+  font-family: "Visuelt Pro",sans-serif;
+}
+
+.grid_100 {
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-margin-60{
+  margin-top: 60px;
+}
+
+.txt_center {
+  text-align: center;
+}
+.bg-primary{
+  background-color: #69e800;
+}
+.txt_address {
+  font: 18px/20px 'Roboto', Arial, sans-serif;
+  color: #000;
+}
+.main_top_line {
+  color: #f7f8f8;
+  height: 2px;
+}
+
+.box-4 {
+  background: url(/assets/bg_pic2.jpg) 50% 0 repeat-x #828282;
+  margin-top: 4px;
+  padding-top: 20px;
+  padding-bottom: 26px;
+  text-align: center;
+  color: #fff;
+}
+
+
+
+footer {
+  display: block;
+  width: 100%;
+}
+
+.footer_priv {
+  padding: 20px 0 30px;
+}
+
+.marTop5 {
+  margin-top: 60px;
+}
+
+
+.txt_address {
+  font: 18px/20px 'Roboto', Arial, sans-serif;
+  margin-top: 15px;
+  color: #fff;
+}
+.txt_address {
+  font: 18px/20px 'Roboto', Arial, sans-serif;
+  margin-top: 15px;
+  color: #fff;
+}

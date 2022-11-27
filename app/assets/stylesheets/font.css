@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Light-3baf1d97251b252d91433d5da6533eb6.woff2') format('woff2'),
+        url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Light-a7c9789c057caff324b55207a6cdd91d.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Regular-9c9d9ef97a47b2e0419fc654c315616a.woff2') format('woff2'),
+        url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Regular-6532d4fe95d7844ab6f766aa4392002c.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Medium-d9eda308f4b8f7648577cd734e73835b.woff2') format('woff2'),
+        url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Medium-a4bb135dbf1aa6abc69236ecd141b094.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Bold-abb52289180a10f095dc843bda30a9a9.woff2') format('woff2'),
+        url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Bold-4d47d20b86d8d3cd93aad89c80911fa3.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visuelt Pro';
+    src: url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Black-c6755bc306cb988906d54085d9bbd3df.woff2') format('woff2'),
+        url('//d1vo8zfysxy97v.cloudfront.net/fonts/VisueltPro-Black-627d24ba69ef71a44984684209fd3316.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}

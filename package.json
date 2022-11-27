@@ -1,20 +1,5 @@
 {
-  "name": "life-and-nature",
-  "version": "1.0.0",
-  "description": "test",
-  "main": "test",
-  "repository": "none",
-  "author": "fineflour",
-  "license": "no",
-  "private": false,
-  "dependencies": {
-    "@hotwired/stimulus": "^3.1.1",
-    "@hotwired/turbo-rails": "^7.2.4",
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2",
-    "bootstrap-sass": "^3.4.3"
-  }
+      "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+      "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
 }
-
-
 
