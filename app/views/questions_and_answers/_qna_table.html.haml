@@ -1,28 +1,23 @@
-%body
-  .table-responsive
-    %table.table.table-bordered.table-hover
-      %thead
-        %tr
-          %th.txt_center Question
-          %th.txt_center Answer 
-          %th.txt_center Created At
-          %th.txt_center{:style => "width: 50px;"} Actions
-      - @list.each do |appnt|
-        %tr{:id => "questions_and_answer-#{appnt.id}"}
-          %td= appnt.question
-          %td
-            =  ActionView::Base.full_sanitizer.sanitize(appnt.answer)
-          %td
-            = appnt.created_at
-          %td
-
-          / td><haml_loud> link_to order.products.size, order_path(order) </haml_loud></td
-          %td
-            = formatted_date(appnt.created_at)
-            = formatted_time(appnt.created_at)
-
-          %td.col-md-2
-            = link_to "Show", online_booking_path(appnt)
-            = link_to "Edit", edit_online_booking_path(appnt)
+.dez-separator.style-liner 
+.grid_100.has-text-centered
+  - if params[:menu_values] != '500'
+    .grid_subtitle
+      %font.txt_dgreen Questions
+      and
+      %font.txt_dgreen Answers
+%br
+.container
+  .accordion#Answer
+    - @qna_list.each do |appnt|
+      .accordion-item
+        %h2.title.is-4.accordion-header{:id => "heading#{appnt.id}"}
+          %button.accordion-button.collapsed{"aria-controls" => "collapse#{appnt.id}", "aria-expanded" => "false", "data-bs-target" => "#collapse#{appnt.id}", "data-bs-toggle" => "collapse", :type => "button"}
+            %b Q.&nbsp;&nbsp;
+            = appnt.question
+        .accordion-collapse.collapse{"id" => "collapse#{appnt.id}", "aria-labelledby" => "heading#{appnt.id}", "data-bs-parent" => "#Answer"}
+          .is-5.accordion-body
+            =  appnt.answer.html_safe
+%br
+%br
 
 

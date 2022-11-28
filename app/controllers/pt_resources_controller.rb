@@ -13,17 +13,17 @@ class PtResourcesController < ApplicationController
 
   def show
     menu_values
-    @ptsrc = Ptsrc.find(params[:id])
+    @ptsrc = PtResource.find(params[:id])
   end
 
   def new
     menu_values
-    @ptsrc = Ptsrc.new
+    @ptsrc = PtResource.new
   end
 
   def create
     menu_values
-    @ptsrc = Ptsrc.new(ptsrc_params)
+    @ptsrc = PtResource.new(ptsrc_params)
     if @ptsrc.save
       flash[:notice] = "ptsrc created successfully!"
       redirect_to ptsrcs_path
@@ -35,12 +35,12 @@ class PtResourcesController < ApplicationController
 
   def edit
     menu_values
-    @ptsrc = Ptsrc.find(params[:id])
+    @ptsrc = PtResource.find(params[:id])
   end
 
   def update
     menu_values
-    @ptsrc = Ptsrc.find(params[:id])
+    @ptsrc = PtResource.find(params[:id])
     @ptsrc.update_attributes(ptsrc_params)
 
     if @ptsrc.save
@@ -53,7 +53,7 @@ class PtResourcesController < ApplicationController
 
   def destroy
     menu_values
-    @ptsrc = Ptsrc.find(params[:id]).destroy
+    @ptsrc = PtResource.find(params[:id]).destroy
     flash[:notice] = "ptsrc successfully deleted"
     redirect_to ptsrcs_path
   end
@@ -83,7 +83,7 @@ class PtResourcesController < ApplicationController
   end
 
   def security_key(key)
-    if key =='Genesis1:26***'
+    if key =='lifeandnature'
       @admin = true
     end
   end

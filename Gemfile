@@ -90,3 +90,6 @@ gem 'pg_search'
 
 gem 'coffee-rails'
 gem 'turbolinks'
+gem 'pry'
+gem 'pry-remote'
+gem 'pry-nav'

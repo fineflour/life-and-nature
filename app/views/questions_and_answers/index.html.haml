@@ -1,6 +1,12 @@
-.container
-  .row
-    .grid_12.marTop5
-      %h2.txt_center Q and A
-      = will_paginate @list, renderer: BootstrapPagination::Rails  
+.grid_100.is-border-top.is-border-bottom.is-marginless.title_section.title_500
+  = render partial: "/layouts/breadcrumb_body" 
+
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    - if (@admin)
+      .panel-heading
+        = link_to "Add new ptsrc", new_pt_resource_path, class: "btn btn-info"
+
+    .table-responsive
+      = will_paginate @qna_list, renderer: BootstrapPagination::Rails  
       = render partial: "qna_table"

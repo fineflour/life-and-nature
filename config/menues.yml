@@ -188,11 +188,9 @@
   note:
 
 
-
-
 - id: 400 
   id_no: 10000
-  category:
+  category: ''
   name: 'Patient Resources'
   link: '' 
   active: true
@@ -200,7 +198,7 @@
 
 - id: 500 
   id_no: 10000
-  category: 
+  category: ''
   name: 'Q & A'
   link: '' 
   active: false
@@ -208,7 +206,7 @@
 
 - id: 600 
   id_no: 10000
-  category: 
+  category: ''
   name: 'Appointments & Visits'
   link: '' 
   active: false
@@ -240,7 +238,7 @@
 
 - id: 700 
   id_no: 10000
-  category: 0
+  category: 0 
   name: 'About us'
   link: '' 
   active: true
