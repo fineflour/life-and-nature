@@ -83,3 +83,7 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'sass-rails'
+
+gem 'will_paginate', '~> 3.3.0'
+gem 'will_paginate-bootstrap'
+gem 'pg_search'

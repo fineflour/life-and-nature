@@ -1,0 +1,38 @@
+.grid_100.is-border-top.is-border-bottom.is-marginless.title_section.title_resources
+  = render partial: "/layouts/breadcrumb_body" 
+
+.grid_80.has-text-centered
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    - if (@admin)
+      .panel-heading
+        = link_to "Add new ptsrc", new_pt_resource_path, class: "btn btn-info"
+    .table-responsive
+      %table#article.table.table-bordered.table-hover
+        %thead
+          %tr
+            %th Title
+            %th Contents
+            %th Link
+            %th Created At
+
+            - if (@admin)
+              %th Action
+        %tbody
+          - @ptsrcs.each do |a|
+            %tr{:id => "ptsrc#{a.id}"}
+              %td
+                = link_to a.title, pt_resource_path(a)
+              %td
+                = a.body
+              %td
+                = a.link
+              %td
+                = a.updated_at.strftime("%m/%d/%Y")
+              - if (@admin)
+                %td
+                  = link_to "Show",pt_resource_path(a)
+                  |
+                  \#{link_to "Edit", edit_pt_resource_path(a)}
+                  |
+                  \#{link_to "Delete", pt_resource_path(a), :confirm => "Are you sure?", :method => :delete}

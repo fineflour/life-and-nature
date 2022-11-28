@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_26_055026) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_012526) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pt_resources", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "category"
+    t.string "link"
+    t.string "attached"
+    t.boolean "active"
+    t.boolean "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "questions_and_answers", force: :cascade do |t|
     t.string "question", default: "", null: false

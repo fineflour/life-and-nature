@@ -1,0 +1,6 @@
+.container
+  .row
+    .grid_12.marTop5
+      %h2.txt_center Q and A
+      = will_paginate @list, renderer: BootstrapPagination::Rails  
+      = render partial: "qna_table"

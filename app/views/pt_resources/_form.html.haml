@@ -1,0 +1,11 @@
+//@param material [Material] an instance of Material to render the form for.
+.grid_100.has-text-centered
+  = simple_form_for ptsrc,  html: { class: "form-horizontal center"},  input_html: {  } do  |f|
+    = f.input :category, placeholder: "Category", label: false
+    = f.input :title , placeholder: "Title", label: false
+    = f.input :body, placeholder: "Body", label: false, :rows => 30
+    = f.input :link, placeholder: "Link", label: false
+    = f.input :active, as: :boolean, checked_value: true, unchecked_value: false
+    .button-padding.txt_center
+      = link_to "Back to index", ptsrcs_path, class: "btn btn-default"
+      = f.submit "Submit", class: "btn btn-info"

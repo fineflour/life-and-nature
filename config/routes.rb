@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root 'home#index'
 
 
-    root 'home#index'
+  resources :pt_resources, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :questions_and_answers, only: [:index, :show, :new, :create, :edit, :update] 
 
-   
-    get "/sites/:site" => "sites#show"
+
+
+  get "/sites/:site" => "sites#show"
 end

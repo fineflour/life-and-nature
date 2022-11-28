@@ -1,0 +1,12 @@
+.grid_100.is-border-top.is-border-bottom.is-marginless.title_section.title_resources
+  = render partial: "/layouts/breadcrumb_body" 
+
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    %div.grid_subtitle.has-text-centered
+      = @ptsrc.title
+      %div.has-text-right
+        = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"
+    %div.grid_100.is-3.has-text-centered
+      = @ptsrc.body.html_safe
+      %iframe{:src => "/assets/" + @ptsrc.link, :width => "96%", :height => "780", :style => "border: none;"}

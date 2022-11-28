@@ -1,0 +1,28 @@
+%body
+  .table-responsive
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th.txt_center Question
+          %th.txt_center Answer 
+          %th.txt_center Created At
+          %th.txt_center{:style => "width: 50px;"} Actions
+      - @list.each do |appnt|
+        %tr{:id => "questions_and_answer-#{appnt.id}"}
+          %td= appnt.question
+          %td
+            =  ActionView::Base.full_sanitizer.sanitize(appnt.answer)
+          %td
+            = appnt.created_at
+          %td
+
+          / td><haml_loud> link_to order.products.size, order_path(order) </haml_loud></td
+          %td
+            = formatted_date(appnt.created_at)
+            = formatted_time(appnt.created_at)
+
+          %td.col-md-2
+            = link_to "Show", online_booking_path(appnt)
+            = link_to "Edit", edit_online_booking_path(appnt)
+
+
