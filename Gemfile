@@ -87,3 +87,6 @@ gem 'sass-rails'
 gem 'will_paginate', '~> 3.3.0'
 gem 'will_paginate-bootstrap'
 gem 'pg_search'
+
+gem 'coffee-rails'
+gem 'turbolinks'
