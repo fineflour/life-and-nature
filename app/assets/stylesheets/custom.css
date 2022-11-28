@@ -693,14 +693,13 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   top: 0;
   left: 0;
   z-index: 99;
-  max-width: 367px!important;
+  width: 100%;
 }
 
-.card:hover .img-top {
-  display: inline;
-  box-shadow: 5px 5px 11px rgba(33,33,33,.2); 
-  border-radius: calc(1rem - 1px);
+.card-img-overlay {
+  width: 100%!important;
 }
+
 
 .card:hover .img-top {
   display: inline;
