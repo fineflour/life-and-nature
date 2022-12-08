@@ -10,17 +10,17 @@ Rails.application.config.assets.precompile += %w(application.js)
 Rails.application.config.assets.precompile += %w(application.css)
 
  
-    Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
-    Rails.application.config.assets.precompile += %w(jquery.min.js jquery_ujs.js bootstrap.min.js popper.js)
+  Rails.application.config.assets.precompile += %w(*.pdf, *.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
+  Rails.application.config.assets.precompile += %w(jquery.min.js jquery_ujs.js bootstrap.min.js popper.js)
     #config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf)
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts)  
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts/jost)  
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets)  
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets/jquery-ui) 
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/images)  
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/resources)
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/javascript)    
-    Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/javascript/)  
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts)  
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts/jost)  
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets)  
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets/jquery-ui) 
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/images)  
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/resources)
+#  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/javascript)    
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/javascript)  
     
 
 

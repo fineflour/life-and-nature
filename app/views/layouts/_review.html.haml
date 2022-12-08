@@ -1,0 +1,19 @@
+%h3.title.is-5
+  = @reviews["title"].html_safe
+%h3.is-6.review-text.has-text-justified    
+  = @reviews["review"].html_safe
+.grid_90.has-text-centered
+  .review-stars
+    %span
+      %span.fa.fa-star
+      %span.fa.fa-star
+      %span.fa.fa-star
+      %span.fa.fa-star
+      %span.fa.fa-star
+
+      %h3.is-6
+        = @reviews['reviewer']
+        = @reviews['review_date']
+      %span
+        /%i.icon.fas.fa-check-circle
+

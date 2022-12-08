@@ -520,6 +520,7 @@
 .navbar-toggler-icon, span.close {
   padding-top: 16px;
   padding-right: 10px;
+  font-weight: 500;
 }
 
 .nav-menu, .nav-menu:link, .nav-menu:hover, .btn.btn-link.menu {
@@ -636,6 +637,7 @@ span.navbar-toggler-icon:focus, button.navbar-toggler:hover, button.navbar-toggl
   font-color: #288255;
   width: 1.2em;
   height: 1.2em;
+  font-weight: 500;
 }
 
 

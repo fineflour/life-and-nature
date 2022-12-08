@@ -12,55 +12,57 @@ class QuestionsAndAnswersController < ApplicationController
 
   def show
     menu_values
-    @qna= QuestionsAndAnswer.find(params[:id])
-    authorize @qna
+    @qna_list = QuestionsAndAnswer.find(params[:id])
+   # authorize @qna_list
   end
 
   def new
     menu_values
-    @qna= QuestionsAndAnswer.new
-    authorize @qna
+    @qna_list = QuestionsAndAnswer.new
+#    authorize @qna_list
   end
 
   def create
     menu_values
-    @qna= QuestionsAndAnswer.new(new_user_params)
-    authorize @qna
-    if @qna.save
-      flash[:notice] = "New user created!"
-      redirect_to users_path
+    @qna_list = QuestionsAndAnswer.new(qna_params)
+#    authorize @qna_list
+    if @qna_list.save
+      flash[:notice] = "New Q & A created!"
+      redirect_to questions_and_answers_path
     else
-      flash[:error] = "New user could not be created. Please check logs for more information."
+      flash[:error] = "New Q & A could not be created. Please check logs for more information."
       render action: :new
     end
   end
 
   def edit
     menu_values
-    @qna = QuestionsAndAnswer.find(params[:id])
-    authorize @qna
+    @qna_list = QuestionsAndAnswer.find(params[:id])
+#    authorize @qna_list
   end
 
   def update
     menu_values
-    @qna = QnestionsAndAnswer.find(params[:id])
-    authorize @qna
-    @qna.update_attributes(user_is_global? ? global_params : user_params)
+    @qna_list = QuestionsAndAnswer.find(params[:id])
+    @qna_list.update(qna_params)
 
-    if @qna.save
-      redirect_to @qna, notice: "Successfully updated Q and A."
+#    authorize @qna_list
+    #@qna_list.update_attributes(user_is_global? ? global_params : user_params)
+
+    if @qna_list.save
+      redirect_to questions_and_answers_path, notice: "Successfully updated Q and A."
     else
-      flash[:error] = "Q and A not updated. Please try again."
+      flash[:error] = "Q and A can not updated. Please try again."
       render :edit
     end
   end
 
   def destroy
     menu_values
-    @qna= QuestionsAndAnswer.find(params[:id])
-    authorize @qna
-    if @qna.destroy
-      redirect_to @qna, notice: "Q and A has been destroyed."
+    @qna_list= QuestionsAndAnswer.find(params[:id])
+#    authorize @qna_list
+    if @qna_list.destroy
+      redirect_to questions_and_answers_path, notice: "Q and A has been destroyed."
     else
       flash[:error] = "Q and A could not be destroyed."
       render :index
@@ -75,7 +77,10 @@ class QuestionsAndAnswersController < ApplicationController
 
 
   def qna_params
-    params.require(:qna).permit(:qnestion, :answer, :view_count, :view)
+
+   #binding.pry
+    params.require(:questions_and_answer).permit(:question, :answer)
+    #params.require(:qna).permit(:qnestion, :answer, :view_count, :view)
   end
 
 
@@ -92,6 +97,11 @@ class QuestionsAndAnswersController < ApplicationController
       if (n["id"] == id)
         @menu_values = n
       end
+    end
+  end
+  def security_key(key)
+    if key =='lifeandnature'
+      @admin = true
     end
   end
 

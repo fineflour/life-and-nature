@@ -1,19 +1,28 @@
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    %h2.is-4
-      Acute pain begins suddenly and is usually sharp in quality. It serves as a warning of disease or a threat to the body. Acute pain might be caused by many events or circumstances, including: 
-      Surgical Pain, Traumatic Pain, Car accident, Sport injury, Infections, Stones in organs, 
+    %h3.is-5
+      %p 
+        Acute pain begins suddenly and is usually sharp in quality. It serves as a warning of disease or a threat to the body. Acute pain might be caused by many events or circumstances.
+      %p Including: Surgical Pain, Traumatic Pain, Car accident, Sport injury, Infections, Stones in organs.
       %br
+      %p 
+        Chronic pain is pain lasting longer than three months or past the time of normal tissue healing. Physical effects include tense muscles, limited mobility, a lack of energy, and changes in appetite. Emotional effects include depression, anxiety, anger, and fear of re-injury. There are several different types of pain which may result in chronic pain. Chronic pain is a common complaint in older adults. A person may have more than one chronic pain condition at a time.
       %br
-      Chronic pain is pain lasting longer than three months or past the time of normal tissue healing. Physical effects include tense muscles, limited mobility, a lack of energy, and changes in appetite. Emotional effects include depression, anxiety, anger, and fear of re-injury. There are several different types of pain which may result in chronic pain. Chronic pain is a common complaint in older adults. A person may have more than one chronic pain condition at a time.
+      %p 
+        Musculoskeletal disorders, Cancer pain, IBS, Neurogenic pain (pain due to nerve damage in the brain or other body parts), Psychogenic pain (pain due to faulty processing of pain signals by the brain), Fibromyalgia: which causes diffuse pain throughout the body.
       %br
-      %br
-      Musculoskeletal disorders, Cancer pain, IBS, Neurogenic pain (pain due to nerve damage in the brain or other body parts), Psychogenic pain (pain due to faulty processing of pain signals by the brain), Fibromyalgia: which causes diffuse pain throughout the body.
-      %br
-      Temporomandibular Joint Dysfunction: which causes severe pain and stiffness in the jaw.
+      %p
+        Temporomandibular Joint Dysfunction: which causes severe pain and stiffness in the jaw.
 
       %br
-      Most of diseases are closely related to the mental and physical condition of the patient and the environment, so without these improvements, health cannot be maintained.
+      %p Most of diseases are closely related to the mental and physical condition of the patient and the environment, so without these improvements, health cannot be maintained.
       %br
       %br
+.container
+  .grid-2
+  .grid-2
+    .mycard
+      .grid_90
+        = render partial: "/layouts/review" ,:reviews => @reviews
+
       

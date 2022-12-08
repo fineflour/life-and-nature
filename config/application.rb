@@ -19,13 +19,22 @@ module LifeAndNature
     config.active_record.legacy_connection_handling = false
    # config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
 
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf)
-    config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts)  
-    config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts/jost)  
-    config.autoload_paths += %W(#{config.root}/app/builds/assest/stylesheets) 
-    config.autoload_paths += %W(#{config.root}/app/builds/assets/images)  
-    config.autoload_paths += %W(#{config.root}/app/sbuilds/assets/resources)  
-    config.autoload_paths += %W(#{config.root}/app/sbuilds/assets//javascripts)  
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf *.css *.js *woff *.woff2 *.svg)
+   # config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts)  
+   # config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts/jost)  
+   # config.autoload_paths += %W(#{config.root}/app/builds/assest/stylesheets) 
+   # config.autoload_paths += %W(#{config.root}/app/builds/assets/images)  
+   # config.autoload_paths += %W(#{config.root}/app/sbuilds/assets/resources)  
+   # config.autoload_paths += %W(#{config.root}/app/sbuilds/assets/javascripts)  
+    #
+  config.autoload_paths += %W(#{config.root}/app/assest/fonts)  
+  config.autoload_paths += %W(#{config.root}/app/assest/fonts/jost)  
+  config.autoload_paths += %W(#{config.root}/app/assest/stylesheets) 
+  config.autoload_paths += %W(#{config.root}/app/assest/stylesheets/jquery-ui) 
+  config.autoload_paths += %W(#{config.root}/app/assets/images)  
+  config.autoload_paths += %W(#{config.root}/app/assets/resources)  
+  config.autoload_paths += %W(#{config.root}/app/assets/javascripts)  
+
 
     config.generators do |generate|
       generate.helper false

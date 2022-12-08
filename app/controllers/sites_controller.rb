@@ -4,10 +4,12 @@ class SitesController < ApplicationController
     #@first = params[:page]
     #@second= params[:page]
     menu_values
+    reviews
     if params[:menu_values] ==  '500'
       @qna_list = to_qna_param
     end
-    render template: "sites/#{params[:site]}"
+
+     render template: "sites/#{params[:site]}"
   end
 
   private
@@ -26,6 +28,26 @@ class SitesController < ApplicationController
       end
     end
   end
+
+
+  def reviews
+    reviews ||= YAML.load((File.open("#{Rails.root}/config/reviews.yml", 'r')))
+
+    if(params[:menu_values])
+      id = params[:menu_values].to_i
+    else
+      id = 100
+    end
+
+
+    for n in reviews 
+      if (n["menu_id"] == id)
+     #   binding.pry
+        @reviews = n
+      end
+    end
+  end
+
 
   def to_qna_param
     QuestionsAndAnswer.new 

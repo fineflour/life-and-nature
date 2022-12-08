@@ -1,13 +1,48 @@
-.grid_100
-  .grid_80.has-text-justified
-    %h2.is-4
-      Life & Nature advises on nutritional supplements, exercise, and diet according to the patient's lifestyle, diet, past medical history, constitution, chemical balance, and western medicine intake.
+.grid_100.is-margin-top-2
+  .container.has-text-justified
+    %h2.is-5
+      %p
+        Life & Nature advises on nutritional supplements, exercise, and diet according to the patient's lifestyle, diet, past medical history, constitution, chemical balance, and western medicine intake.
       %br
+      %p 
+        Most diseases are closely related to the patient's mental and physical condition and the environment in which he lives,  so optimal healtph cannot be acuared without improvement of them.
       %br
-      Most of diseases are closely related to the mental and physical condition of the patient and the environment, so without these improvements, health cannot be maintained.
+      %p
+        We believe in combining the 3 pillars of natural medicine: botanical, homeopathy, and nutrition. These tailored protocols are geared towards supporting the structure and function of the body or temporarily relieving specific symptoms.
+.container.is-margin-top-2.has-text-centered
+  .dez-separator.style-liner 
+  %img.img8{:src => "#{ENV['IMG_PATH']}3pillar.jpg"}
+  .dez-separator.style-liner 
+    %h3.is-5.has-text-justified.is-margin-top-2
+      Life and Nature provides high-quality supplements of the market that are guaranteed through extensive experience and clinical trials of patients.
+.container
+  .row
+    .col
+      .card.text-bg-dark
+        %a{:href => "#"}
+          %img.card-img{:alt => "service",:src => "#{ENV['IMG_PATH']}neutri-detox.jpg"}
+          /%img.card-img.img-top{:alt => "service", :src => "#{ENV['IMG_PATH']}neutri-detox-1.jpg"}
+          %h2.title.is-5 Detoxification
+          %h2.is-6
+          Personalize your detox
 
-      %br
-      %br
-      We believe in combining the 3 pillars of natural medicine: botanical, homeopathy, and nutrition. These tailored protocols are geared towards supporting the structure and function of the body or temporarily relieving specific symptoms.
-    %h2.title.is-4.has-text-justified
+    .col
+      .card.text-bg-dark
+        %a{:href => "#"}
+          %img.card-img{:alt => "service",:src => "#{ENV['IMG_PATH']}neutri-emotion.jpg"}
+          /%img.card-img.img-top{:alt => "service", :src => "#{ENV['IMG_PATH']}neutri-detox-1.jpg"}
+          %h2.title.is-5 Sleep & Emotions
+          %h2.is-6
+            Fresh Start
+     
+    .col
+      .card.text-bg-dark
+        %a{:href => "#"}
+          %img.card-img{:alt => "service",:src => "#{ENV['IMG_PATH']}neutri-immune.jpg"}
+          /%img.card-img.img-top{:alt => "service", :src => "#{ENV['IMG_PATH']}neutri-detox-1.jpg"}
+          %h2.title.is-5 Immnune Support
+          %h2.is-6
+            Optimal Health
+     
+
 

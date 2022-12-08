@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   resources :pt_resources, only: [:index, :edit, :show, :new, :update, :create, :destroy]
-  resources :questions_and_answers, only: [:index, :show, :new, :create, :edit, :update] 
+  resources :questions_and_answers, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
 
 
 

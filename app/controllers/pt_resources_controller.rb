@@ -26,7 +26,7 @@ class PtResourcesController < ApplicationController
     @ptsrc = PtResource.new(ptsrc_params)
     if @ptsrc.save
       flash[:notice] = "ptsrc created successfully!"
-      redirect_to ptsrcs_path
+      redirect_to pt_resourcess_path
     else
       flash[:error] = "ptsrc could not be saved."
       render action: :new
@@ -46,7 +46,7 @@ class PtResourcesController < ApplicationController
     if @ptsrc.save
       redirect_to @ptsrc, notice: "Successfully updated"
     else
-      flash[:error] = "ptsrc cannot be updated. Try again"
+      flash[:error] = "Patient resource cannot be updated. Try again"
       render :edit
     end
   end
@@ -55,7 +55,7 @@ class PtResourcesController < ApplicationController
     menu_values
     @ptsrc = PtResource.find(params[:id]).destroy
     flash[:notice] = "ptsrc successfully deleted"
-    redirect_to ptsrcs_path
+    redirect_to pt_resources_path
   end
 
   private 
@@ -67,7 +67,7 @@ class PtResourcesController < ApplicationController
   end
 
   def ptsrc_params
-    params.require(:ptsrc)
+    params.require(:pt_resource)
       .permit(:category, :title, :body, :link, :attached, :link, :active)
   end
 
