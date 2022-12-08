@@ -2,7 +2,7 @@
   .container.is-mobile
     %div.column.flex-middle-center
       %a.navbar-brand{:href => "/"}
-        %img{:alt => "Life and Nature", :src => "#{ENV['IMG_PATH']}/logo_sm.png"}/
+        = image_url "#{ENV['IMG_PATH']}logo_sm.png"
     %div.column.flex-middle
       %button.navbar-toggler{"aria-controls" => "navbarNavDropdown", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavDropdown", "data-bs-toggle" => "collapse", :type => "button"}
         %span.close ×
