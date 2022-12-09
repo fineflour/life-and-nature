@@ -762,6 +762,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 
 .title_section {
   height: 240px;
+  height: 80vh;
   flex-direction: column;
   justify-content: space-between;
   background-size: cover; 
