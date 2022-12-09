@@ -19,10 +19,12 @@
       %br
       %br
 .container
-  .grid-2
-  .grid-2
-    .mycard
-      .grid_90
-        = render partial: "/layouts/review" ,:reviews => @reviews
+  .row
+    .grid-2
+      = render partial: "/layouts/testimony_youtube" 
+    .grid-2
+      .mycard
+        .grid_90
+          = render partial: "/layouts/review" ,:reviews => @reviews
 
       
