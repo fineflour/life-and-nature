@@ -25,7 +25,7 @@
 - id: 202 
   id_no: 20000
   category: 'Services'
-  name: 'Physical Therapy'
+  name: 'Holistic Therapy'
   link: '' 
   active: true
   AD1: 'All in One Holistic Therapy'
@@ -160,7 +160,7 @@
 - id: 308 
   id_no: 10000
   category: 'Conditions'
-  name: 'Pediatric Care'
+  name: 'Children''s Health'
   link: '' 
   active: true
   note:

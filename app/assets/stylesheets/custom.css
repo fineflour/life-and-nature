@@ -827,7 +827,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   word-wrap: break-word;
   background-color: #ebebeb;
   background-clip: border-box;
-  border: 0px solid rgba(0, 0, 0, 0.125);
+  border: 0px solid rgba(0, 0, 0, 0.100);
   border-radius: 1rem;
   padding: 14px;
 }
@@ -880,6 +880,12 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 .gi-ico-bg {
   background-color: #909090;
 }
+
+.kids-ico-bg {
+  background-color: #b87330;
+}
+
+
 
 
 
