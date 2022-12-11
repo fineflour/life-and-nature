@@ -138,7 +138,7 @@ p.txt_priv{
 
 .title {
   color: #000;
-  line-height: 1.5;
+  line-height: 2rem;
   font-weight: 600;
 }
 
@@ -766,7 +766,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 
 .title_section {
   height: 240px;
-  height: 70vh;
+  height: 80vh;
   flex-direction: column;
   justify-content: space-between;
   background-size: cover; 
@@ -856,30 +856,33 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   color: #333;
 }
 
-//CSS for icons
-
-.pain-ico-bg {
-  background-color: #286e26
-}
-
-.feature-block-4-img-container {
-  display: block;
-  height: 120px;
-  width: 120px;
-  border-radius: 120px;
-  background-color: #004a80;
-  margin: 0 auto;
-  text-align: center;
-}
-
-
-.feature-block-style-4 {
-  height: 60px;
-  width: auto;
-  position: relative;
-  top: 25px;
-}
 
 .upper{
   text-transform: uppercase;
 }
+
+.women-ico-bg {
+  background-color: #a63e72;
+}
+
+.neuro-ico-bg {
+  background-color: #448fed;
+}
+
+.emotion-ico-bg {
+  background-color: #666b82;
+}
+
+.pupple-ico-bg {
+  background-color: #7f2d67;
+}
+
+.gi-ico-bg {
+  background-color: #909090;
+}
+
+
+
+
+
+

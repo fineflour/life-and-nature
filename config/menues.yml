@@ -28,6 +28,8 @@
   name: 'Physical Therapy'
   link: '' 
   active: true
+  AD1: 'All in One Holistic Therapy'
+  AD2:  'Chiropractic, Massage, Physical Therapy'
   note: 
   
 - id: 203 

@@ -1,19 +1,30 @@
-%h3.title.is-5
-  = @reviews["title"].html_safe
-%h3.is-6.review-text.has-text-justified    
-  = @reviews["review"].html_safe
-.grid_90.has-text-centered
-  .review-stars
-    %span
-      %span.fa.fa-star
-      %span.fa.fa-star
-      %span.fa.fa-star
-      %span.fa.fa-star
-      %span.fa.fa-star
+.grid
+  %h3.title.is-3.has-text-centered
+    What our customers are saying
+    %br
+    %br
+.container.has-text-centered
+  .row
+    .grid-2
+      = render partial: "/layouts/testimony_youtube" 
+    .grid-2
+      .mycard
+        .grid_90
+          %h3.title.is-5
+            = @reviews["title"].html_safe
+          %h3.is-6.review-text.has-text-justified    
+            = @reviews["review"].html_safe
+          .grid_90.has-text-centered
+            .review-stars
+              %span
+                %span.fa.fa-star
+                %span.fa.fa-star
+                %span.fa.fa-star
+                %span.fa.fa-star
+                %span.fa.fa-star
 
-      %h3.is-6
-        = @reviews['reviewer']
-        = @reviews['review_date']
-      %span
-        /%i.icon.fas.fa-check-circle
+                %h3.is-6
+                  = @reviews['reviewer']
+                %span
+                  /%i.icon.fas.fa-check-circle
 
