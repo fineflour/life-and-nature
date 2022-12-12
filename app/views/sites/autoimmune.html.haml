@@ -1,7 +1,11 @@
 .grid_100.has-text-justified.is-margin-top-2
   .container
     %h2.is-4
-      sjögren’s syndrome, Addison disease, Celiac disease (gluten-sensitive enteropathy), Dermatomyositis, Graves disease, Hashimoto thyroiditis, Multiple sclerosis, Myasthenia gravis, Pernicious anemia, Rheumatoid Arthritis, Inflammatory bowel disease (Crohn's Disease, Ulcerative colitis)Chronic Fatigue, Fibromyalgia, Psoriasis/psoriatic arthritis, Multiple sclerosis, Systemic lupus erythematosus (SLE), Autoimmune vasculitis
+      Life and Nature Holistic Medicine provides practical, natural solutions for multiple areas of autoimmnue disorders.
+      %br
+      %br
+      Below are just a few of the more common issues we help patients with. Please call the office and let's discuss your symptoms and explore how we can help.
+
       %br
       %br
     %h2.is-5.has-text-justified
@@ -15,42 +19,46 @@
       %li Recurring low grade fever
       %li Swollen glands
 
-  .dez-separator.style-liner 
+    .dez-separator.style-liner 
 .container
   .row
-    .grid-4.has-text-centered
+    .grid-3.has-text-centered
       %span.feature-block-4-img-container.pupple-ico-bg
         %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-thyroid1.png"}
       .grid.is-margin-top-1
         %p.is-5.upper
-          Hypo, hyperthyroidism
+          Thyroidism
         %p.is-6
+          Hashimoto thyroiditis, Hypo, hyperthyroidsm
 
-    .grid-4.has-text-centered
+    .grid-3.has-text-centered
       %span.feature-block-4-img-container.pupple-ico-bg
         %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-bone.png"}
       .grid.is-margin-top-1
         %p.is-5.upper
-          rheumatoid arthritis
+          arthritis
         %p.is-6
+          Rheumatoid arthritis
 
-    .grid-4.has-text-centered
+    .grid-3.has-text-centered
       %span.feature-block-4-img-container.pupple-ico-bg
         %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-fatigue.png"}
       .grid.is-margin-top-1
         %p.is-5.upper
-          Chronic Fatigue, fibromyalgia
+          ME/CFS, 
         %p.is-6
+          Myalgic Encephalomyelitis/Chronic Fatigue Syndrome, Fibromyalgia
 
-    .grid-4.has-text-centered
+  .row          
+    .grid-3.has-text-centered
       %span.feature-block-4-img-container.pupple-ico-bg
         %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-colon.png"}
       .grid.is-margin-top-1
         %p.is-5.upper
-          IBS
+          IBD
         %p.is-6
+          Inflammatory bowel disease (Crohn's Disease, Ulcerative colitis)
 
-  .row
     .grid-3.has-text-centered
       %span.feature-block-4-img-container.pupple-ico-bg
         %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-skinissue.png"}
@@ -58,21 +66,17 @@
         %p.is-5.upper
           Skin Disorders
         %p.is-6
+          Dermatomyositis, Psoriasis/psoriatic arthritis,
 
     .grid-3.has-text-centered
       %span.feature-block-4-img-container.pupple-ico-bg
         %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-als1.png"}
       .grid.is-margin-top-1
         %p.is-5.upper
-          ALS, MS
+          MS, SLE, ALS
         %p.is-6
+          Multiple sclerosis, Systemic lupus erythematosus(SLE), Amyotrophic Lateral Sclerosis
 
-
-    .grid-3.has-text-centered
-      %span.feature-block-4-img-container.pupple-ico-bg
-        %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-more1.png"}
-      .grid.is-margin-top-1
-        %p.is-5.upper
-          And More...
-        %p.is-6
+  .dez-separator.style-liner
+  = render partial: "/layouts/review-pics" 
 

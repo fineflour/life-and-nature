@@ -1,2 +1,5 @@
-%iframe.i_overlay{:frameborder => "0", :height => "300", :src => @menu_values['youtube'], :width => "90%"}
+- if @reviews['youtube']
+  %iframe.i_overlay{:frameborder => "0", :height => "300", :src => @menu_values['youtube'], :width => "90%"}
+- if @reviews['picture']
+  %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}gallery/" + @reviews['picture']}
 

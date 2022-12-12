@@ -885,10 +885,51 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   background-color: #b87330;
 }
 
+.life-ico-bg {
+  background-color: #18cb00;
+}
+
+.life-block-style-4 {
+  height: 50px;
+  width: auto;
+  position: relative;
+  top: 25px;
+}
 
 
+.life-img-container {
+  display: block;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.women-ico-bg {
+  background-color: #804f52;
+}
+
+.pain-ico-bg {
+  background-color: #004a80;
+}
+
+.feature-block-4-img-container {
+  display: block;
+  height: 120px;
+  width: 120px;
+  border-radius: 120px;
+  margin: 0 auto;
+  text-align: center;
+}
 
 
+.feature-block-style-4 {
+  height: 60px;
+  width: auto;
+  position: relative;
+  top: 25px;
+}
 
-
-
+.flex {
+  display: flex;
+}

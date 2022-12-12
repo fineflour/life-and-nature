@@ -20,3 +20,19 @@
   youtube: 'https://www.youtube.com/embed/NYyN8Q5ew3E?feature=oembed=0=0=0'
   note: 
 
+- id: 3 
+  menu_id: 304 
+  active: true 
+  title : 'Acupuncture is Amazing and it really does work!'
+  reviewer: 'Kimberly B.   Tustin, CA'
+  review : 'I am very thankful to have been referred to Life & Nature Acupuncture. I was in a lot of pain and had chronic inflammation in my joints and bed bound for many years. This kind of pain I was in every morning, made me frustrated and I knew I needed real help. I have been convinced that Acupuncture is Amazing and it really does work. I still have a long way to go in my healing process but the help I am receiving is priceless. If you''re in chronic pain of any kind, come and experience getting real help from an expert.'
+  review_date : '10/30/2018'
+  picture: 'testimony-kim-b.jpg'
+  youtube: 
+  note: '34 year-old-female with Postpartum Rheumatoid Arthritis
+    with knee and elbow joints crooked<br><br>
+    Treatment Methods: Acupuncture, Detoxification, Personalized Diet Plan,
+    Natural Supplements'
+
+    
+

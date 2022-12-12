@@ -2,12 +2,10 @@
   .container
     %h3.is-5
       %p 
-        Acute pain begins suddenly and is usually sharp in quality. It serves as a warning of disease or a threat to the body. Acute pain might be caused by many events or circumstances.
-      %p Including: Surgical Pain, Traumatic Pain, Car accident, Sport injury, Infections, Stones in organs.
-      %br
-      %p 
-        Chronic pain is pain lasting longer than three months or past the time of normal tissue healing. Physical effects include tense muscles, limited mobility, a lack of energy, and changes in appetite. Emotional effects include depression, anxiety, anger, and fear of re-injury. There are several different types of pain which may result in chronic pain. Chronic pain is a common complaint in older adults. A person may have more than one chronic pain condition at a time.
-      %br
+        We have seen many patients who have given up on conventional medicine recover with natural healing and return to a normal, pain-free life.
+        If you have been suffering for a long time and many treatments have not worked very well, please contact us.
+      %br 
+        Maybe we can help.
       %br
 
 .container
@@ -49,7 +47,49 @@
           Headaches
         %p.is-6
           Migaraine, Tension Headache, PMS Headache, Trigeminal autonomic cephalalgia, Cluster Headache and ect. 
+  .row
+    .grid-4.has-text-centered
+      %span.feature-block-4-img-container.pain-ico-bg
+        %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-pain-abdomin.png"}
+      .grid.is-margin-top-1
+        %p.is-5.upper
+          Abdominal Pain
+        %p.is-6
+          IBS, Gerd, Constipation, Colitis, Diverticulitis...
+
+    .grid-4.has-text-centered
+      %span.feature-block-4-img-container.pain-ico-bg
+        %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-autoimmune.png"}
+      .grid.is-margin-top-1
+        %p.is-5.upper
+          Autoimmune Disorder
+        %p.is-6
+          Fibromyalgia, Lupus, Rheumatoid Arthritis...
+
+
+    .grid-4.has-text-centered
+      %span.feature-block-4-img-container.pain-ico-bg
+        %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-cancer.png"}
+      .grid.is-margin-top-1
+        %p.is-5.upper
+          Cancer Pain
+        %p.is-6
+          Side effects from chemo and radiation therapy
+
+    .grid-4.has-text-centered
+      %span.feature-block-4-img-container.pain-ico-bg
+        %img.feature-block-style-4{:src => "#{ENV['IMG_PATH']}ico-more1.png"}
+      .grid.is-margin-top-1
+        %p.is-5.upper
+          And More
+        %p.is-6
+          Unexplained pain, Something else...
+
+
+
+
   .dez-separator.style-liner 
   = render partial: "/layouts/review" ,:reviews => @reviews
+
 
       

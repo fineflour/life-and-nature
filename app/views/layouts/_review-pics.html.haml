@@ -5,9 +5,13 @@
     %br
 .container.has-text-centered
   .row
-    .grid-2
+    .grid-3-2.pad-rt
       = render partial: "/layouts/testimony_youtube" 
-    .grid-2
+      %br
+      %br
+      %h3.is-5.has-text-justified
+        = @reviews["note"].html_safe
+    .grid-3
       .mycard
         .grid_90
           %h3.is-4
