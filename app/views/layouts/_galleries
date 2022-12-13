@@ -1,0 +1,17 @@
+.container
+  - @galleries.each do |n|
+    - if n["filename"]
+      - if n["id"] % 3 == 1
+        .row
+          .grid-3.mycard
+            %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}gallery/" +  n["filename"]}
+              %h2.title.is-5 Kathy K
+              %p.small
+
+      - else 
+        .grid-3.mycard
+          %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}gallery/" +  n["filename"]}
+            %h2.title.is-5 Kathy K
+            %p.small
+
+   

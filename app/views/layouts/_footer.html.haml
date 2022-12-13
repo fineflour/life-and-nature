@@ -3,27 +3,38 @@
   .container.has-text-centered.is-margin-top-2
     %span.life-img-container.life-ico-bg
       %img.life-block-style-4{:src => "#{ENV['IMG_PATH']}ico-cell.png"}
-    %h2.is-4
+    %h2.is-4.is-margin-top-1
       To book your appointment please CALL or TEXT:
       %br
       %br
     %h2.title.is-3
       %b (714) 443-1779
+    %br
+    %span.life-img-container.life-ico-bg
+      %img.life-block-style-4{:src => "#{ENV['IMG_PATH']}ico-email.png"}
+    %h2.is-4.f-white
 
-  .box-4.marTop5
-    %h2.is-4.f-white
-      %b Business Hours
-    %h2.is-4.f-white.upper
-      Mon ~ Fri (9:30AM ~ 6:00PM), 
-      Sat (9:30AM ~ 4:00PM)
-      %br
-    %h2.is-4.f-white
-      %img.img3.no_resize{:alt => "", :src => "#{ENV['IMG_PATH']}icon2.png"}/
+    %br
+    %h2.is-4
       info@life-and-nature.com
 
-    %img.img3.no_resize{:alt => "", :src =>  "#{ENV['IMG_PATH']}icon1.png"}/
+  .box-4.marTop5
+    %span.life-img-container.life-ico-bg
+      %img.life-block-style-4{:src => "#{ENV['IMG_PATH']}ico-location.png"}
     %h3.is-4.f-white
       %p 520 N Brookhurst St. Suite 204 Anaheim, CA 92801
+      %br
+    %h2.is-4.f-white.upper
+      Business Hours
+      %br
+      %br
+    %h2.is-4.f-white.upper
+      Mon ~ Fri (9:30AM ~ 6:00PM) 
+      %br
+      Sat (9:30AM ~ 4:00PM)
+      %br
+
+
 
 .footer_priv
   %p.txt_priv

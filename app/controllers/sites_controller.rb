@@ -9,6 +9,12 @@ class SitesController < ApplicationController
       @qna_list = to_qna_param
     end
 
+    if params[:menu_values] ==  '704'
+      galleries
+    end
+
+
+
      render template: "sites/#{params[:site]}"
   end
 
@@ -47,6 +53,18 @@ class SitesController < ApplicationController
       end
     end
   end
+
+  def galleries
+
+    @galleries ||= YAML.load((File.open("#{Rails.root}/config/galleries.yml", 'r')))
+
+    #for n in galleries
+    #  @galleries= n
+     # binding.pry
+    #end
+  end
+
+
 
 
   def to_qna_param

@@ -825,12 +825,26 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #ebebeb;
+  background-color: #ededed;
   background-clip: border-box;
   border: 0px solid rgba(0, 0, 0, 0.100);
   border-radius: 1rem;
   padding: 14px;
 }
+
+.mycard-b {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.100);
+  border-radius: 1rem;
+  padding: 14px;
+}
+
 .bg-danger {
   background-color: #ff4088!important;
   margin: 4px!important;
@@ -890,18 +904,18 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 }
 
 .life-block-style-4 {
-  height: 50px;
+  height: 40px;
   width: auto;
   position: relative;
-  top: 25px;
+  top: 10px;
 }
 
 
 .life-img-container {
   display: block;
-  height: 100px;
-  width: 100px;
-  border-radius: 100px;
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
   margin: 0 auto;
   text-align: center;
 }
