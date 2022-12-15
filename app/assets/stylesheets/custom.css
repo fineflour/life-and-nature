@@ -891,6 +891,10 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   background-color: #7f2d67;
 }
 
+.green-ico-bg {
+  background-color: #00ab17;
+}
+
 .gi-ico-bg {
   background-color: #909090;
 }
@@ -903,7 +907,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   background-color: #18cb00;
 }
 
-.life-block-style-4 {
+.life-ico-style {
   height: 40px;
   width: auto;
   position: relative;
@@ -911,7 +915,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 }
 
 
-.life-img-container {
+.life-ico-container {
   display: block;
   height: 60px;
   width: 60px;
@@ -927,7 +931,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   background-color: #004a80;
 }
 
-.feature-block-4-img-container {
+.ico-container {
   display: block;
   height: 120px;
   width: 120px;
@@ -937,7 +941,7 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 }
 
 
-.feature-block-style-4 {
+.ico-style {
   height: 60px;
   width: auto;
   position: relative;
@@ -946,4 +950,19 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
 
 .flex {
   display: flex;
+}
+
+.sq-ico-container{  
+  display: inline-block;
+  padding: 0.9em 0.9em;
+  margin: 0.5em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.4rem;
+
 }

@@ -2,12 +2,14 @@
   .container.has-text-centered
     .row
       .grid-2.has-text-centered
+        %i
+          .fa-solid.fa-map-pin
         %h3.is-4
           520 N Brookhurst Suit 204 Anaheim, CA 92801
-        .mycard.is-margin-top-2
+        .mycard-b.is-margin-top-2
           %img.img8{:src => "#{ENV['IMG_PATH']}gmap-520N.jpg"}
           %br
-        .mycard.is-margin-top-2
+        .mycard-b.is-margin-top-2
           %img.img8{:src => "#{ENV['IMG_PATH']}520-building.jpg"}
 
       .grid-2.has-text-center
@@ -19,15 +21,17 @@
             %br
             Monday ~ Friday
             %br
-            9:30 AM ~ 6PM
             %br
+            9:30 AM ~ 6:00 PM
+            %br
+            %br
+            .dez-separator.style-liner 
             %br
             %br
             Saturday
             %br
-            9:30 AM ~ 4PM
             %br
-            %br
+            9:30 AM ~ 4:00 PM
             %br
             %br
             %br
