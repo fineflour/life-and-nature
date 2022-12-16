@@ -2,19 +2,20 @@
   .container.has-text-centered
     .row
       .grid-2.has-text-centered
-        %i
-          .fa-solid.fa-map-pin
-        %h3.is-4
-          520 N Brookhurst Suit 204 Anaheim, CA 92801
+        .grid
+          %img.float-left.ico-w-text{:src => "#{ENV['IMG_PATH']}ico-map-green.jpg"}
+          %h3.is-4
+            520 N Brookhurst Suit 204 Anaheim, CA 92801
         .mycard-b.is-margin-top-2
           %img.img8{:src => "#{ENV['IMG_PATH']}gmap-520N.jpg"}
           %br
         .mycard-b.is-margin-top-2
           %img.img8{:src => "#{ENV['IMG_PATH']}520-building.jpg"}
 
-      .grid-2.has-text-center
-        %h3.is-4
-          Business Hours
+      .grid-2
+        .grid
+          %h3.is-4
+            Business Hours
         .mycard.is-margin-top-2
           %h3.is-5
             %br

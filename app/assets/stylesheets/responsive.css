@@ -177,21 +177,19 @@
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-  .container:not(.is-max-desktop) {
+@media only screen and (max-width : 992px) {
+ .container:not(.is-max-desktop) {
   }
   .is-mobile {
     flex-direction: row-reverse !important;
   }
-
-
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 .container {
     /*max-width: 960px; */
-  }
+ }
   .f-green{
     text-align: right;
     text-shadow: #ddd 6px 0 6px;

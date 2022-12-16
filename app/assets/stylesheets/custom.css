@@ -147,7 +147,7 @@ p.txt_priv{
   color: #fff;
   vertical-align: top;
   font-weight: 400;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   line-height: 2;
 
 }
@@ -964,5 +964,11 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.4rem;
+}
 
+.ico-w-text {
+  display: inline-block;
+  height: auto;
+  width: 25px;
+  position: relative;
 }
