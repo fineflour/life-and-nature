@@ -972,3 +972,22 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   width: 25px;
   position: relative;
 }
+
+.sq-ico-container-xl{  
+  display: inline-block;
+  padding: 0.9em 0.9em;
+  margin: 0.5em;
+  line-height: 1;
+  background-color: #eee;
+  vertical-align: baseline;
+  border-radius: 0.4rem;
+}
+
+
+
+.ico-labtest {
+  background-image:url('/assets/ico-lab.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right -15px;
+}
