@@ -3,9 +3,13 @@
     .row
       .grid-2.has-text-centered
         .grid
-          %img.float-left.ico-w-text{:src => "#{ENV['IMG_PATH']}ico-map-green.jpg"}
-          %h3.is-4
-            520 N Brookhurst Suit 204 Anaheim, CA 92801
+          .widgets_div
+            .icon_div
+              %h3.is-3.txt_dgreen
+                %i.fa-solid.fa-location-dot
+            .text_div
+              %h3.is-4
+                %span 520 N Brookhurst Suit 204 Anaheim, CA 92801
         .mycard-b.is-margin-top-2
           %img.img8{:src => "#{ENV['IMG_PATH']}gmap-520N.jpg"}
           %br
@@ -14,8 +18,13 @@
 
       .grid-2
         .grid
-          %h3.is-4
-            Business Hours
+          .widgets_div
+            .icon_div
+              %h3.is-3.txt_dgreen
+                %i.fa.fa-clock
+            .text_div
+              %h3.is-4
+                %span Business Hours
         .mycard.is-margin-top-2
           %h3.is-5
             %br
