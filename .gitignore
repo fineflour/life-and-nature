@@ -36,3 +36,6 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# URL Redirection 
+/app/controllers/application_controller.rb

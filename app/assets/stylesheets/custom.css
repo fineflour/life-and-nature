@@ -250,7 +250,7 @@ p.txt_priv{
   font-weight: 500;
   font-size: 3.57rem;
   color: hsl(0deg,0%,4%);
-  line-height: 1.125;
+  line-height: 1.2em;
 }
 
 .is-2 {
@@ -284,7 +284,7 @@ p.txt_priv{
 }
 .title.thin {
   font-weight: 200;
-  font-size: 2.8rem;
+  font-size: 3.3rem;
   font-style: italic;
 }
 
