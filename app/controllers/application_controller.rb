@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   #before_action :add_www_subdomain
 
-
   private
   def add_www_subdomain
     unless /^www/.match(request.host)
