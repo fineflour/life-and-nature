@@ -16,6 +16,8 @@ module LifeAndNature
 
     config.autoload_paths += Dir["#{config.root}/lib/**/"]  
     config.active_record.legacy_connection_handling = false
+
+    config.action_dispatch.cookies_same_site_protection = :strict
     # config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf *.css *.js *woff *.woff2 *.svg)
