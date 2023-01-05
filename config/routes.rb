@@ -13,4 +13,9 @@ Rails.application.routes.draw do
 
 
   get "/sites/:site" => "sites#show"
+  get "/pt_resources/dismiss_admin"
+
+  resources 'site' do
+    resources :pt_resources, only: [:show]
+  end 
 end

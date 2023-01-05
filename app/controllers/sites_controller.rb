@@ -13,9 +13,9 @@ class SitesController < ApplicationController
       galleries
     end
 
+    @pt_resource = PtResource.article_by_menu_id(params[:menu_values])
 
-
-     render template: "sites/#{params[:site]}"
+    render template: "sites/#{params[:site]}"
   end
 
   private

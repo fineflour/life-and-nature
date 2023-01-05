@@ -3,9 +3,10 @@
 
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    - if (@admin)
+    - if (session[:admin])
       .panel-heading
-        = link_to "Add new ptsrc", new_pt_resource_path, class: "btn btn-info"
+        = link_to "Add new Resource", new_pt_resource_path, class: "btn btn-info"
+        = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-info"
     .table-responsive
       %table#article.table.table-bordered.table-hover
         %thead
@@ -15,11 +16,11 @@
             %th Link
             %th Created At
 
-            - if (@admin)
+            - if (session[:admin])
               %th Action
         %tbody
-          - @ptsrcs.each do |a|
-            %tr{:id => "ptsrc#{a.id}"}
+          - @pt_resource.each do |a|
+            %tr{:id => "pt_resource#{a.id}"}
               %td
                 = link_to a.title, pt_resource_path(a)
               %td
@@ -28,10 +29,11 @@
                 = a.link
               %td
                 = a.updated_at.strftime("%m/%d/%Y")
-              - if (@admin)
+              - if (session[:admin])
                 %td
                   = link_to "Show",pt_resource_path(a)
                   |
                   \#{link_to "Edit", edit_pt_resource_path(a)}
                   |
-                  \#{link_to "Delete", pt_resources_path(a), :confirm => "Are you sure?", :method => :delete}
+                  \#{link_to "Delete", pt_resource_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}}
+                  

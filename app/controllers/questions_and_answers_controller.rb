@@ -2,7 +2,7 @@ class QuestionsAndAnswersController < ApplicationController
   include ActionView::Helpers::AssetUrlHelper
 
   def index
-    if (params[:key])
+    if (params[:key]) || session[:admin] == nil || session[:admin] == false
       security_key(params[:key])
     end if
 
@@ -100,8 +100,9 @@ class QuestionsAndAnswersController < ApplicationController
     end
   end
   def security_key(key)
-    if key =='lifeandnature'
+    if key == Rails.application.credentials.admin_key
       @admin = true
+      session[:admin] =  true
     end
   end
 

@@ -1,50 +1,59 @@
 class PtResourcesController < ApplicationController
   include ActionView::Helpers::AssetUrlHelper
-  def index
 
+  def index
+    menu_values
     if (params[:key])
       security_key(params[:key])
     end if
 
-    menu_values
-    @ptsrcs =  ptsrc_for_index  
+    if(session[:admin])
+      @pt_resource =  pt_resource_for_index  
+    else
+      @pt_resource = PtResource.article_by_menu_id(params[:menu_values])
+    end
   end
 
 
   def show
     menu_values
-    @ptsrc = PtResource.find(params[:id])
+    if(params[:id].to_s == "dismiss_admin")
+       dismiss_admin
+    else 
+      @pt_resource= PtResource.find(params[:id])
+    end
   end
 
   def new
     menu_values
-    @ptsrc = PtResource.new
+    @pt_resource = PtResource.new
   end
 
   def create
     menu_values
-    @ptsrc = PtResource.new(ptsrc_params)
-    if @ptsrc.save
-      flash[:notice] = "ptsrc created successfully!"
-      redirect_to pt_resourcess_path
+    #binding.pry
+    @pt_resource = PtResource.new(pt_resource_params)
+    if @pt_resource.save
+      flash[:notice] = "Article has been created successfully!"
+      redirect_to pt_resources_path
     else
-      flash[:error] = "ptsrc could not be saved."
+      flash[:error] = "patient resourc could not be saved."
       render action: :new
     end
   end
 
   def edit
     menu_values
-    @ptsrc = PtResource.find(params[:id])
+    @pt_resource= PtResource.find(params[:id])
   end
 
   def update
     menu_values
-    @ptsrc = PtResource.find(params[:id])
-    @ptsrc.update_attributes(ptsrc_params)
+    @pt_resource= PtResource.find(params[:id])
+    @pt_resource.update(pt_resource_params)
 
-    if @ptsrc.save
-      redirect_to @ptsrc, notice: "Successfully updated"
+    if  @pt_resource.save
+      redirect_to  pt_resources_path, notice: "Successfully updated"
     else
       flash[:error] = "Patient resource cannot be updated. Try again"
       render :edit
@@ -53,22 +62,48 @@ class PtResourcesController < ApplicationController
 
   def destroy
     menu_values
-    @ptsrc = PtResource.find(params[:id]).destroy
-    flash[:notice] = "ptsrc successfully deleted"
+    @pt_resource = PtResource.find(params[:id])
+    if @pt_resource.destroy
+      flash[:notice] = "The data successfully deleted"
+      #redirect_to pt_resources_path, notice: "The data has been destroyed."
+      redirect_to("/pt_resources")
+    else 
+      flash[:error] = "The data could not be destroyed."
+      render :index
+    end
+  end
+
+
+
+  private 
+
+  def dismiss_admin
+    session[:admin] = false;
+   # binding.pry
     redirect_to pt_resources_path
   end
 
-  private 
-  def ptsrc_for_index
-    PtResource.order("created_at DESC").
-      #includes(:products, :orderproducts, :orderproduct_transitions).
-      # text_search(params[:query]).
-      paginate(page: params[:page])
+  def pt_resource_for_index
+    if @admin
+      PtResource.order("created_at DESC").
+        #includes(:products, :orderproducts, :orderproduct_transitions).
+        # text_search(params[:query]).
+        paginate(page: params[:page])
+    else
+
+      PtResource.order("created_at DESC").
+        where(active: true).
+        #includes(:products, :orderproducts, :orderproduct_transitions).
+        # text_search(params[:query]).
+        paginate(page: params[:page])
+
+    end
   end
 
-  def ptsrc_params
+  def pt_resource_params
     params.require(:pt_resource)
-      .permit(:category, :title, :body, :link, :attached, :link, :active)
+      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active)
+    #   binding.pry
   end
 
   def menu_values
@@ -83,8 +118,9 @@ class PtResourcesController < ApplicationController
   end
 
   def security_key(key)
-    if key =='lifeandnature'
+    if key == Rails.application.credentials.admin_key
       @admin = true
+      session[:admin] =  true
     end
   end
 

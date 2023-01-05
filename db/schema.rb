@@ -15,13 +15,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_012526) do
   enable_extension "plpgsql"
 
   create_table "pt_resources", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.string "category"
+    t.string "title", default: "", null: false
+    t.text "body", default: "", null: false
+    t.string "category", default: "Article", null: false
+    t.string "menu_id", default: "", null: false
     t.string "link"
     t.string "attached"
-    t.boolean "active"
-    t.boolean "public"
+    t.boolean "active", default: true
+    t.boolean "public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,12 +30,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_012526) do
   create_table "questions_and_answers", force: :cascade do |t|
     t.string "question", default: "", null: false
     t.text "answer", default: "", null: false
-    t.integer "view_count", default: 0, null: false
+    t.integer "view_count", default: 0
     t.boolean "show", default: true
     t.integer "view_order", default: 10000
     t.text "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", default: -> { "now()" }
+    t.datetime "updated_at", default: -> { "now()" }
   end
 
 end

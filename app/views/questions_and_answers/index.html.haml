@@ -3,7 +3,7 @@
 
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    - if (@admin)
+    - if (session[:admin])
       .panel-heading
         = link_to "Add new Q & A", new_questions_and_answer_path, class: "btn btn-info"
         = will_paginate @qna_list, renderer: BootstrapPagination::Rails  
@@ -33,7 +33,7 @@
               %tr
                 %td.has-text-centered
                   .grid_90.is-margin-top-2.has-text-centered
-                    = link_to "Delete", questions_and_answer_path(a), confirm: "Are you sure?", method: :delete, class: "btn btn-danger"
+                    = link_to "Delete", questions_and_answer_path(a),  class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure to delete?"}
     - else
       .panel-heading
         = render partial: "qna_table"
