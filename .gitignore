@@ -38,3 +38,5 @@
 
 # URL Redirection 
 /app/controllers/application_controller.rb
+
+/config/credentials/production.key
