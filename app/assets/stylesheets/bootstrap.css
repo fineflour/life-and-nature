@@ -4229,9 +4229,10 @@ textarea.form-control-lg {
 .accordion-button:hover {
   z-index: 2;
 }
+
 .accordion-button:focus {
   z-index: 3;
-  border-color: #86b7fe;
+  border-color: #eee;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
@@ -4270,7 +4271,7 @@ textarea.form-control-lg {
 }
 
 .accordion-body {
-  padding: 0.5rem 0.75rem;
+  padding: 1rem 1rem;
   text-align: justify!important;
   text-justify: inter-word;
 }

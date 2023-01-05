@@ -5,6 +5,7 @@ class PtResourcesController < ApplicationController
     menu_values
     if (params[:key])
       security_key(params[:key])
+      @pt_resource =  pt_resource_for_index  
     end if
 
     if(session[:admin])
@@ -118,7 +119,8 @@ class PtResourcesController < ApplicationController
   end
 
   def security_key(key)
-    if key == Rails.application.credentials.admin_key
+    if key == 'dr.life-and-nature'
+        #Rails.application.credentials.admin_key
       @admin = true
       session[:admin] =  true
     end

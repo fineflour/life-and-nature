@@ -25,7 +25,7 @@
 
 .container
   .row
-    .grid-2.pad-rt
+    .grid-3-2.pad-rt
       %h3.title.is-4
         %p Correlation between immunity and cancer treatment
         %br
@@ -36,34 +36,15 @@
           Our oncology supportive care treatment not only alleviates various side effects and post-effects that can occur during chemotherapy and radiation treatment, but also increases the efficiency of treatment through the treatments that focuse on the recovery of immune system and basic physical strength of cancer patients.
         %br
 
-    .grid-2
-      .mycard
-        .grid_90
-          %h3.title.is-5.text-blue
-            &#9776; &nbsp; Related Articles
+    .grid-3
+      .mycard-b
+        %h3.title.is-6.text-navy
+          &#9776; &nbsp; RELATED ARTICLES
           = render partial: "/pt_resources/article" 
-          %h3.is-6.has-text-justified.revew-text
-            %li 
-              %a{:href => "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2642987/", target: "_new"}
-              The Value of Acupuncture in Cancer Care
-            %li 
-              %a{:href => "https://www.cancer.gov/about-cancer/treatment/cam/patient/acupuncture-pdq", target: "_new"}
-                Alternative medicine for cancer patients
-            %li 
-              %a{:href => "https://magazine.nursing.jhu.edu/2020/04/healing-path/", target: "_new"}
-                Acupressure and the Ear: A Healing Path
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
-              %br
+        %br
+        %br
+        %br
+        %br
   .dez-separator.style-liner
   = render partial: "/layouts/review" 
 
