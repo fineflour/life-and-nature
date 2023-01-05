@@ -2,7 +2,7 @@ class QuestionsAndAnswersController < ApplicationController
   include ActionView::Helpers::AssetUrlHelper
 
   def index
-    if (params[:key]) || session[:admin] == nil || session[:admin] == false
+    if (params[:key]) 
       security_key(params[:key])
     end if
 
@@ -12,7 +12,12 @@ class QuestionsAndAnswersController < ApplicationController
 
   def show
     menu_values
-    @qna_list = QuestionsAndAnswer.find(params[:id])
+    if(params[:id].to_s == "dismiss_admin")
+       dismiss_admin
+    else 
+      @qna_list = QuestionsAndAnswer.find(params[:id])
+    end
+
    # authorize @qna_list
   end
 
@@ -71,6 +76,12 @@ class QuestionsAndAnswersController < ApplicationController
 
 
   private
+  def dismiss_admin
+    session[:admin] = false;
+   # binding.pry
+    redirect_to questions_and_answers_path
+  end
+
   def questions_and_answers_for_index
     QuestionsAndAnswer.order("id").paginate(page: params[:page])
   end
@@ -100,7 +111,8 @@ class QuestionsAndAnswersController < ApplicationController
     end
   end
   def security_key(key)
-    if key == Rails.application.credentials.admin_key
+    if key == 'dr.life-and-nature'
+        #Rails.application.credentials.admin_key
       @admin = true
       session[:admin] =  true
     end

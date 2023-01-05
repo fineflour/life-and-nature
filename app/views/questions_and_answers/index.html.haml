@@ -6,6 +6,8 @@
     - if (session[:admin])
       .panel-heading
         = link_to "Add new Q & A", new_questions_and_answer_path, class: "btn btn-info"
+        = link_to "Exit Admin", questions_and_answers_dismiss_admin_path, class: "btn btn-info"
+
         = will_paginate @qna_list, renderer: BootstrapPagination::Rails  
 
       .container
