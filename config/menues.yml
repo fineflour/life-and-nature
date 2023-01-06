@@ -49,7 +49,7 @@
 - id: 204 
   id_no: 20000
   category: 'Services'
-  name: 'Health Tests'
+  name: ''
   link: '' 
   active: true 
   note: 

@@ -50,6 +50,7 @@ class PtResourcesController < ApplicationController
 
   def update
     menu_values
+    #binding.pry
     @pt_resource= PtResource.find(params[:id])
     @pt_resource.update(pt_resource_params)
 
@@ -104,7 +105,6 @@ class PtResourcesController < ApplicationController
   def pt_resource_params
     params.require(:pt_resource)
       .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active)
-    #   binding.pry
   end
 
   def menu_values
