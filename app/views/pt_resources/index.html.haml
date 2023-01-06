@@ -6,7 +6,7 @@
     - if (session[:admin])
       .panel-heading
         = link_to "Add new Resource", new_pt_resource_path, class: "btn btn-info"
-        = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-info"
+        = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
     .table-responsive
       %table#article.table.table-bordered.table-hover
         %thead

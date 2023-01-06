@@ -6,7 +6,7 @@
     - if (session[:admin])
       .panel-heading
         = link_to "Add new Q & A", new_questions_and_answer_path, class: "btn btn-info"
-        = link_to "Exit Admin", questions_and_answers_dismiss_admin_path, class: "btn btn-info"
+        = link_to "Exit Admin", questions_and_answers_dismiss_admin_path, class: "btn btn-danger"
 
         = will_paginate @qna_list, renderer: BootstrapPagination::Rails  
 
@@ -35,6 +35,7 @@
               %tr
                 %td.has-text-centered
                   .grid_90.is-margin-top-2.has-text-centered
+                    = link_to "Edit", edit_questions_and_answer_path(a),  class: "btn btn-info"
                     = link_to "Delete", questions_and_answer_path(a),  class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure to delete?"}
     - else
       .panel-heading

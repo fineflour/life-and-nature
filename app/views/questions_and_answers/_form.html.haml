@@ -1,8 +1,8 @@
 //@param material [Material] an instance of Material to render the form for.
-.container.has-text-centered
+.container.has-text-justified
   = simple_form_for qna_list,  html: { class: "form-horizontal center"},  input_html: {  } do  |f|
-    = f.input :question, placeholder: "Question", label: false
-    = f.input :answer, placeholder: "Answer", :input_html => { 'rows' => 20, 'cols' => 110 }, label: false, :wrapper => :horizontal_range, :as => :text     
+    = f.input :question, placeholder: "Question", label: 'Question'
+    = f.input :answer, placeholder: "Answer", :input_html => { 'rows' => 10, 'cols' => 130 }, label: 'Answer', :as => :text     
     .button-padding.txt_center
       = link_to "Back to index", questions_and_answers_path, class: "btn btn-default"
       = f.submit "Submit", class: "btn btn-info"
