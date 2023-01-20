@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  require 'yaml'
   include Pundit
-  before_action:authenticate_user!
+  before_action :authenticate_user!
 
   def index
     menu_values
@@ -8,19 +9,23 @@ class UsersController < ApplicationController
     authorize @users
   end
 
+
   def show
+    menu_values
     @user = User.find(params[:id])
     authorize @user
   end
 
   def new
+    menu_values
     @user = User.new
-    #authorize @user
+    authorize @user
   end
 
   def create
+    menu_values
     @user = User.new(new_user_params)
-    #authorize @user
+    authorize @user
     if @user.save
       flash[:notice] = "New user created!"
       redirect_to users_path
@@ -31,11 +36,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    menu_values
     @user = User.find(params[:id])
-    #authorize @user
+    authorize @user
   end
 
   def update
+    menu_values
     @user = User.find(params[:id])
     authorize @user
     @user.update_attributes(user_is_global? ? global_params : user_params)
@@ -49,46 +56,24 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    authorize @user
-    if @user.destroy
-      redirect_to @user, notice: "User has been destroyed."
-    else
-      flash[:error] = "User could not be destroyed."
-      render :index
-    end
+    menu_values
   end
 
   private
+
   def menu_values
     menu_values ||= YAML.load((File.open("#{Rails.root}/config/menues.yml", 'r')))
-    id = 400
+
+    if(params[:menu_values])
+      id = params[:menu_values].to_i
+    else
+      id = 100
+    end
 
     for n in menu_values
       if (n["id"] == id)
         @menu_values = n
       end
     end
-  end
-
-
-
-  def user_params
-    params.require(:user).permit(:email, :name, :role, :distribution_center_ids => [])
-  end
-
-  def global_params
-    b = {distribution_center_ids: []}
-    params.require(:user).permit(:email, :name, :role).merge(b)
-  end
-
-  def user_is_global?
-    params[:user][:role] == "admin" || params[:user][:role] == "user"
-  end
-
-  def new_user_params
-    assign_params = user_is_global? ? global_params : user_params
-    pw = {password: "hellojesus"}
-    assign_params.merge(pw)
   end
 end

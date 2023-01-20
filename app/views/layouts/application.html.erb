@@ -14,7 +14,7 @@
 
   <body>
    <%= render partial: "/layouts/dropdown" %>
-   <% if not current_page?(root_url)  %> 
+   <% if not current_page?(root_url) || params['menu_values'] == '000'  %> 
    <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
    <% end %>
    <%= yield %>

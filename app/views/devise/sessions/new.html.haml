@@ -1,0 +1,25 @@
+.grid_100.is-border-top.is-border-bottom.is-marginless.title_section.title_201
+  .center.container
+    %div.breadcrumb-box
+      %nav{"aria-label" => "breadcrumb"}
+        %ol.breadcrumb
+          %li.breadcrumb-item
+            Admin / Sign-in     
+          %li.breadcrumb-item.active{"aria-current" => "page"} 
+    %div.title-box
+      %h1.page-title
+        Sign-in
+   
+
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } 
+        = f.input :password,   required: false,   input_html: { autocomplete: "current-password" } 
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      .form-actions
+        = f.button :submit, "Log in"
+
+    = render "devise/shared/links"
+
