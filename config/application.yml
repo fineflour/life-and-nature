@@ -17,5 +17,7 @@ default: &defaults
   #
 development:
   IMG_PATH : "/assets/"
+  ADMIN_PASSWORD: "dr@life-and-nature123!"
 production:
   IMG_PATH : "/assets/"
+  ADMIN_PASSWORD: "dr@life-and-nature321!"

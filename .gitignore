@@ -30,6 +30,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/secrets.yml
+/config/application.yml
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
@@ -39,4 +40,5 @@
 # URL Redirection 
 /app/controllers/application_controller.rb
 
+# Security
 /config/credentials/production.key

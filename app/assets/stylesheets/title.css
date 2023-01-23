@@ -200,9 +200,14 @@
   background-image:url('/assets/title-resources-m.jpg');
 }
 
-  .title_section {
-    height: 70vh;
-  }
+.title_section {
+  height: 70vh;
+}
+
+.admin_title_section {
+  height: 50vh;
+}
+
 }
 
 

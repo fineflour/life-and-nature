@@ -111,7 +111,7 @@ class QuestionsAndAnswersController < ApplicationController
     end
   end
   def security_key(key)
-    if key == 'dr.life-and-nature'
+    if key == ENV["ADMIN_PASSWORD"]
         #Rails.application.credentials.admin_key
       @admin = true
       session[:admin] =  true

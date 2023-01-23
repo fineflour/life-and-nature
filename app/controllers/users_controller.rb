@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
   require 'yaml'
-  include Pundit
+  include Pundit::Authorization
   before_action :authenticate_user!
 
   def index
     menu_values
+    #binding.pry
     @users = User.paginate(page: params[:page])
     authorize @users
   end
 
-
   def show
     menu_values
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
     authorize @user
   end
 
@@ -61,19 +61,39 @@ class UsersController < ApplicationController
 
   private
 
-  def menu_values
-    menu_values ||= YAML.load((File.open("#{Rails.root}/config/menues.yml", 'r')))
 
-    if(params[:menu_values])
-      id = params[:menu_values].to_i
-    else
-      id = 100
-    end
+  def user_params
+    params.require(:user).permit(:email, :name, :role, :distribution_center_ids => [])
+  end
 
-    for n in menu_values
-      if (n["id"] == id)
-        @menu_values = n
-      end
+  def global_params
+    b = {distribution_center_ids: []}
+    params.require(:user).permit(:email, :name, :role).merge(b)
+  end
+
+  def user_is_global?
+    params[:user][:role] == "admin" || params[:user][:role] == "user"
+  end
+
+  def new_user_params
+    assign_params = user_is_global? ? global_params : user_params
+    pw = {password: "hellojesus"}
+    assign_params.merge(pw)
+  end
+end
+
+def menu_values
+  menu_values ||= YAML.load((File.open("#{Rails.root}/config/menues.yml", 'r')))
+
+  if(params[:menu_values])
+    id = params[:menu_values].to_i
+  else
+    id = 100
+  end
+
+  for n in menu_values
+    if (n["id"] == id)
+      @menu_values = n
     end
   end
 end

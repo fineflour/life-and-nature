@@ -78,13 +78,12 @@
               %a.dropdown-item{:href => "/sites/testimonials?menu_values=703"} Case Studies & Testimonials            
             %li
               %a.dropdown-item{:href => "/sites/galleries?menu_values=704"} Galleries       
+  -if user_signed_in?
+    current_user
+    = link_to "Log out", destroy_user_session_path, class: "btn btn-info", method: :delete
+
 
         
-        /%li.nav-item
-        /  %a.nav-link{:href => "/shop/"} Shop
-  /%div.column.flex-middle-right
-  /  shop
-
 - if current_page?(root_url)
   = render partial: "/layouts/main_image"
 - else
