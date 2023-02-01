@@ -83,7 +83,7 @@ class QuestionsAndAnswersController < ApplicationController
   end
 
   def questions_and_answers_for_index
-    QuestionsAndAnswer.by_date.paginate(page: params[:page])
+    QuestionsAndAnswer.order("id").paginate(page: params[:page])
   end
 
 

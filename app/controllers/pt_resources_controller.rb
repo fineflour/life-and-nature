@@ -86,7 +86,7 @@ class PtResourcesController < ApplicationController
 
   def pt_resource_for_index
     if @admin
-      PtResource.order("created_at DESC").
+      PtResource.by_date.
         #includes(:products, :orderproducts, :orderproduct_transitions).
         # text_search(params[:query]).
         paginate(page: params[:page])
