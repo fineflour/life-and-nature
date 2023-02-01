@@ -3,7 +3,7 @@
 
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    - if current_user.admin?  #(session[:admin])
+    - if current_user.try(:admin?)
       .panel-heading
         = link_to "Add new Resource", new_pt_resource_path, class: "btn btn-info"
         = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
@@ -29,7 +29,7 @@
                 = a.link
               %td
                 = a.updated_at.strftime("%m/%d/%Y")
-              - if current_user.admin?  #(session[:admin])
+              - if current_user.try(:admin?)
                 %td
                   = link_to "Show",pt_resource_path(a)
                   |

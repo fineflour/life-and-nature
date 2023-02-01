@@ -3,7 +3,7 @@
 
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    - if current_user.admin?  #(session[:admin])
+    - if current_user.try(:admin?)
       .panel-heading
         = link_to "Add new Q & A", new_questions_and_answer_path, class: "btn btn-info"
         = link_to "Exit Admin", questions_and_answers_dismiss_admin_path, class: "btn btn-danger"
