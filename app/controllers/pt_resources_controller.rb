@@ -8,7 +8,7 @@ class PtResourcesController < ApplicationController
       @pt_resource =  pt_resource_for_index  
     end if
 
-    if current_user.admin?#(session[:admin])
+    if current_user.try(:admin?)
       @pt_resource =  pt_resource_for_index  
     else
       @pt_resource = PtResource.article_by_menu_id(params[:menu_values])
