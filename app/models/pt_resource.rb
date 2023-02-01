@@ -9,19 +9,6 @@ class PtResource < ActiveRecord::Base
 
    ['Skin Conditions', 309], ['Men''s Health', 310], ['Addictions', 311], ['Digestive Disorders', 312], ['Patient Resources', 400]]
 
-
-
- 
-
-
-
-
-
-
-
-
-
-
   self.per_page = 20
   WillPaginate.per_page = 10
 
@@ -33,6 +20,11 @@ class PtResource < ActiveRecord::Base
 #    binding.pry
     query
   end
+
+  def self.by_date
+    query = self.where(active: true)
+    query = query.order('created_at DESC')
+    query
+  end
+
 end
-
-

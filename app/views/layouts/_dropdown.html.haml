@@ -79,10 +79,8 @@
             %li
               %a.dropdown-item{:href => "/sites/galleries?menu_values=704"} Galleries       
   -if user_signed_in?
-    current_user
+    = current_user[:fullname]  +' '+ current_user[:role]  
     = link_to "Log out", destroy_user_session_path, class: "btn btn-info", method: :delete
-
-
         
 - if current_page?(root_url)
   = render partial: "/layouts/main_image"

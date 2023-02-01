@@ -3,7 +3,7 @@
 
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    - if (session[:admin])
+    - if current_user.admin?  #(session[:admin])
       .panel-heading
         = link_to "Add new Resource", new_pt_resource_path, class: "btn btn-info"
         = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
@@ -22,14 +22,14 @@
           - @pt_resource.each do |a|
             %tr{:id => "pt_resource#{a.id}"}
               %td
-                = link_to a.title, pt_resource_path(a)
+                = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
               %td
                 = a.body
               %td
                 = a.link
               %td
                 = a.updated_at.strftime("%m/%d/%Y")
-              - if (session[:admin])
+              - if current_user.admin?  #(session[:admin])
                 %td
                   = link_to "Show",pt_resource_path(a)
                   |

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     menu_values
-    #binding.pry
+#    binding.pry
     @users = User.paginate(page: params[:page])
     authorize @users
   end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def create
     menu_values
     @user = User.new(new_user_params)
-    authorize @user
+    #authorize @user
     if @user.save
       flash[:notice] = "New user created!"
       redirect_to users_path
@@ -63,22 +63,12 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:email, :name, :role, :distribution_center_ids => [])
+    params.require(:user).permit(:email, :fullname, :role, :phone, :password, :dob)
   end
 
-  def global_params
-    b = {distribution_center_ids: []}
-    params.require(:user).permit(:email, :name, :role).merge(b)
-  end
-
-  def user_is_global?
-    params[:user][:role] == "admin" || params[:user][:role] == "user"
-  end
 
   def new_user_params
-    assign_params = user_is_global? ? global_params : user_params
-    pw = {password: "hellojesus"}
-    assign_params.merge(pw)
+    params.require(:user).permit(:email, :fullname, :role, :phone, :password, :dob)
   end
 end
 

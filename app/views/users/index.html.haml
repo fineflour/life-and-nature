@@ -13,8 +13,9 @@
 .grid_100.has-text-justified.is-margin-top-2
   .container
     .panel-heading
-      = link_to "Add new Resource", new_user_path, class: "btn btn-info"
-      = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
+      = link_to "Add a user", new_user_path, class: "btn btn-info"
+      = link_to "Exit admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
+      = link_to "Go to article list", pt_resources_path, class: "btn btn-light"
     .table-responsive
       %table#article.table.table-bordered.table-hover
         %thead
@@ -28,7 +29,7 @@
           - @users.each do |a|
             %tr{:id => "users#{a.id}"}
               %td
-                = link_to a.fullname, user_path(a)
+                = link_to a.fullname, edit_user_path(a)
               %td
                 = a.role
               %td
@@ -40,5 +41,5 @@
                   |
                   \#{link_to "Edit", edit_user_path(a)}
                   |
-                  \#{link_to "Delete", user_resource_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}}
+                  \#{link_to "Delete", user_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}}
                   

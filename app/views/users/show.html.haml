@@ -18,4 +18,6 @@
       %div.has-text-right
         = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"
     %div.grid_100.is-3.has-text-centered
+      = @user.fullname
       = @user.email
+      = @user.role

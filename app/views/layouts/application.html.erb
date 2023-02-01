@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LifeAndNature</title>
+    <title>Life & Nature Natural Health Care and Holistic Medicine</title>
+    <link rel="canonical" href="https://www.life-and-nature.com" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-   <%= render partial: "/layouts/metatag" %>
-   <%= render partial: "/layouts/script" %>
+    <%= render partial: "/layouts/metatag" %>
+    <%= render partial: "/layouts/script" %>
   </head>
 
   <body>
-   <%= render partial: "/layouts/dropdown" %>
-   <% if not current_page?(root_url) || params['menu_values'] == '000'  %> 
-   <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
-   <% end %>
-   <%= yield %>
-   <%= render partial: "/layouts/footer" %>
+    <%= render partial: "/layouts/dropdown" %>
+    <% if not current_page?(root_url) || params['menu_values'] == '000'  %> 
+      <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
+    <% end %>
+    <%= yield %>
+    <%= render partial: "/layouts/footer" %>
   </body>
 </html>
