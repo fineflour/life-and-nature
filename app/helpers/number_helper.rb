@@ -2,7 +2,7 @@
 module NumberHelper
 
   def formatted_date(date)
-    date.strftime("%m/%d/%Y") unless date.nil?
+    date.strftime("%Y/%m/%d") unless date.nil?
   end
 
   def formatted_time(time)
