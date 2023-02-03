@@ -14,16 +14,11 @@
   </head>
 
   <body>
-    <% if request.path.include?('blogs')  %> 
-      <%= yield %>
+    <%= render partial: "/layouts/dropdown" %>
+    <% if not current_page?(root_url) || params['menu_values'] == '000' || request.path.include?('blogs')  %> 
+      <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
+    <% end %>
+    <%= yield %>
     <%= render partial: "/layouts/footer" %>
-    <% else %>
-      <%= render partial: "/layouts/dropdown" %>
-      <% if not current_page?(root_url) || params['menu_values'] == '000' %> 
-        <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
-      <% end %>
-      <%= yield %>
-    <%= render partial: "/layouts/footer" %>
-   <% end %>
   </body>
 </html>

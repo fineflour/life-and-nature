@@ -1,4 +1,7 @@
 - @pt_resource.each do |a|
   %h3.is-6.has-text-justified.revew-text
     %li
-      = link_to a.title, a.link, target: "_blank" 
+      - if a.public
+        = link_to truncate(a.title.html_safe, length: 38), pt_resource_with_title_path(a, :title => a.title, length: 10), :target =>  "_blank"
+      - else
+        = link_to a.title, pt_resource_with_title_path(a, :title => a.title)

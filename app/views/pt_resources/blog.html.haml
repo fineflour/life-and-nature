@@ -1,0 +1,12 @@
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    %div.grid_subtitle.has-text-centered
+      = @pt_resource.title
+    %div.grid_100.is-3.has-text-centered
+      .container
+        = @pt_resource.body.html_safe
+        %br
+      - if File.extname(@pt_resource.link).strip.downcase[1..-1] == "pdf"
+        %iframe{:src => "/assets/" + @pt_resource.link, :width => "96%", :height => "780", :style => "border: none;"}
+      - else 
+        = link_to @pt_resource.link, @pt_resource.link

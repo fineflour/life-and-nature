@@ -20,7 +20,10 @@
           - @pt_resource.each do |a|
             %tr{:id => "pt_resource#{a.id}"}
               %td
-                = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
+                - if a.public
+                  = link_to a.title, pt_resource_with_title_path(a, :title => a.title), :target =>  "_blank"
+                - else
+                  = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
               %td
                 = a.updated_at.strftime("%m/%d/%Y")
               - if current_user.try(:admin?)

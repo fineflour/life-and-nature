@@ -24,6 +24,11 @@ class PtResourcesController < ApplicationController
     end
   end
 
+  def blog
+      @pt_resource= PtResource.find(params[:id])
+  end
+
+
   def new
     menu_values
     @pt_resource = PtResource.new
@@ -103,7 +108,7 @@ class PtResourcesController < ApplicationController
 
   def pt_resource_params
     params.require(:pt_resource)
-      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active)
+      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active, :public)
   end
 
   def menu_values
