@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :questions_and_answers, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
   resources :pt_resources, only: [:index, :edit, :show, :new, :update, :create, :destroy]
 
-  get '/pt_resources/:id/:title' => 'pt_resources#show', :as => :pt_resource_with_title
+  get '/blogs/:id/:title' => 'pt_resources#show', :as => :pt_resource_with_title
 
   get "/sites/:site" => "sites#show"
   get "/pt_resources/dismiss_admin"
