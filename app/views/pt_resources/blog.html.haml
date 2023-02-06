@@ -1,5 +1,6 @@
 .grid_100.is-margin-top-2
   .container
+    = link_to "X Close",'javascript:window.close()', class: "float-right btn btn-outline-secondary btn-sm"
     %div.grid_subtitle.has-text-centered
       = @pt_resource.title
     %div.grid_100.is-5

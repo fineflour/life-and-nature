@@ -8,24 +8,19 @@
         = link_to "Add new Resource", new_pt_resource_path, class: "btn btn-info"
         = link_to "Exit Admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
     .table-responsive
-      %table#article.table.table-bordered.table-hover
-        %thead
-          %tr
-            %th Title
-            %th Created At
-
-            - if current_user.try(:admin?)
-              %th Action
+      %table#article.table.table-hover
         %tbody
           - @pt_resource.each do |a|
             %tr{:id => "pt_resource#{a.id}"}
               %td
-                - if a.public
-                  = link_to a.title, pt_resource_with_title_path(a, :title => a.title), :target =>  "_blank"
-                - else
-                  = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
-              %td
-                = a.updated_at.strftime("%m/%d/%Y")
+                %h2.is-3
+                  - if a.public #opens a blank window with the blog
+                    = link_to a.title, pt_resource_with_title_path(a, :title => a.title), :target =>  "_blank"
+                  - else
+                    = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
+                %br
+                  %h4.is-6.float-right
+                    = a.updated_at.strftime("%m/%d/%Y")
               - if current_user.try(:admin?)
                 %td
                   = link_to "Show",pt_resource_path(a)

@@ -214,7 +214,7 @@
 - id: 400 
   id_no: 10000
   category: ''
-  name: 'Patient Resources'
+  name: 'Blogs'
   link: '' 
   active: true
   note: 

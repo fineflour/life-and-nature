@@ -3,12 +3,12 @@ class PtResourcesController < ApplicationController
 
   def index
     menu_values
-    if (params[:key])
-      security_key(params[:key])
-      @pt_resource =  pt_resource_for_index  
-    end if
+#    if (params[:key])
+#     security_key(params[:key])
+#      @pt_resource =  pt_resource_for_index  
+#    end if
 
-    if current_user.try(:admin?)
+    if current_user.try(:admin?) || params[:menu_values] == '400'
       @pt_resource =  pt_resource_for_index  
     else
       @pt_resource = PtResource.article_by_menu_id(params[:menu_values])
