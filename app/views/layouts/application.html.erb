@@ -19,7 +19,7 @@
     <%= render partial: "/layouts/footer" %>
     <% else %>
       <%= render partial: "/layouts/dropdown" %>
-      <% if not current_page?(root_url) || params['menu_values'] == '000' %> 
+      <% if not current_page?(root_url) || params['menu_values'] == '1000' %> 
         <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
       <% end %>
       <%= yield %>

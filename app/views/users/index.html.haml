@@ -1,21 +1,8 @@
-.grid_100.is-border-top.is-border-bottom.is-marginless.admin_title_section.title_201
-  .center.container
-    %div.breadcrumb-box
-      %nav{"aria-label" => "breadcrumb"}
-        %ol.breadcrumb
-          %li.breadcrumb-item
-            Admin / Users      
-          %li.breadcrumb-item.active{"aria-current" => "page"} 
-    %div.title-box
-      %h1.page-title
-        User List
-
 .grid_100.has-text-justified.is-margin-top-2
   .container
+    = render partial: "/layouts/admin_menu" 
     .panel-heading
       = link_to "Add a user", new_user_path, class: "btn btn-info"
-      = link_to "Exit admin", pt_resources_dismiss_admin_path, class: "btn btn-danger"
-      = link_to "Go to article list", pt_resources_path, class: "btn btn-light"
     .table-responsive
       %table#article.table.table-bordered.table-hover
         %thead

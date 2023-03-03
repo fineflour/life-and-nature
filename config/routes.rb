@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/sitemap'
   get 'users/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -19,6 +18,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :show, :new, :update, :create, :destroy]
   resources :questions_and_answers, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
   resources :pt_resources, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :products, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :categories, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :product_categories, only: [:index, :edit, :show, :new, :update, :create, :destroy]
 
   get '/blogs/:id/:title' => 'pt_resources#blog', :as => :pt_resource_with_title
 

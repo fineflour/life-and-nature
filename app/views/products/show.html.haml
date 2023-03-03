@@ -1,0 +1,8 @@
+.grid_100.has-text-justified.is-margin-top-2
+  = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"
+  .container
+    %div.grid_subtitle.has-text-centered
+      = @product.name
+    %img.grid-2.img9.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}products/" +  @product.img_1}
+    %div.grid-2.is-4.has-text-justified
+      = @product.desc_1.html_safe

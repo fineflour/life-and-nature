@@ -49,7 +49,7 @@ class PtResourcesController < ApplicationController
 
   def edit
     menu_values
-    @pt_resource= PtResource.find(params[:id])
+    @pt_resource = PtResource.find(params[:id])
   end
 
   def update
@@ -92,7 +92,6 @@ class PtResourcesController < ApplicationController
   def pt_resource_for_index
     if @admin
       PtResource.by_date.
-        #includes(:products, :orderproducts, :orderproduct_transitions).
         # text_search(params[:query]).
         paginate(page: params[:page])
     else
@@ -108,12 +107,19 @@ class PtResourcesController < ApplicationController
 
   def pt_resource_params
     params.require(:pt_resource)
-      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active, :public)
+      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active, :public,
+              :category_ids => [],
+             )
   end
 
   def menu_values
     menu_values ||= YAML.load((File.open("#{Rails.root}/config/menues.yml", 'r')))
-    id = 400
+
+    if(params[:menu_values])
+      id = params[:menu_values].to_i
+    else
+      id = 400
+    end
 
     for n in menu_values
       if (n["id"] == id)

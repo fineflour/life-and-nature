@@ -1,18 +1,18 @@
-.grid_100.is-margin-top-2
+.grid_100
   .container
-    = link_to "X Close",'javascript:window.close()', class: "float-right btn btn-outline-secondary btn-sm"
-    %br
-    %div.has-text-centered.title.is-2
+    %div
+      = link_to "X Close",'javascript:window.close()', class: "float-right btn btn-outline-secondary btn-sm"
+      %br
+    %div.has-text-centered.title.is-2.is-margin-top-2
       = @pt_resource.title
-    %div.grid_100.is-5.is-margin-top-1
-      .container.has-text-justified
-        = @pt_resource.body.html_safe
+    %div.grid_100.is-5.is-margin-top-2.has-text-justified
+      = @pt_resource.body.html_safe
       %br
       - if File.extname(@pt_resource.link).strip.downcase[1..-1] == "pdf"
         %iframe{:src => "/assets/" + @pt_resource.link, :width => "96%", :height => "780", :style => "border: none;"}
       - else 
         - if @pt_resource.link != ""
-          .container
+          %br
+          %h4.text-navy
             View full article
-            %br
             = link_to @pt_resource.link, @pt_resource.link

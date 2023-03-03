@@ -1,0 +1,21 @@
+.container.has-text-justified
+  = simple_form_for product,  html: { class: "form-horizontal center"},  input_html: {  } do  |f|
+
+    = f.input :name, placeholder: "Name", label: 'Name'
+    = f.input :sku, placeholder: "Sku #", label: 'Sku #'
+    = f.association :categories, collection: Category.all, label: false, prompt: "select a category", label: "Category"
+    = f.input :brand, collection: Product::BRAND_LIST, prompt: "Select a Brand"
+    = f.input :price_1, placeholder: "Price", label: 'Price'
+    = f.input :price_2, placeholder: "Sales Price", label: 'Sales Price'
+    = f.input :sale, placeholder: "Sales %", label: 'Sales %'
+    = f.input :img_1, placeholder: "Image", label: 'Image'
+    = f.input :img_2, placeholder: "Image", label: 'Image'
+    = f.input :desc_1, placeholder: "Short Description", label: 'Short Description',:input_html => {:rows => 4}
+    = f.input :desc_2, placeholder: "Description", label: 'Description',:input_html => {:rows => 5}
+    = f.input :usage, placeholder: "Usage", label: 'Usage',:input_html => {:rows => 2}
+    = f.input :ingredient, placeholder: "Ingredient", label: 'Ingredient',:input_html => {:rows => 2}
+    = f.input :dosage, placeholder: "Dosage", label: 'Dosage',:input_html => {:rows => 2}
+    = f.input :active,  as: :boolean, checked_value: true, unchecked_value: false
+    .button-padding.txt_center
+      = link_to "Back to index",  products_path, class: "btn btn-default"
+      = f.submit "Submit", class: "btn btn-info"

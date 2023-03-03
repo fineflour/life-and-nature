@@ -1,17 +1,7 @@
-.grid_100.is-border-top.is-border-bottom.is-marginless.admin_title_section.title_201
-  .center.container
-    %div.breadcrumb-box
-      %nav{"aria-label" => "breadcrumb"}
-        %ol.breadcrumb
-          %li.breadcrumb-item
-            Admin / Users     
-          %li.breadcrumb-item.active{"aria-current" => "page"} 
-    %div.title-box
-      %h1.page-title
-        Add a New User 
-
-.grid_100.has-text-centered.is-margin-top-2
-  %h2.is-4 ADD A NEW USER
-  .dez-separator.bg-primary.style-liner
-.container.has-txt-centered
-  = render "form", user: @user
+.grid_100.has-text-justified.is-margin-top-2
+  .container
+    %h1.title.is-3.has-text-centered
+      ADD A NEW USER 
+      %br
+    = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm float-right"
+    = render "form", user: @user

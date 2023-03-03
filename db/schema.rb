@@ -10,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_203052) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_24_020515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_categories", force: :cascade do |t|
+    t.integer "category_id", default: 0, null: false
+    t.integer "blog_id", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "c_type", default: 0, null: false
+    t.string "desc_1", default: ""
+    t.text "desc_2", default: ""
+    t.string "img_1", default: "", null: false
+    t.string "img_2", default: "", null: false
+    t.decimal "price_1", default: "0.0"
+    t.decimal "price_2", default: "0.0"
+    t.integer "sale", default: 0
+    t.boolean "active", default: true
+    t.boolean "package", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "sku", default: "", null: false
+    t.string "img_1", default: "", null: false
+    t.string "img_2", default: "", null: false
+    t.integer "sale", default: 0, null: false
+    t.decimal "price_1", default: "0.0"
+    t.decimal "price_2", default: "0.0"
+    t.integer "brand", default: 0, null: false
+    t.text "desc_1", default: ""
+    t.text "desc_2", default: ""
+    t.string "dosage", default: ""
+    t.text "usage", default: ""
+    t.text "ingredient", default: ""
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pt_resources", force: :cascade do |t|
     t.string "title", default: "", null: false

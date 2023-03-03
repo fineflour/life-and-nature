@@ -74,11 +74,12 @@ end
 
 def menu_values
   menu_values ||= YAML.load((File.open("#{Rails.root}/config/menues.yml", 'r')))
+  id = 1000
 
   if(params[:menu_values])
     id = params[:menu_values].to_i
   else
-    id = 100
+    id = 1000
   end
 
   for n in menu_values

@@ -1,13 +1,3 @@
-- id: 000
-  id_no: 10000
-  category: 0
-  name: 'Admin'
-  link: '' 
-  active: true 
-  note: 
-  meta: 
-
-
 - id: 100
   id_no: 10000
   category: 0
@@ -303,6 +293,32 @@
   id_no: 10000
   category: 
   name: 'Price & Insurance'
+  link: '' 
+  active: false
+  note: 
+
+
+- id: 1000
+  id_no: 10000
+  category: 'Admin' 
+  name: 'Users'
+  link: '' 
+  active: true 
+  note: 
+  meta: 
+
+- id: 000
+  id_no: 30000
+  category: 'Admin'
+  name: 'Blogs'
+  link: '' 
+  active: false
+  note: 
+
+- id: 1002
+  id_no: 30000
+  category: 'Admin'
+  name: 'Products'
   link: '' 
   active: false
   note: 
