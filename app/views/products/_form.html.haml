@@ -3,7 +3,7 @@
 
     = f.input :name, placeholder: "Name", label: 'Name'
     = f.input :sku, placeholder: "Sku #", label: 'Sku #'
-    = f.association :categories, collection: Category.all, label: false, prompt: "select a category", label: "Category"
+    = f.association :categories, collection: Category.is_product, label: false, prompt: "select a category", label: "Category"
     = f.input :brand, collection: Product::BRAND_LIST, prompt: "Select a Brand"
     = f.input :price_1, placeholder: "Price", label: 'Price'
     = f.input :price_2, placeholder: "Sales Price", label: 'Sales Price'

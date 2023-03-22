@@ -1,7 +1,13 @@
 class Category < ApplicationRecord
-  has_many :product_categories
   has_many :products, through: :product_categories
+  has_many :product_categories
+  has_many :blogs, through: :blog_categories
+  has_many :blog_categories
+
   scope :active, -> { where active: true }
+  scope :is_blog, -> { where c_type: 100}
+  scope :is_product, -> { where c_type: 200}
+
   self.per_page = 20
   WillPaginate.per_page = 10
 

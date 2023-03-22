@@ -1,0 +1,13 @@
+<% @product.each_slice(3) do |array_of_3_items|%>
+  <div class="row">
+      <% array_of_3_items.each do |a|%>
+        <div class="grid-3">
+          <img alt="service" class="mycard-p img9 is-margin-top-1" src="<%= ENV['IMG_PATH'] %>products/<%= a.img_1%>">
+        </div>
+      <% end %>
+      <% (3 - array_of_3_items.length).times.each do |fake_div| %>
+        <div class="grid-3">
+        </div>
+      <% end %>
+    </div>
+<% end %>

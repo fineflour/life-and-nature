@@ -13,7 +13,13 @@ class SitesController < ApplicationController
       galleries
     end
 
-    @pt_resource = PtResource.article_by_menu_id(params[:menu_values])
+
+
+    if params[:menu_values] ==  '203'
+      @product = Product.by_category(11).active
+    end
+
+    @pt_resource = PtResource.getArticleList(params[:menu_values])
 
     render template: "sites/#{params[:site]}"
   end

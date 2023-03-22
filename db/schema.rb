@@ -15,10 +15,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_020515) do
   enable_extension "plpgsql"
 
   create_table "blog_categories", force: :cascade do |t|
-    t.integer "category_id", default: 0, null: false
-    t.integer "blog_id", default: 0, null: false
+    t.integer "category_id"
+    t.integer "pt_resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_blog_categories_on_category_id"
+    t.index ["pt_resource_id"], name: "index_blog_categories_on_pt_resource_id"
   end
 
   create_table "categories", force: :cascade do |t|

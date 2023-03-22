@@ -729,6 +729,13 @@ p {
   border-radius: calc(1rem - 1px);
 }
 
+.img_p {
+  margin: 10px;
+  padding: 10px;
+  max-width: 240px;
+  border: 0px solid #aaa
+}
+
 
 .section {
   border-top: .0714285714rem solid rgba(0,0,0,.08);
@@ -924,6 +931,18 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   border-radius: 1rem;
   padding: 14px;
 }
+
+.mycard-p{ //product
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #ededed;
+  background-clip: border-box;
+  border: 0px solid rgba(0, 0, 0, 0.100);
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 0px;
+}
+
 
 .bg-danger {
   background-color: #ff4088!important;

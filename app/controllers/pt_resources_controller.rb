@@ -3,15 +3,11 @@ class PtResourcesController < ApplicationController
 
   def index
     menu_values
-#    if (params[:key])
-#     security_key(params[:key])
-#      @pt_resource =  pt_resource_for_index  
-#    end if
 
     if current_user.try(:admin?) || params[:menu_values] == '400'
       @pt_resource =  pt_resource_for_index  
     else
-      @pt_resource = PtResource.article_by_menu_id(params[:menu_values])
+      @pt_resource = PtResource.getArticleList(params[:menu_values])
     end
   end
 
@@ -93,11 +89,13 @@ class PtResourcesController < ApplicationController
     if @admin
       PtResource.by_date.
         # text_search(params[:query]).
+        includes(:blog_categories).
         paginate(page: params[:page])
     else
 
       PtResource.order("created_at DESC").
         where(active: true).
+        includes(:blog_categories).
         #includes(:products, :orderproducts, :orderproduct_transitions).
         # text_search(params[:query]).
         paginate(page: params[:page])
@@ -109,6 +107,7 @@ class PtResourcesController < ApplicationController
     params.require(:pt_resource)
       .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active, :public,
               :category_ids => [],
+              :menu_ids => []
              )
   end
 
