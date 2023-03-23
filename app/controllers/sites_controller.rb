@@ -16,8 +16,8 @@ class SitesController < ApplicationController
 
 
     if params[:menu_values] ==  '203'
-      #@product = Product.by_category(4).active #DETOX
-      @product = Product.by_category(11).active #DETOX
+      @product = Product.by_category(4).active #DETOX
+#      @product = Product.by_category(11).active #DETOX
     end
 
     @pt_resource = PtResource.getArticleList(params[:menu_values])
