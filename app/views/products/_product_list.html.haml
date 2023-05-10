@@ -1,10 +1,17 @@
 - @product.each_slice(4) do |array_of_3_items|
   .row.has_text-centered
     - array_of_3_items.each do |a|
-      .grid-4.has-text-centered
-        %img.mycard-p.img_p.is-margin-top-1{:alt => "service", :src => "#{ENV['IMG_PATH']}products/" +  a.img_1}
-        %h3.is-5
-          = link_to truncate(a.name), product_path(a, :name=> a.name), :target =>  "_blank"
+      .grid-4.has-text-centered.card.text-bg-dark
+        %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}products/" +  a.img_1}
+        .desc-top
+          %h3.is-6.has-text-justified.pad10
+            = a.desc_1
+        .grid
+          %h2.title.is-5
+            = link_to truncate(a.name), product_path(a, :name=> a.name), :target =>  "_blank"
+          %p.card-text
+
+
 
     - (4 - array_of_3_items.length).times.each do |fake_div| 
       .grid-4.has-text-centered

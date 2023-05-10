@@ -787,6 +787,22 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   width: 100%;
 }
 
+.card .desc-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: #eee;
+}
+.card:hover .desc-top {
+  display: inline;
+  height: 100%;
+  background-color: #efefef;
+}
+
+
 .card-img-overlay {
   width: 100%!important;
 }
@@ -797,6 +813,9 @@ blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html
   box-shadow: 5px 5px 8px rgba(33,33,33,.2); 
   border-radius: calc(1rem - 1px);
 }
+
+
+
 
 .right {
   text-align: right;
