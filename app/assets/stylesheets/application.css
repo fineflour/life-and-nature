@@ -13,7 +13,6 @@
  *                     text-align: center;
  *                         color: #fff;
  *                         }
- *= require bootstrap
  *= require_self    
  *= require_tree .       
 */

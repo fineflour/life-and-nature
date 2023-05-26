@@ -20,8 +20,7 @@ module LifeAndNature
     config.action_dispatch.cookies_same_site_protection = :strict
     # config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif .svg .eot .woff .woff2 .ttf .css .wo .svg .eot .js)
 
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf *.css *.js *woff *.woff2 *.svg)
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif *.pdf *.css *.js *woff *.woff2 *.svg, ttf, otf)
     # config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts)  
     # config.autoload_paths += %W(#{config.root}/app/builds/assest/fonts/jost)  
     # config.autoload_paths += %W(#{config.root}/app/builds/assest/stylesheets) 

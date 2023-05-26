@@ -16,11 +16,10 @@ Rails.application.config.assets.precompile += %w(application.css)
   Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts)  
   Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/fonts/jost)  
   Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets)  
-  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assest/stylesheets/jquery-ui) 
   Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/images)  
   Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/resources)
 #  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/javascript)    
-  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/javascript)  
+  Rails.application.config.autoload_paths += %W(#{Rails.root}/app/assets/javascripts)  
     
 
 
