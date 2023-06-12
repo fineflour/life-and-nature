@@ -7,10 +7,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag 'application', media: 'all'  %>
     <%= render partial: "/layouts/metatag" %>
     <%= render partial: "/layouts/script" %>
+
+    <% if current_page?(root_url) %> 
+    <%= render partial: "/layouts/home_sliderJS" %>
+    <% end %> 
   </head>
 
   <body>
@@ -25,6 +29,6 @@
       <%= yield %>
     <%= render partial: "/layouts/footer" %>
    <% end %>
-   <%= render partial: "/layouts/JSscript" %>
   </body>
+<%= render partial: "/layouts/JSscript" %>
 </html>

@@ -1,33 +1,20 @@
-.grid
-  %h3.title.is-3.has-text-centered.is-margin-top-1
-    What Our Patients Are Saying
-    %br
-    %br
-.container.has-text-centered
-  .row
-    .grid-2
-      = render partial: "/layouts/testimony_youtube" 
-    .grid-2
-      .mycard
-        .grid_90
-          %h3.is-4
+.section.why-choose.section
+  .container
+    .row
+      .col-lg-12
+        .section-title.padding-2
+          %h2 What Our Patients Are Saying
+    .row
+      .col-lg-6.col-12
+        .choose-left
+          %h3
+            = @reviews["title"].html_safe
+          %p
+            = @reviews["review"].html_safe 
+          %p
             %i
-              = @reviews["title"].html_safe
-            %br
-            %br
-          %h3.is-6.review-text.has-text-justified    
-            = @reviews["review"].html_safe
-          .grid_90.has-text-centered
-            .review-stars
-              %span
-                %span.fa.fa-star
-                %span.fa.fa-star
-                %span.fa.fa-star
-                %span.fa.fa-star
-                %span.fa.fa-star
-
-                %h3.is-6
-                  = @reviews['reviewer']
-                %span
-                  /%i.icon.fas.fa-check-circle
-
+              = @reviews["reviewer"].html_safe 
+      <!-- Start Choose Rights -->
+      .col-lg-6.col-12
+        = render partial: "/layouts/testimony_youtube" 
+      <!-- End Choose Rights -->

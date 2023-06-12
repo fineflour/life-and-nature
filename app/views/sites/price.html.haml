@@ -1,38 +1,15 @@
-.grid_100.has-text-justified.is-margin-top-2
-  .container
-    %h2.is-4      
-      %br
+.container
+  .row
+    .col-lg-12
+      .section-title.tpadding-2
+        %h2
+          Service Prices
+        %img{src: "/assets/section-img.png", alt: "#"}
+        %p Your health is the most priceless!
+        Our top-notch medical services vary in price depending on service, hours, and type of symptoms. For more information, please contact us by 
+        %u phone, text or email.
+        %br   
+        %br   
 
-.grid_100
-  .container
-    .card-text.text-center
-      .card-text-header.h2.is-4
-        Prices for services
-      .card-body
-        %p.card-text.is-4
-          For inquiries about prices for each service, please contact us.       
-          %br
-          %br
-            %a.btn.btn-primary.h2.title.is-4.f-white
-              CALL or TEXT: 714-443-1779 
-              %br   
-              EMAIL: info@life-and-nature-com
-  %br
-  .container           
-    .card-text.text-center
-      .card-text-header.h2.is-4
-        Insurance
-      .card-body
-        %p.card-text.is-4
-          If you are an insured patient, please send a copy of your insurance card along with your DoB when making your first appointment.
-          %br
-          We will check your insurance coverage and benefits in advance.
-          %br
-          %br
-            %a.btn.btn-primary.h2.title.is-4.f-white
-              CALL or TEXT: 714-443-1779 
-              %br
-              EMAIL: info@life-and-nature-com
-  
-    = render partial: "/layouts/home_insurance", formats: :html
+= render partial: "/layouts/home_insurance", formats: :html
       

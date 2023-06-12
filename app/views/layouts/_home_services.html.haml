@@ -1,72 +1,60 @@
-.dez-separator.style-liner 
-  .grid_100.has-text-centered
-    .grid_subtitle
-      %font.txt_dgreen Natural
-      Health Care
-      %font.txt_dgreen Services
-
-.container.text-center.is-margin-top-2
-  .row 
-    .col
-      .card.text-bg-dark
-        %a{:href => "/sites/acupuncture?menu_values=201"}
-          %img.card-img{:alt => "service",:src => "/assets/main-service-acu.jpg"}
-          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-acu-h.jpg"}
-          .card-img-overlay
-            %h2.title.is-5 Balancing Acupuncture
-            %p.card-text
-            %small You can get started here
-           
-    .col
-      .card.text-bg-dark
-        %a{:href => "/sites/cupping?menu_values=202"}
-          %img.card-img{:alt => "service", :src => "/assets/main-service-cupping.jpg"}
-          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-cupping-h.jpg"}
-          .card-img-overlay
-            %h2.title.is-5 Cupping & Medical Massage
-            %p.card-text
-            %small Improve mobility and decrease muscle pain
-
-    .col
-      .card.text-bg-dark
-        %a{:href => "/sites/detox?menu_values=203"}
-          %img.card-img{:alt => "service", :src => "/assets/main-service-detox.jpg"}
-          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-detox-h.jpg"}
-          .card-img-overlay
-            %h2.title.is-5 Detox and Weight Loss
-            %p.card-text
-            %small Cleanse your body and restore natural detox functions
-          
-  
-  .row
-    .col
-      .card.text-bg-dark
-        %a{:href => "/sites/skincare?menu_values=205"} 
-          %img.card-img{:alt => "service", :src => "/assets/main-service-skin.jpg"}
-          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-skin-h.jpg"}
-            .card-img-overlay
-              %h2.title.is-5 Skin Care
-              %p.card-text
-              %small Beautify your skin by treating your health problems
- 
-       
-    .col
-      .card.text-bg-dark
-        %a{:href => "/sites/supplements?menu_values=207"}
-          %img.card-img{:alt => "service", :src => "/assets/main-service-suppl.jpg"}
-          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-suppl-h.jpg"}
-          .card-img-overlay
-            %h2.title.is-5 Natural Supplements         
-            %small We offers three pillars of supplements such as
-            %small homeopathics, botanicals and nutritionals 
-  
-    .col
-      .card.text-bg-dark
-        %a{:href => "/sites/healthtest?menu_values=208"}
-          %img.card-img{:alt => "service", :src => "/assets/main-service-test.jpg"}
-          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-test-h.jpg"}
-          .card-img-overlay              
-            %h2.title.is-5 Health Test
-            %p.card-text
-            %small Learn about your health from a holistic perspective
+%section.services.section
+  .container
+    .row
+      .col-lg-12
+        .section-title
+          %h2 Natural Health Care Services
+          %img{src: "/assets/section-img.png", alt: ""}
+          %p
+    .row
+      .col-lg-4.col-md-6.col-12
+        .single-service
+          %i.icofont.icofont-magic
+          %h4 
+            %a{href: "/sites/acupuncture?menu_values=201"}
+              Acupuncture 
+          %p 
+            Balancing Acupuncture, Scalp Acupuncture, Facial Acupuncture, Ear Acupuncture, Electro Acupuncture, Pediatric Acupuncture
+      .col-lg-4.col-md-6.col-12
+        .single-service
+          %i.icofont.icofont-operation-theater
+          %h4 
+            %a{href: "/sites/holistic-therapy?menu_values=202"}
+              Holistic Therapy
+          %p 
+            Cupping Therapy, Theraupeutic Massage Bed, EMS & TENS, Acupressusre, Scraping Massage, Sports Tape  	
       
+      .col-lg-4.col-md-6.col-12
+        .single-service
+          %i.icofont.icofont-cat-face
+          %h4
+            %a{href: "/sites/facial-acupuncture?menu_values=205"}
+              Facial Care  
+          %p Facial Acupuncture, Cosmetic Acupuncture, Acne Treatment, Herbal Facial Massages, Guasha Teraphy 
+        
+    .row
+      .col-lg-4.col-md-6.col-12
+        .single-service
+          %i.icofont.icofont-history
+          %h4 
+            %a{href: "/sites/detox?menu_values=203"}
+              Detox & Balance 
+          %p 
+            Toxicity Questioaire, Balanced Weight, Toxic And Essetional Element Test, Anti-Inflamatory Diet, High-Quality & Whole Food-Based Detox Kits
+      .col-lg-4.col-md-6.col-12
+        .single-service
+          %i.icofont.icofont-connection
+          %h4 
+            %a{href: "/sites/oncology?menu_values=206"}
+              Oncology Supportive Care  
+          %p Natural Immunotherapy, Acupuncture Treatments, Prescribed Herbal Medicine, Nutritional Supports, Meal Plan, Detox Program 	
+      
+      .col-lg-4.col-md-6.col-12
+        .single-service
+          %i.icofont.icofont-medicine
+          %h4
+            %a{href: "/sites/natural-supplements?menu_values=207"}
+              Natural Supplements
+          %p  	
+            We believe in combining the 3 pillars of natural medicine: botanical, homeopathy, and nutrition. These tailored protocols are geared towards supporting the structure and function of the body.
+ 

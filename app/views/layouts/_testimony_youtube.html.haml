@@ -1,5 +1,17 @@
-- if @reviews['youtube']
-  %iframe.i_overlay{:frameborder => "0", :height => "300", :src => @reviews['youtube'], :width => "90%"}
 - if @reviews['picture']
-  %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}gallery/" + @reviews['picture']}
+  - if @reviews['youtube']
+    .choose-right{"data-bgimage" => "/assets/gallery/"+ @reviews["picture"], "data-overlay" => "1", :style => "background-image: url(\"/assets/gallery/"+@reviews["picture"]+"\");"}
+      .video-image
+        .promo-video
+          .waves-block
+            .waves.wave-1
+            .waves.wave-2
+            .waves.wave-3
+            %a.video{:href => @reviews['youtube'], :target => "_blank"}
+              %i.fa.fa-play
+
+
+  - else
+    .choose-right
+      %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}gallery/" + @reviews['picture']}
 

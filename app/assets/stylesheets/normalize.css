@@ -470,7 +470,7 @@ Preloader Area CSS
 	transform: scaleX(1);
 }
 .section{
-	padding:100px 0;
+	padding:40px 0;
 }
 .section-title{
 	text-align: center;
@@ -506,7 +506,6 @@ Preloader Area CSS
 }
 /* Bread Crumbs */
 .breadcrumbs {
-	background-image: url('https://via.placeholder.com/1600x350');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1100,4 +1099,10 @@ object {
  }
 }
 
+.section-mytitle{
+	text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 250px;
+}
 

@@ -1,0 +1,72 @@
+.dez-separator.style-liner 
+  .grid_100.has-text-centered
+    .grid_subtitle
+      %font.txt_dgreen Natural
+      Health Care
+      %font.txt_dgreen Services
+
+.container.text-center.is-margin-top-2
+  .row 
+    .col
+      .card.text-bg-dark
+        %a{:href => "/sites/acupuncture?menu_values=201"}
+          %img.card-img{:alt => "service",:src => "/assets/main-service-acu.jpg"}
+          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-acu-h.jpg"}
+          .card-img-overlay
+            %h2.title.is-5 Balancing Acupuncture
+            %p.card-text
+            %small You can get started here
+           
+    .col
+      .card.text-bg-dark
+        %a{:href => "/sites/cupping?menu_values=202"}
+          %img.card-img{:alt => "service", :src => "/assets/main-service-cupping.jpg"}
+          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-cupping-h.jpg"}
+          .card-img-overlay
+            %h2.title.is-5 Cupping & Medical Massage
+            %p.card-text
+            %small Improve mobility and decrease muscle pain
+
+    .col
+      .card.text-bg-dark
+        %a{:href => "/sites/detox?menu_values=203"}
+          %img.card-img{:alt => "service", :src => "/assets/main-service-detox.jpg"}
+          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-detox-h.jpg"}
+          .card-img-overlay
+            %h2.title.is-5 Detox and Weight Loss
+            %p.card-text
+            %small Cleanse your body and restore natural detox functions
+          
+  
+  .row
+    .col
+      .card.text-bg-dark
+        %a{:href => "/sites/skincare?menu_values=205"} 
+          %img.card-img{:alt => "service", :src => "/assets/main-service-skin.jpg"}
+          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-skin-h.jpg"}
+            .card-img-overlay
+              %h2.title.is-5 Skin Care
+              %p.card-text
+              %small Beautify your skin by treating your health problems
+ 
+       
+    .col
+      .card.text-bg-dark
+        %a{:href => "/sites/supplements?menu_values=207"}
+          %img.card-img{:alt => "service", :src => "/assets/main-service-suppl.jpg"}
+          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-suppl-h.jpg"}
+          .card-img-overlay
+            %h2.title.is-5 Natural Supplements         
+            %small We offers three pillars of supplements such as
+            %small homeopathics, botanicals and nutritionals 
+  
+    .col
+      .card.text-bg-dark
+        %a{:href => "/sites/healthtest?menu_values=208"}
+          %img.card-img{:alt => "service", :src => "/assets/main-service-test.jpg"}
+          %img.card-img.img-top{:alt => "service", :src => "/assets/main-service-test-h.jpg"}
+          .card-img-overlay              
+            %h2.title.is-5 Health Test
+            %p.card-text
+            %small Learn about your health from a holistic perspective
+      

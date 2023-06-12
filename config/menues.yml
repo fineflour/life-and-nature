@@ -212,7 +212,7 @@
 - id: 500 
   id_no: 10000
   category: ''
-  name: 'Q & A'
+  name: 'FAQ'
   link: '' 
   active: false
   note: 

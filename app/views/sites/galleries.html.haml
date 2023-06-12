@@ -1,12 +1,12 @@
-.grid_100.has-text-justified.is-margin-top-2
-  .container
-    %h2.is-4.has-text-centered
-      Thank you to those who visit our clinic and allowed us to help you.
-      %br 
-      We also want to thank everyone who gave us permission to share their testimonies.
-    %br
-    %br
-    %h2.title.is-4.has-text-justified
-.container.text-center.is-margin-top-1
-  = render partial: "/layouts/galleries" ,:galleries=> @galleries
+.container
+  .row
+    .col-lg-12.padding-2
+      .section-title
+        %h2
+          Our Memories and Testimonials
+        %img{src: "/assets/section-img.png", alt: "#"}
+        %p 
+          Thank you to those who visit our clinic and allowed us to help you.
+          We also want to thank everyone who gave us permission to share their testimonies. 
+= render partial: "/layouts/galleries" ,:galleries=> @galleries
 

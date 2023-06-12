@@ -1,0 +1,24 @@
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="bread-inner">
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            <%= @menu_values['name'] %>
+          </h2>
+          <% if @menu_values['category'].present? %>
+            <ul class="bread-list">
+              <li><%= @menu_values['category'] %></a></li>
+              <li><i class="icofont-simple-right"></i></li>
+              <li class="active">
+                <%= @menu_values['name']%>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Breadcrumbs -->

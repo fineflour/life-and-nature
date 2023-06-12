@@ -1,19 +1,60 @@
-.dez-separator.style-liner 
-.grid_100.has-text-centered
-  .grid_subtitle
-    %font.txt_dgreen Testimonials
+/ Start Why choose
+%section.why-choose.section
+  .container
+    .row
+      .col-lg-12
+        .section-title
+          %h2 We Offer High Quality Natural Medical Services To Improve Your Health
+          %img{:alt => "#", :src => "/assets/section-img.png"}/
+          %p Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts
+    .row
+      .col-lg-6.col-12
+        / Start Choose Left
+        .choose-left
+          %h3 Who We Are
+          %p           
+            We stick to the basics of medicine. For our benefit, not harming the patient should be basically kept. All patients who trust us and faithfully pay for treatment are confident that they have seen the effect of the treatment they want. 
+          %p 
+            We want to provide the best natural medicine treatment to those who are not effective or harmed by conventional medicine.
+          .row
+            .col-lg-6
+              %ul.list
+                %li
+                  %i.fa.fa-caret-right>
+                  Banalcing Acupuncture
+                %li
+                  %i.fa.fa-caret-right>
+                  Head and Scalp Acupuncture
+                %li
+                  %i.fa.fa-caret-right>
+                  Facial Acupuncture
+            .col-lg-6
+              %ul.list
+                %li
+                  %i.fa.fa-caret-right>
+                  Sports Therapy
+                %li
+                  %i.fa.fa-caret-right>
+                  Cupping Therapy
+                %li
+                  %i.fa.fa-caret-right>
+                  Massage Therapy
+        / End Choose Left
+      .col-lg-6.col-12
+        / Start Choose Rights
+        .choose-right{"data-bgimage" => "/assets/gallery/4.jpg", "data-overlay" => "1", :style => "background-image: url(\"/assets/gallery/4.jpg\");"}
+          .video-image
+            / Video Animation
+            .promo-video
+              .waves-block
+                .waves.wave-1
+                .waves.wave-2
+                .waves.wave-3
+            / / End Video Animation
+            %a.video{:href => "https://youtu.be/NYyN8Q5ew3E", :target => "_blank"}
+              %i.fa.fa-play
+        / End Choose Rights
+/ / End Why choose
 
-.container
-  .row
-    .grid-3.has-text-centered
-      %h2.title.is-4 Oncology Support
-      %h2.is-5 Steve U.
-      %iframe.i_overlay{:frameborder => "0", :height => "240", :src => "https://www.youtube.com/embed/NYyN8Q5ew3E?feature=oembed=0=0=0", :width => "300"}
-    .grid-3.has-text-centered
-      %h2.title.is-4 Infertility
-      %h2.is-5 Carolyn B.
-      %iframe.i_overlay{:height => "240", :src => "https://www.youtube.com/embed/E-kTnsZx1ok?feature=oembed=0=0=0", :width => "300"}
-    .grid-3.has-text-centered
-      %h2.title.is-4 Lower Back Pain  Sciatica
-      %h2.is-5 Joshua S.
-      %iframe.i_overlay{:frameborder => "0", :height => "240", :src => "https://www.youtube.com/embed/h7g5N3qiVeg?feature=oembed=0=0=0", :width => "300"}
+
+
