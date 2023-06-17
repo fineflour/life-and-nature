@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_24_020515) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_203721) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_020515) do
     t.integer "sale", default: 0
     t.boolean "active", default: true
     t.boolean "package", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "subject", default: "", null: false
+    t.text "message", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -89,6 +99,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_020515) do
     t.text "link"
     t.datetime "created_at", default: -> { "now()" }
     t.datetime "updated_at", default: -> { "now()" }
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

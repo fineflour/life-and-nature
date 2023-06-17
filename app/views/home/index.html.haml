@@ -14,8 +14,8 @@
                 %span Trust!
               %p We offer treatment that is no side effect, not addictive, not Harmful or invasive!
               .button
-                %a.btn{:href => "#"} Get Appointment
-                %a.btn.primary{:href => "#"} Learn More
+                %a.btn{:href => "/sites/appointments?menu_values=600"} Get Appointment
+                %a.btn.primary{:href => "/sites/acupuncture?menu_values=201"} Learn More
     / End Single Slider
     / Start Single Slider
     .single-slider{:style => "background-image:url('/assets/title-301.jpg')"}
@@ -24,13 +24,12 @@
           .col-lg-7
             .text
               %h1
-                We can help Your
-                %span Severe  Chronic
                 %span Pain!
-              %p We are specialized to treat the patients who have severe and chronic term pain.
+                No More
+              %p We specialize in treating severe and chronic pain patients.
               .button
-                %a.btn{:href => "#"} Get Appointment
-                %a.btn.primary{:href => "#"} About Us
+                %a.btn{:href => "/sites/appointments?menu_values=600"} Get Appointment
+                %a.btn.primary{:href => "/sites/meetus?menu_values=702"} Meet Us
     / Start End Slider
     / Start Single Slider
     .single-slider{:style => "background-image:url('/assets/title-303.jpg')"}
@@ -39,14 +38,14 @@
           .col-lg-7
             .text
               %h1
-                We Provide
-                %span Medical
-                Services That You Can
-                %span Trust!
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam.
+                Start Your 
+                %span 
+                  Healing 
+                Journey!
+              %p.wt There are many good testimonies of overcoming mental suffering with us.
               .button
-                %a.btn{:href => "#"} Get Appointment
-                %a.btn.primary{:href => "#"} Conatct Now
+                %a.btn{:href => "/sites/appointments?menu_values=600"} Get Appointment
+                %a.btn.primary{:href => "/sites/contact?menu_values=701"} Conatct Now
     / End Single Slider
     / Start Single Slider
     .single-slider{:style => "background-image:url('/assets/title-307.jpg')"}
@@ -55,14 +54,15 @@
           .col-lg-7
             .text
               %h1
-                We Provide
-                %span Medical
-                Services That You Can
-                %span Trust!
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam.
+                %span Natural 
+                Medicine For       
+                %span Women's 
+                Optimal Health
+              %p.wt 
+                The benefits of natural medicine can beautify a woman's body and mind.
               .button
-                %a.btn{:href => "#"} Get Appointment
-                %a.btn.primary{:href => "#"} About Us
+                %a.btn{:href => "/sites/appointments?menu_values=600"} Get Appointment
+                %a.btn.primary{:href => "/sites/womens-health?menu_values=307"} Learn More
     / Start End Slider
 / / End Slider Area
 / Start Schedule Area
@@ -93,7 +93,7 @@
                 %span SPECIAL
                 %h4 Severe  Chronic Pain
                 %p Our natural treatments can help people who have been suffering for a long time and have resorted to medication but still haven't recovered.
-                %a{:href => "/sites/pain?menu_values=301"}
+                %a{:href => "/sites/pain-management?menu_values=301"}
                   LEARN MORE
                   %i.fa.fa-long-arrow-right
         .col-lg-4.col-md-12.col-12
@@ -106,10 +106,11 @@
                 %span SPECIAL
                 %h4 Detox & Banalced Weight
                 %p It is not too much to say that toxins in the body are the cause of all diseases. We provide a clean diet program along with toxin detoxification.
-              %a{:href => "/sites/detox?menu_values=203"}
+              %a{:href => "/sites/detox-weight-manage?menu_values=203"}
                 LEARN MORE
                 %i.fa.fa-long-arrow-right
 
 = render partial: "/layouts/home_service_intro", formats: :html
 = render partial: "/layouts/home_services", formats: :html
-= render partial: "/layouts/home_testimonials", formats: :html
+= render partial: "/layouts/home_insurance", formats: :html
+= render partial: "/layouts/home_who-we-are", formats: :html

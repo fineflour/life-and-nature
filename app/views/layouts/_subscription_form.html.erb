@@ -1,0 +1,8 @@
+<%= simple_form_for Subscription.new,  html: { class: "newsletter-inner"},  input_html: {  } do  |f| %>
+  <%= f.input :email, placeholder: "Email address", class: "common-input", onblur: "this.placeholder = 'Your email address'", onfocus: "this.placeholder = ''", placeholder: "Email Address", required: "", type: "email", label: false %>
+  <%= button_tag type: 'submit', class: "button", id: "register-button",  :onclick => "return confirm('You have been registered successfully.')"  do %>
+    <i class="icofont icofont-paper-plane"></i>
+  <% end %>
+<% end %>
+
+

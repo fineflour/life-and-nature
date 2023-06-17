@@ -1,0 +1,8 @@
+.subscribe-form
+  = simple_form_for @subscription_list,  html: { class: "newsletter-inner"},  input_html: {  } do  |f|
+    = f.input :email, placeholder: "ABC@test.com"
+    = link_to "Back to index", subscriptions_path, class: "btn btn-default"
+    = f.submit "Submit", class: "btn Subscribe"
+    - flash.each do |message_type, message|
+      %div{:class => "alert alert-#{message_type}"}= message
+

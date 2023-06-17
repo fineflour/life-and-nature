@@ -1,0 +1,42 @@
+/ Start Contact Us
+%section.contact-us.section
+  .container
+    .inner
+      .row
+        .col-lg-6
+          .contact-us-left
+            / Start Google-map
+            #myMap
+              %img{:src => "/assets/gmap-520N.jpg"}/
+              %img{:src => "/assets/520-building.jpg"}/
+            / /End Google-map
+        .col-lg-6
+          = render "form", contact_list: @contact_list
+    .contact-info
+      .row
+        / single-info
+        .col-lg-4.col-12
+          .single-info
+            %i.icofont.icofont-ui-call
+            .content
+              %h3 +(714) 443-1779
+              %p info@life-and-nature.com
+        / /End single-info
+        / single-info
+        .col-lg-4.col-12
+          .single-info
+            %i.icofont-google-map
+            .content
+              %h3 520N Brookhurst St. Ste. 204
+              %p Anaheim, CA
+        / /End single-info
+        / single-info
+        .col-lg-4.col-12
+          .single-info
+            %i.icofont.icofont-wall-clock
+            .content
+              %h3 Mon - Fri: 9:30am - 6pm
+              %h3 Saturday: 9:30am - 4pm
+        / /End single-info
+/ / End Contact Us
+
