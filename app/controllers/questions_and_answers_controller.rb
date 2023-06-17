@@ -77,7 +77,10 @@ class QuestionsAndAnswersController < ApplicationController
 
   private
   def dismiss_admin
-    session[:admin] = false;
+    #binding.pry
+    current_user = nil;
+    session[:admin] = nil;
+    session[:user_id] = nil;
    # binding.pry
     redirect_to questions_and_answers_path
   end

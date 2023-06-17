@@ -4,5 +4,5 @@ class SessionsController < Devise::SessionsController
   end
 
   def create
-      end
+  end
 end
