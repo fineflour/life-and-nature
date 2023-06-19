@@ -2,15 +2,17 @@
   %section.register.section
     .container
       .row
-        .col-lg-8
+        .col-lg-12
+          You are logged in as 
+          = current_user[:fullname]  +' /'+ current_user[:role]  
+          >> 
+          = link_to "Log out", destroy_user_session_path, method: :delete
+        .col-lg-12
           = link_to "Users", users_path, class: "btn btn-info"
           = link_to "Blogs", pt_resources_path, class: "btn btn-info"
           = link_to "FAQ", questions_and_answers_path, class: "btn btn-info"
+          = link_to "Contact", contacts_path, class: "btn btn-info"
+          = link_to "Subscriptions", subscriptions_path, class: "btn btn-info"
           = link_to "Products", products_path, class: "btn btn-info"
           = link_to "Categories", categories_path, class: "btn btn-info"
-        .col-lg-4
-          .register-right
-            You are logged in as 
-            = current_user[:fullname]  +' /'+ current_user[:role]  
-            %br
-            = link_to "Log out", destroy_user_session_path, method: :delete
+        

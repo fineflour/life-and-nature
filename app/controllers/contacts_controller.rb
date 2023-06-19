@@ -88,7 +88,7 @@ class ContactsController < ApplicationController
 
 
   def contacts_for_index
-    Contact.order("id").paginate(page: params[:page])
+    Contact.order("id desc").paginate(page: params[:page])
   end
 
 

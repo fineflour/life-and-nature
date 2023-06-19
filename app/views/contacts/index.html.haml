@@ -1,36 +1,39 @@
-.grid_100.has-text-justified.is-margin-top-2
-  .container
-    - if current_user.try(:admin?)
-      = render partial: "/layouts/admin_menu" 
-      = will_paginate @qna_list, renderer: BootstrapPagination::Rails  
+= render partial: "/layouts/admin_menu" 
 
-      .container
-        .table-responsive
-          %tbody
-            - @qna_list.each do |a|
-              %tr{:id => "qna_list#{a.id}"}
-                %td
-                  %hr
-                  %h3.is-5
-                    Q.
-                    = link_to a.question, edit_questions_and_answer_path(a)
-              %tr{:id => "qna_list#{a.id}"}
-                %td
-                  .grid_90.is-margin-top-2
-                    %h3.is-6
-                      = link_to a.answer.html_safe, edit_questions_and_answer_path(a)
-
-              %tr
-                %td.has-text-centered
-                  .grid_90.is-margin-top-2.has-text-centered
-                    %h3.is-6
-                      = a.created_at.strftime("%m/%d/%Y") 
+-if user_signed_in? && current_user[:role]=="admin"  
+  %section.doctor-calendar-area.section
+    .container
+      .row
+        .col-lg-12
+          .section-title.tpadding-2
+            %h2 Contact Us
+            %img{src: "/assets/section-img.png", alt: "#"}
+      .row
+        .col-lg-12
+          .doctor-calendar-table.table-responsive
+            %table.table
+              %thead
+                %tr
+                  %th Full Name
+                  %th Phone
+                  %th Email
+                  %th Subject
+                  %th Created At
+                  %th Action
+              %tbody
+                - @contact_list.each do |a|
+                  %tr{:id => "contact_list#{a.id}"}
+                    %td
+                      = link_to a.name, edit_contact_path(a)
+                    %td
+                      = a.phone
+                    %td
+                      = a.email
+                    %td
+                      = a.subject.html_safe
+                    %td
                       = a.updated_at.strftime("%m/%d/%Y")
-              %tr
-                %td.has-text-centered
-                  .grid_90.is-margin-top-2.has-text-centered
-                    = link_to "Edit", edit_questions_and_answer_path(a),  class: "btn btn-info"
-                    = link_to "Delete", questions_and_answer_path(a),  class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure to delete?"}
-    - else
-      .panel-heading
-        = render partial: "form"
+                    %td
+                      = link_to "Show",contact_path(a)
+                      | 
+                      = link_to "Delete", contact_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}

@@ -81,7 +81,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def subscriptions_for_index
-   subscriptions.order("id").paginate(page: params[:page])
+   Subscription.order("id").paginate(page: params[:page])
   end
 
 
