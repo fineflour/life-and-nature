@@ -1,6 +1,5 @@
 .grid_100.has-text-justified.is-margin-top-2
   .container
-    Sign In
     - if controller_name != 'sessions'
       = link_to "Log in", users_path #new_session_path(resource_name)
       %br/

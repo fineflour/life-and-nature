@@ -33,11 +33,15 @@ class ContactsController < ApplicationController
       flash[:error] = ""
     if @contact_list.save
       flash[:notice] = "We will reply to your email soon. Thank you!"
-      redirect_to request.referrer
+      redirect_to '/sites/success/'
     else
       flash[:error] = "Sorry, An error has occurred. Please try again"
       render action: :new
     end
+  end
+
+  def success
+
   end
 
   def edit

@@ -1,0 +1,96 @@
+%section.blog.grid.section
+  .container
+    .row
+      .col-lg-8.col-12
+        .row
+          - @pt_resource.each do |a|
+            .col-lg-6.col-md-6.col-12
+              .single-news
+                .news-head
+                  %img{:alt => "#", :src => "https://via.placeholder.com/560x370"}/
+                  .news-body
+                    .news-content
+                      .date 
+                        = a.updated_at.strftime("%m/%d/%Y")
+                      %h2
+                        %a{:href => "#"} 
+                          - if a.public #opens a blank window with the blog
+                            = link_to a.title, pt_resource_with_title_path(a, :title => a.title), :target =>  "_blank"
+                          - else
+                            = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
+                        %p.text 
+
+                        .b-0.border-top{:id => "pt_resource#{a.id}"}
+              -if user_signed_in? && current_user[:role]=="admin"  
+                = link_to "Show",pt_resource_path(a)
+                |
+                = link_to "Edit", edit_pt_resource_path(a)
+                |
+                = link_to "Delete", pt_resource_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+        .col-12
+          .pagination
+            %ul.pagination-list
+              %li
+                %a{href: "#"}
+                  %i.icofont-rounded-left
+              %li.active
+                %a{href: "#"}
+                  1
+              %li
+                %a{href: "#"}
+                  2
+              %li
+                %a{href: "#"}
+                  3
+              %li
+                %a{href: "#"}
+                  %i.icofont-rounded-right
+
+
+      .col-lg-4.col-12
+        .main-sidebar
+          .single-widget.category
+            %h3.title
+              Blog Categories
+              %ul.categor-list
+                %li
+                  %a{href: "#"}
+                    Men's Apparel
+                %li
+                  %a{href: "#"}
+                    Men's Apparel
+                %li
+                  %a{href: "#"}
+                    Men's Apparel
+
+            
+          .single-widget.recent-post
+            %h3.title
+              Recent post
+            .single-post
+              .image
+                %img{src: "https://via.placeholder.com/200x200", alt: "#"}
+              .content
+                %h5
+                  %a{href: "#"} We have annnocuced our new product.
+                  %ul.comment
+                    %li.fa.fa-calendar
+                      Jan 11, 2020
+                    %li.fa.fa-commenting-o
+                      35
+            .single-post
+              .image
+                %img{src: "https://via.placeholder.com/200x200", alt: "#"}
+              .content
+                %h5
+                  %a{href: "#"} We have annnocuced our new product.
+                  %ul.comment
+                    %li.fa.fa-calendar
+                      Jan 11, 2020
+                    %li.fa.fa-commenting-o
+                      35
+
+
+
+
+

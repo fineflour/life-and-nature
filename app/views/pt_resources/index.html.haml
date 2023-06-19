@@ -1,28 +1,18 @@
-.grid_100.has-text-justified.is-margin-top-2
+= render partial: "/layouts/admin_menu" 
+%section.services.section
   .container
-    - if current_user.try(:admin?)
-      = render partial: "/layouts/admin_menu" 
-      .panel-heading
-        = link_to "Add new blog", new_pt_resource_path, class: "btn btn-info"
-    .table-responsive
-      %table#article.table.table-hover.table-striped
-        %tbody.b-0
-          - @pt_resource.each do |a|
-            %tr.b-0.border-top{:id => "pt_resource#{a.id}"}
-              %td.b-0
-                %h2.is-3
-                  - if a.public #opens a blank window with the blog
-                    = link_to a.title, pt_resource_with_title_path(a, :title => a.title), :target =>  "_blank"
-                  - else
-                    = link_to a.title, pt_resource_with_title_path(a, :title => a.title)
-                %br
-                  %h4.is-6.float-right
-                    = a.updated_at.strftime("%m/%d/%Y")
-              - if current_user.try(:admin?)
-                %td.b-0
-                  = link_to "Show",pt_resource_path(a)
-                  |
-                  \#{link_to "Edit", edit_pt_resource_path(a)}
-                  |
-                  \#{link_to "Delete", pt_resource_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}}
-                  
+    .row
+      .col-lg-12
+        .section-title.tpadding-2
+          %h2
+            We Care For You!
+          %img{src: "/assets/section-img.png", alt: "#"}
+          %p 
+            We are here for your ultimate journey.
+
+-if user_signed_in? && current_user[:role]=="admin"  
+  = link_to "Add new blog", new_pt_resource_path
+  = render partial: "single_blog" 
+-else
+  = render partial: "single_blog" 
+              

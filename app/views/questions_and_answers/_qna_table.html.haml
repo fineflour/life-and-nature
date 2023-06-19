@@ -6,16 +6,12 @@
           %h2
             Frequently Asked Questions 
           %img{src: "/assets/section-img.png", alt: "#"}
-          %p We are trying our best to be accessible to our patients. Find your questions that your would like to ask us below and if you can't find it, email or text us.
+          %p We are trying our best to be accessible to our patients. Find your questions that your would like to ask us below and if you can't find it, please contact us.
 
-
-.container
-  .accordion#Answer
 %section.faq-area.section
   .col-lg-12
     .container
       #Answer.accordion
-
         - @qna_list.each do |appnt|
           .accordion-item.wow.fadeInUp
             .accordion-header{:id => "heading#{appnt.id}"}

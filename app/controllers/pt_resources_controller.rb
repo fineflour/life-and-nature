@@ -7,7 +7,8 @@ class PtResourcesController < ApplicationController
     if current_user.try(:admin?) || params[:menu_values] == '400'
       @pt_resource =  pt_resource_for_index  
     else
-      @pt_resource = PtResource.getArticleList(params[:menu_values])
+      #@pt_resource = PtResource.getArticleList(params[:menu_values])
+      @pt_resource =  pt_resource_for_index  
     end
   end
 

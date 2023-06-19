@@ -13,22 +13,22 @@
     <%= render partial: "/layouts/script" %>
 
     <% if current_page?(root_url) %> 
-    <%= render partial: "/layouts/home_sliderJS" %>
+      <%= render partial: "/layouts/home_sliderJS" %>
     <% end %> 
   </head>
 
   <body>
     <% if request.path.include?('blogs')  %> 
       <%= yield %>
-    <%= render partial: "/layouts/footer" %>
+      <%= render partial: "/layouts/footer" %>
     <% else %>
       <%= render partial: "/layouts/dropdown" %>
       <% if not current_page?(root_url) || params['menu_values'] == '1000' || request.path.include?('landings') %> 
         <%= render partial: '/layouts/breadcrumb', :local => {:menues => @menu_values}  %>
       <% end %>
       <%= yield %>
-    <%= render partial: "/layouts/footer" %>
-   <% end %>
+      <%= render partial: "/layouts/footer" %>
+    <% end %>
   </body>
-<%= render partial: "/layouts/JSscript" %>
+  <%= render partial: "/layouts/JSscript" %>
 </html>

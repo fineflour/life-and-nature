@@ -1,13 +1,26 @@
 //@param material [Material] an instance of Material to render the form for.
-.container.has-text-justified
+.container
   = simple_form_for user,  html: { class: "form-horizontal center"},  input_html: {  } do  |f|
-
-    = f.input :fullname, placeholder: "Full Name", label: 'Full Name'
-    = f.input :email, placeholder: "Body", label: 'Email',:input_html => {:rows => 10}
-    = f.input :password, placeholder: "Password", label: 'Password', :type => "text"
-    = f.input :dob, placeholder: "Date of Birth", label: 'Date of Birth'
-    = f.input :phone, placeholder: "Phone Number", label: 'Phone'
-    = f.input :role, collection: User::ROLES, prompt: "Select role"
-    .button-padding.txt_center
-      = link_to "Back to index",  users_path, class: "btn btn-default"
-      = f.submit "Submit", class: "btn btn-info"
+    .row
+      .col-lg-6
+        .form-group
+          = f.input :fullname, placeholder: "Full Name", label: 'Full Name'
+      .col-lg-6
+        .form-group
+          = f.input :email, placeholder: "Body", label: 'Email'
+      .col-lg-6
+        .form-group
+          = f.input :password, placeholder: "Password", :value => @user.password,  label: 'Password'
+      .col-lg-6
+        .form-group
+          = f.input :dob, placeholder: "Date of Birth", label: 'Date of Birth'
+      .col-lg-6
+        .form-group
+          = f.input :phone, placeholder: "Phone Number", label: 'Phone'
+      .col-lg-6
+        .form-group
+          = f.input :role, collection: User::ROLES, prompt: "Select user role", label: false
+    .row
+      .col-lg-12
+        .form-group
+          = f.submit "Submit", class: "btn btn-info"

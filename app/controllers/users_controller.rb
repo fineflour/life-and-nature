@@ -7,19 +7,16 @@ class UsersController < ApplicationController
     menu_values
 #    binding.pry
     @users = User.paginate(page: params[:page])
-    authorize @users
   end
 
   def show
     menu_values
     @user = User.find_by_id(params[:id])
-    authorize @user
   end
 
   def new
     menu_values
     @user = User.new
-    authorize @user
   end
 
   def create
@@ -38,17 +35,17 @@ class UsersController < ApplicationController
   def edit
     menu_values
     @user = User.find(params[:id])
-    authorize @user
   end
 
   def update
     menu_values
     @user = User.find(params[:id])
-    authorize @user
-    @user.update_attributes(user_is_global? ? global_params : user_params)
+    @user.update(user_params)
 
     if @user.save
-      redirect_to @user, notice: "Successfully updated user."
+      #redirect_to @user, notice: "Successfully updated user."
+      redirect_to users_path
+
     else
       flash[:error] = "User not updated. Please try again."
       render :edit

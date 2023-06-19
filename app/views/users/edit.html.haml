@@ -1,6 +1,20 @@
-.grid_100.has-text-justified.is-margin-top-2
-  .container
-    %h1.is-3.has-text-centered
-      EDIT USER
+-if user_signed_in? && current_user[:role]=="admin"  
+  %section.doctor-calendar-area.section
+    .container
+      .row
+        .col-lg-12
+          .section-title.tpadding-2
+            %h2
+              Edit User Profile
+            %img{src: "/assets/section-img.png", alt: "#"}
 
-    = render "form", user: @user
+      .row
+        .col-lg-12
+          = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"
+      .row
+        .col-lg-12
+          .doctor-calendar-table.table-responsive
+            %table.table
+              %thead
+                %tr
+= render "form", user: @user

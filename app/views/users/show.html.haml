@@ -1,20 +1,36 @@
-.grid_100.has-text-justified.is-margin-top-2
-  .container
-    %div.title-box
-      %h1.is-3.has-text-centered
-        USER PROFILE
+= render partial: "/layouts/admin_menu" 
+-if user_signed_in? && current_user[:role]=="admin"  
+  %section.services.section
+    .container
+      .row
+        .col-lg-12
+          .section-title.tpadding-2
+            %h2
+              USER PROFILE
+            %img{src: "/assets/section-img.png", alt: "#"}
 
-    %div.grid_subtitle.has-text-centered
-      = @user.fullname
-      %div.has-text-right
-        = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"
-    %div.grid_100.is-3.has-text-centered
-      Name:
-      = @user.fullname
-      %br
-      EMAIL:
-      = @user.email
+      .row
+        .col-lg-12
+          = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"
+      .row
+        .col-lg-6
+          .form-group
+            %h3
+              User Name:
+              = @user.fullname
+        .col-lg-6
+          .form-group
 
-      %br
-      ROLE:
-      = @user.role
+            %h3
+              EMAIL:
+              = @user.email
+        .col-lg-6
+          .form-group
+            %h3
+              Password:
+              = @user.password
+        .col-lg-6
+          .form-group
+            %h3
+              ROLE:
+              = @user.role
