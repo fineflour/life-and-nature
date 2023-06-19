@@ -1,2 +1,15 @@
-.grid_100.has-text-justified.is-margin-top-2
-  = render "form", product: @product
+= render partial: "/layouts/admin_menu" 
+%section.services.section
+  .container
+    .row
+      .col-lg-12
+        .section-title.tpadding-2
+          %h2
+            Edit Products 
+          %img{src: "/assets/section-img.png", alt: "#"}
+
+    .row
+      .col-lg-12
+        = link_to "Back to index",  products_path, class: "btn btn-default"
+        %hr
+        = render "form", product: @product

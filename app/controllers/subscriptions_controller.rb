@@ -31,7 +31,7 @@ class SubscriptionsController < ApplicationController
 #    authorize @qna_list
     if @subscription_list.save
       flash[:notice] = "You're subscribed!"
-      redirect_to request.referrer
+      redirect_to '/sites/success/'
     else
       flash[:error] = "We can not process your request now. Please try later"
       redirect_to request.referrer
@@ -81,7 +81,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def subscriptions_for_index
-   Subscription.order("id").paginate(page: params[:page])
+   Subscription.order("id desc").paginate(page: params[:page])
   end
 
 

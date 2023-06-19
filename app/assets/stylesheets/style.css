@@ -4273,3 +4273,17 @@ ADDED from Bootstrapr 5
 .padding-2 {
   padding: 20px;
 }
+
+
+.text-justified{
+  text-align: justify!important;
+  text-justify: inter-word;
+}
+
+.center{
+  text-align: center!important;
+}
+
+.right {
+  text-align: right!important;
+}
