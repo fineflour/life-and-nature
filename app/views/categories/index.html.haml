@@ -32,7 +32,7 @@
                 %td.b-0
                   = link_to "Show",category_path(a)
                   |
-                  \#{link_to "Edit", edit_category_path(a)}
+                  = link_to "Edit", edit_category_path(a)
                   |
-                  \#{link_to "Delete", category_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}}
+                  = link_to "Delete", category_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
                   

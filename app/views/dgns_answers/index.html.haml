@@ -1,0 +1,43 @@
+= render partial: "/layouts/admin_menu" 
+%section.services.section
+  .container
+    .row
+      .col-lg-12
+        .section-title.tpadding-2
+          %h2
+            Diagnostic Answer
+          %img{src: "/assets/section-img.png", alt: "#"}
+
+    .row
+      .col-lg-12
+        = link_to "Add new answer", new_dgns_answer_path, class: "btn btn-info"
+      .col-lg-12
+        %table#article.table.table-hover.table-striped.table-responsive
+          %tbody
+            %tr
+              %td
+                Answer
+              %td
+                Type
+              %td
+                Value
+              %td
+                Created at 
+              %td
+                Actions
+            - @answers.each do |a|
+              %tr.b-0.border-top{:id => "answer#{a.id}"}
+                %td.b-0
+                  = link_to a.answer
+                %td.b-0
+                  = link_to a.a_type
+                %td.b-0
+                  = link_to a.a_value
+                %td.b-0
+                  = a.updated_at.strftime("%m/%d/%Y")
+                %td.b-0
+                  //  = link_to "Show",diagno_question_path(a)
+                  = link_to "Edit", edit_dgns_answer_path(a)
+                  |
+                  = link_to "Delete", dgns_answer_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                  

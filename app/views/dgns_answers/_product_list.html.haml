@@ -1,0 +1,10 @@
+.clients.overlay
+  .container
+    .row
+      .col-lg-12.col-md-12.col-12
+        .owl-carousel.clients-slider
+          - @product.each do |a|
+            .single-clients
+              %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}products/" +  a.img_1}
+              %p.center
+                = link_to truncate(a.name), product_path(a, :name=> a.name), :target =>  "_blank"

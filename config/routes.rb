@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :edit, :show, :new, :update, :create, :destroy]
   resources :categories, only: [:index, :edit, :show, :new, :update, :create, :destroy]
   resources :product_categories, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :diagno_questions, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :dgns_answers, only: [:index, :edit, :show, :new, :update, :create, :destroy]
+  resources :diagno_user_answers, only: [:index, :edit, :show, :new, :update, :create, :destroy]
 
   get '/blogs/:id/:title' => 'pt_resources#blog', :as => :pt_resource_with_title
 

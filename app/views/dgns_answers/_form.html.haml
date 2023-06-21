@@ -1,0 +1,20 @@
+.container
+  = simple_form_for answer,  html: { class: "form-horizontal center"},  input_html: {  } do  |f|
+    .row
+      .col-lg-12
+        .form-group
+          = f.input :answer
+      .col-lg-6
+        .form-group
+          = f.input :a_type
+
+      .col-lg-6
+        .form-group
+          = f.input :a_value
+
+      .col-lg-6
+        .form-group
+          = f.input :active,  as: :boolean, checked_value: true, unchecked_value: false, label: "Active"
+      .col-lg-6
+        .form-group
+          = f.submit "Submit", class: "btn btn-info"

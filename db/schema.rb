@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_203721) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_20_224613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,65 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_203721) do
     t.text "message", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dgns_answers", force: :cascade do |t|
+    t.string "answer", default: "", null: false
+    t.integer "a_type", default: 0, null: false
+    t.string "a_value", default: "", null: false
+    t.integer "sex", default: 0, null: false
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diagno_answers", force: :cascade do |t|
+    t.string "answer", default: "", null: false
+    t.integer "a_type", default: 0, null: false
+    t.integer "a_value", default: 0, null: false
+    t.integer "sex", default: 0, null: false
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diagno_category_questions", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "diagno_question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_diagno_category_questions_on_category_id"
+    t.index ["diagno_question_id"], name: "index_diagno_category_questions_on_diagno_question_id"
+  end
+
+  create_table "diagno_question_answers", force: :cascade do |t|
+    t.integer "diagno_question_id"
+    t.integer "diagno_answer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diagno_answer_id"], name: "index_diagno_question_answers_on_diagno_answer_id"
+    t.index ["diagno_question_id"], name: "index_diagno_question_answers_on_diagno_question_id"
+  end
+
+  create_table "diagno_questions", force: :cascade do |t|
+    t.string "question", default: "", null: false
+    t.integer "q_type", default: 0, null: false
+    t.integer "sex", default: 0, null: false
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diagno_user_answers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "diagno_question_id"
+    t.integer "diagno_answer_id", null: false
+    t.string "value", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diagno_answer_id"], name: "index_diagno_user_answers_on_diagno_answer_id"
+    t.index ["diagno_question_id"], name: "index_diagno_user_answers_on_diagno_question_id"
+    t.index ["user_id"], name: "index_diagno_user_answers_on_user_id"
   end
 
   create_table "product_categories", force: :cascade do |t|
@@ -108,6 +167,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_203721) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_diagno_answers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "diagno_question_id"
+    t.integer "diagno_answer_id", null: false
+    t.integer "value", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diagno_answer_id"], name: "index_user_diagno_answers_on_diagno_answer_id"
+    t.index ["diagno_question_id"], name: "index_user_diagno_answers_on_diagno_question_id"
+    t.index ["user_id"], name: "index_user_diagno_answers_on_user_id"
+    t.index ["value"], name: "index_user_diagno_answers_on_value"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "fullname", default: "", null: false
     t.string "email", default: "", null: false
@@ -120,6 +192,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_203721) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "sex"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

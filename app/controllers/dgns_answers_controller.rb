@@ -1,13 +1,15 @@
-class ProductsController < ApplicationController
+class DgnsAnswersController < ApplicationController
   require 'yaml'
   include ActionView::Helpers::AssetUrlHelper
   include Pundit::Authorization
+  add_flash_types :info, :error, :success
   before_action :authenticate_user!
   def index
     menu_values
     if current_user.try(:admin?) || params[:menu_values] == '1002'
-      @products =  product_for_index  
-      @categories = category_list
+#        binding.pry
+      @answers =  answers_for_index  
+      @question  = question_selection_type
     end
   end
 
@@ -16,53 +18,53 @@ class ProductsController < ApplicationController
     if(params[:id].to_s == "dismiss_admin")
        dismiss_admin
     else 
-      @product = Product.find(params[:id])
+      @answer = DgnsAnswer.find(params[:id])
     end
   end
 
   def new
     menu_values
-    @product = Product.new
+    @answer = DgnsAnswer.new
   end
 
   def create
     menu_values
-    @product = Product.new(product_params)
+    @answer = DgnsAnswer.new(answer_params)
     @categories = category_list
-    if @product.save
-      flash[:notice] = "A product has been created successfully!"
-      redirect_to products_path
+    if @answer.save
+      flash[:notice] = "A answer has been created successfully!"
+      redirect_to diagno_answers_path
     else
-      flash[:error] = "product could not be saved."
+      flash[:error] = "answer could not be saved."
       render action: :new
     end
   end
 
   def edit
     menu_values
-    @product = Product.find(params[:id])
+    @answer = DgnsAnswer.find(params[:id])
     @categories = category_list
   end
 
   def update
     menu_values
     #binding.pry
-    @product = Product.find(params[:id])
+    @answer = DgnsAnswer.find(params[:id])
     @categories = category_list
-    @product.update(product_params)
+    @answer.update(answer_params)
 
-    if  @product.save
-      redirect_to  products_path, notice: "Successfully updated"
+    if  @answer.save
+      redirect_to  dgns_answers_path, notice: "Successfully updated"
     else
-      flash[:error] = "Product cannot be updated. Try again"
+      flash[:error] = "The answer cannot be updated. Try again"
       render :edit
     end
   end
 
   def destroy
     menu_values
-    @product = Product.find(params[:id])
-    if @product.destroy
+    @answer = DgnsAnswer.find(params[:id])
+    if @answer.destroy
       flash[:notice] = "The data successfully deleted"
       #redirect_to pt_resources_path, notice: "The data has been destroyed."
       redirect_to("/products")
@@ -80,34 +82,25 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-  def product_for_index
+  def answers_for_index
     if current_user.try(:admin?) 
-        Product.order("created_at DESC").
-        includes(:categories, :product_categories).
+        DgnsAnswer.order("created_at DESC").
+#        includes(:diagno_questions, :diagno_question_answers).
         paginate(page: params[:page])
+#        binding.pry
     else
-
-      Product.order("created_at DESC").
-        where(active: true).
-        includes(:categories, :product_categories).
-        paginate(page: params[:page])
-
     end
   end
 
-  def product_params
-    params.require(:product)
-      .permit(:name,:sku, :img_1, :img_2, :price_1,:price_2, :brand, :desc_1, :desc_2, :dosage, :usage,:ingredient, :sale, :active, 
-             :category_ids => [] 
+  def answer_params
+    params.require(:dgns_answer)
+      .permit(:answer, :a_type, :a_value, :sex, :active, 
+             :diagno_question_ids => [] 
              )
   end
 
-  def category_list
-    Category.select("name, id").order("name").where("active = true")
-  end
-
-  def answer_list
-    DiagnoAnswer.select("answer, id").order("answer").where("active = true")
+  def question_selection_type
+    DiagnoQuestion.select("question, id").order("name").where("active = true")
   end
 
 

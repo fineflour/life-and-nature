@@ -1,0 +1,48 @@
+= render partial: "/layouts/admin_menu" 
+%section.services.section
+  .container
+    .row
+      .col-lg-12
+        .section-title.tpadding-2
+          %h2
+            Questions 
+          %img{src: "/assets/section-img.png", alt: "#"}
+
+    .row
+      .col-lg-12
+        = link_to "Add new question", new_diagno_question_path, class: "btn btn-info"
+      .col-lg-12
+        %table#article.table.table-hover.table-striped.table-responsive
+          %tbody
+            %tr
+              %td
+                Question
+              %td
+                Class
+              %td
+                Type
+              %td
+                Sex
+              %td
+                Created at 
+              %td
+                Actions
+            - @questions.each do |a|
+              %tr.b-0.border-top{:id => "question#{a.id}"}
+                %td.b-0
+                  = link_to a.question, edit_diagno_question_path(a)
+                %td.b-0
+                  - a.categories.each do |b|
+                    = b.name
+                %td.b-0
+                  = DiagnoQuestion.getSex(a.sex)
+                %td.b-0
+                  = DiagnoQuestion.getQuestionType(a.q_type)
+                %td.b-0
+                  = a.updated_at.strftime("%m/%d/%Y")
+                %td.b-0
+                  //  = link_to "Show",diagno_question_path(a)
+                  = link_to "Edit", edit_diagno_question_path(a)
+                  |
+                  = link_to "Delete", diagno_question_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                  
