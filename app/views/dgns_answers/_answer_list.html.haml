@@ -1,0 +1,54 @@
+%section.services.section
+  .container
+    .row
+      .col-lg-12
+        %h5.text-center Select answers
+        %hr
+
+    .row
+      .col-lg-12
+        = link_to "Add new answer", new_dgns_answer_path
+      .col-lg-12
+        %form#form-question-answers{:action => "save_answers", :method => "get"}
+          %table#article.table.table-hover.table-striped.table-responsive
+            %tbody
+              %tr
+                %td
+                  Select
+                %td
+                  Answer
+                %td
+                  Type
+                %td
+                  Value
+                %td
+                  Actions
+              %input{:name => "diagno_question_id", :type => "hidden", :value => params[:id]}
+                - answers.each do |a|
+                  %tr.b-0.border-top{:id => "answer#{a.id}"}
+                    - if @question.dgns_answer_ids.include? a.id
+                      %td.b-0
+                        %input{:name => "dgns_answer_ids[]", :type => "checkbox", :value => a.id, checked: true }
+                    - else 
+                      %td.b-0
+                        %input{:name => "dgns_answer_ids[]", :type => "checkbox", :value => a.id }
+
+                    %td.b-0
+                      = link_to a.answer
+                    %td.b-0
+                      = link_to a.a_type
+                    %td.b-0
+                      = link_to a.a_value
+                    %td.b-0
+                      //  = link_to "Show",diagno_question_path(a)
+                      = link_to "Edit", edit_dgns_answer_path(a)
+                      |
+                      = link_to "Delete", dgns_answer_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+
+                %tr
+                  %td
+                  %td
+                  %td
+                    %input{:type => "submit", :value => "Submit", class: "btn btn-info"}
+
+        .col-lg-12

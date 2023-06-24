@@ -30,7 +30,6 @@ class DgnsAnswersController < ApplicationController
   def create
     menu_values
     @answer = DgnsAnswer.new(answer_params)
-    @categories = category_list
     if @answer.save
       flash[:notice] = "A answer has been created successfully!"
       redirect_to diagno_answers_path
@@ -43,14 +42,12 @@ class DgnsAnswersController < ApplicationController
   def edit
     menu_values
     @answer = DgnsAnswer.find(params[:id])
-    @categories = category_list
   end
 
   def update
     menu_values
     #binding.pry
     @answer = DgnsAnswer.find(params[:id])
-    @categories = category_list
     @answer.update(answer_params)
 
     if  @answer.save

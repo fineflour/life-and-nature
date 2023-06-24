@@ -24,6 +24,7 @@ class DiagnoQuestionsController < ApplicationController
   def new
     menu_values
     @question = DiagnoQuestion.new
+    @question_answers= DiagnoQuestionAnswer.new
   end
 
   def create
@@ -33,7 +34,7 @@ class DiagnoQuestionsController < ApplicationController
     @answers = answer_list
 
 
-    if @question.save
+    if @questionave
       flash[:notice] = "A question has been created successfully!"
       redirect_to diagno_questions_path
     else
@@ -47,6 +48,9 @@ class DiagnoQuestionsController < ApplicationController
     @question = DiagnoQuestion.find(params[:id])
     @categories = category_list
     @answers = answer_list
+    @answers_for_question = answers_for_question(params[:id])
+    #binding.pry
+
   end
 
   def update
@@ -78,19 +82,46 @@ class DiagnoQuestionsController < ApplicationController
     end
   end
 
+  def save_answers
+    menu_values
+
+    @question_answers= question_answer_list(params[:id])
+#    binding.pry
+
+    if @question_answers != nil 
+      @question_answers.each do |a|
+        DiagnoQuestionAnswer.find(a.id).delete
+      end
+    end
+    var = 0
+
+    if params["dgns_answer_ids"] != nil
+      until var == params["dgns_answer_ids"].count do
+        b = DiagnoQuestionAnswer.new
+        b.dgns_answer_id = params["dgns_answer_ids"][var]
+        b.diagno_question_id = params["diagno_question_id"]
+        b.save
+        var = var + 1
+      end
+    end
+    redirect_to diagno_questions_path
+  end
+
+
   private
 
   def dismiss_admin
     session[:admin] = false;
-   # binding.pry
+    # binding.pry
     redirect_to products_path
   end
 
   def questions_for_index
     if current_user.try(:admin?) 
-        DiagnoQuestion.order("created_at DESC").
+      DiagnoQuestion.order("created_at DESC").
         includes(:categories, :diagno_category_questions).
-        includes(:dgns_answers, :diagno_question_answers).
+        includes(:dgns_answers, :dgns_answers).
+        includes(:diagno_question_answers, :diagno_question_answers).
         paginate(page: params[:page])
     else
 
@@ -105,17 +136,27 @@ class DiagnoQuestionsController < ApplicationController
   def question_params
     params.require(:diagno_question)
       .permit(:question, :q_type, :sex, :active, 
-             :category_ids => [] 
+              :category_ids => [], :dgns_answer_ids => [] 
              )
   end
+
+  def question_answer_list(question_id)
+    DiagnoQuestionAnswer.where(diagno_question_id: question_id)
+  end
+
 
   def category_list
     Category.select("name, id").order("name").where("active = true")
   end
 
   def answer_list
-    DiagnoAnswer.select("answer, id").order("answer").where("active = true")
+    DgnsAnswer.is_active
   end
+
+  def answers_for_question(question_id)
+    DiagnoQuestionAnswer.select("diagno_question_id, dgns_answer_id, id").where("diagno_question_id="+ question_id)
+  end
+
 
 
   def menu_values

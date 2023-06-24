@@ -34,6 +34,10 @@ Rails.application.routes.draw do
   get "/sites/:site" => "sites#show"
   get "/pt_resources/dismiss_admin"
   get "/questions_and_answers/dismiss_admin"
+  #get "/diagno_questions/save_answers/:id"
+  match '/diagno_questions/:id/save_answers', to: 'diagno_questions#save_answers',       via: 'get'
+
+#  match '/users/:id',     to: 'users#show',       via: 'get'
 
   resources :landings, only: [:index, :edit, :show, :new, :update, :create, :destroy]
 

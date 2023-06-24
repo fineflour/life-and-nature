@@ -59,16 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_224613) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "diagno_answers", force: :cascade do |t|
-    t.string "answer", default: "", null: false
-    t.integer "a_type", default: 0, null: false
-    t.integer "a_value", default: 0, null: false
-    t.integer "sex", default: 0, null: false
-    t.boolean "active", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "diagno_category_questions", force: :cascade do |t|
     t.integer "category_id"
     t.integer "diagno_question_id"
@@ -80,10 +70,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_224613) do
 
   create_table "diagno_question_answers", force: :cascade do |t|
     t.integer "diagno_question_id"
-    t.integer "diagno_answer_id", null: false
+    t.integer "dgns_answer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["diagno_answer_id"], name: "index_diagno_question_answers_on_diagno_answer_id"
+    t.index ["dgns_answer_id"], name: "index_diagno_question_answers_on_dgns_answer_id"
     t.index ["diagno_question_id"], name: "index_diagno_question_answers_on_diagno_question_id"
   end
 
@@ -99,11 +89,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_224613) do
   create_table "diagno_user_answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "diagno_question_id"
-    t.integer "diagno_answer_id", null: false
+    t.integer "dgns_answer_id", null: false
     t.string "value", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["diagno_answer_id"], name: "index_diagno_user_answers_on_diagno_answer_id"
+    t.index ["dgns_answer_id"], name: "index_diagno_user_answers_on_dgns_answer_id"
     t.index ["diagno_question_id"], name: "index_diagno_user_answers_on_diagno_question_id"
     t.index ["user_id"], name: "index_diagno_user_answers_on_user_id"
   end
