@@ -62,7 +62,7 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     menu_values
-    @subscription_list= Subscriptions.find(params[:id])
+    @subscription_list= Subscription.find(params[:id])
 #    authorize @qna_list
     if @subscription_list.destroy
       redirect_to subscriptions_path, notice: "Q and A has been destroyed."

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :add_www_subdomain
+  #before_action :add_www_subdomain
 end
 
 private

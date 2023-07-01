@@ -11,7 +11,7 @@
               Subscriptions
       .row
         .col-lg-12
-          .doctor-calendar-table.table-responsive
+          .table-responsive
             %table.table
               %thead
                 %tr
@@ -26,7 +26,7 @@
                     %td
                       = a.created_at.strftime("%m/%d/%Y") 
                     %td
-                      = link_to "Inactive", edit_subscription_path(a), class: "btn btn-danger"
+                      = link_to "Inactive", edit_subscription_path(a)
                       |
                       = button_to "Delete", subscription_path(a), method: :delete, form: {data: {turbo_confirm: "Are you sure to delete?"}}
 

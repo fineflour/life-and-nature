@@ -37,8 +37,8 @@
 
 /node_modules
 
-# URL Redirection 
-
+# www URL Redirection 
+/app/controllers/application_controller.rb
 
 # Security
 /config/credentials/production.key
