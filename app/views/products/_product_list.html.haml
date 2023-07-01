@@ -6,5 +6,5 @@
           - @product.each do |a|
             .single-clients
               %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}products/" +  a.img_1}
-              %p.center
+              %p.text-center
                 = link_to truncate(a.name), product_path(a, :name=> a.name), :target =>  "_blank"

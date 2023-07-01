@@ -1,6 +1,5 @@
 .contact-us-form
   %h5 Appointment Request Form
-  %p If you have any questions please fell free to contact with us.
 
   - flash.each do |message_type, message|
     %div{:class => "alert alert-#{message_type}"}
@@ -17,10 +16,10 @@
           = f.input :phone, placeholder: "123-456-7890", label: false
       .col-lg-6
         .form-group
-          = f.input :subject, placeholder: "Subject", label: false
+          = f.text_field :subject, readonly: :true, disabled: :true, value: "Appointment Request"
       .col-12
         .form-group
-          = f.input :message, placeholder: "Your Message", :input_html => { 'rows' => 5, 'cols' => 130 }, label: false, :as => :text  
+          = f.input :message, placeholder: "Please let us know the date and time you would like to visit, we will check and contact you.", :input_html => { 'rows' => 5, 'cols' => 130 }, label: false, :as => :text  
           //= p.input :active,  as: :boolean, checked_value: true, unchecked_value: false, label: "do you wnat to subscribe our Newsletter?", class: "checkbox-inline{:for=>'2'}"
       .col-lg-12
         .form-group.login-btn

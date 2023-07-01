@@ -8,7 +8,9 @@
           %img{src: "/assets/section-img.png", alt: "#"}
           %p no health insurance required.
 
-      .col-lg-12
+      .col-lg-6
+        = render "/contacts/form_appnt", contact_list: @contact_list
+      .col-lg-6
         .container
           #appointmentTable.accordion
 
