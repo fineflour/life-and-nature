@@ -28,5 +28,5 @@
                     %td
                       = link_to "Inactive", edit_subscription_path(a), class: "btn btn-danger"
                       |
-                      = button_to "Delete", subscription_path(a),  class: "btn btn-danger", method: :delete, data: {turbo_confirm: "Are you sure to delete?"}
+                      = button_to "Delete", subscription_path(a), method: :delete, form: {data: {turbo_confirm: "Are you sure to delete?"}}
 
