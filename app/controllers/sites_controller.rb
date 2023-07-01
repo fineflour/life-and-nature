@@ -14,7 +14,7 @@ class SitesController < ApplicationController
     end
 
     if params[:menu_values] ==  '600'
-      @contact_list = Contact.new
+      @contact = Contact.new
     end
 
 

@@ -3,7 +3,7 @@
 
   - flash.each do |message_type, message|
     %div{:class => "alert alert-#{message_type}"}
-  = simple_form_for contact_list,  html: { },  input_html: {  } do  |f|
+  = simple_form_for @contact, :url => { :controller => "contact", :action => "create" },  html: {:method => :post },  input_html: {  } do  |f|
     .row
       .col-lg-6
         .form-group

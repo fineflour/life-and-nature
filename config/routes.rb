@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'contacts/index'
   get 'subscriptions/index'
   get 'users/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
