@@ -10,7 +10,7 @@
             %img{src: "/assets/section-img.png", alt: "#"}
       .row
         .col-lg-12
-          .doctor-calendar-table.table-responsive
+          .table-responsive
             %table.table
               %thead
                 %tr
@@ -22,7 +22,7 @@
                   %th Action
               %tbody
                 - @contact_list.each do |a|
-                  %tr{:id => "contact_list#{a.id}"}
+                  %tr
                     %td
                       = link_to a.name, edit_contact_path(a)
                     %td
@@ -35,5 +35,6 @@
                       = a.updated_at.strftime("%m/%d/%Y")
                     %td
                       = link_to "Show",contact_path(a)
-                      | 
-                      = link_to "Delete", contact_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                    %td
+                      = button_to "Delete", contact_path(a), form: {data: {turbo_confirm: "Are you sure to delete?"}}, method: :delete
+

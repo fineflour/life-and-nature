@@ -34,5 +34,5 @@
                   |
                   = link_to "Edit", edit_category_path(a)
                   |
-                  = link_to "Delete", category_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                  = button_to "Delete", category_path(a), method: :delete, data: {turbo_confirm: "Are you sure to delete?"}
                   

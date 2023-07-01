@@ -34,7 +34,7 @@ class DiagnoQuestionsController < ApplicationController
     @answers = answer_list
 
 
-    if @questionave
+    if @question.save
       flash[:notice] = "A question has been created successfully!"
       redirect_to diagno_questions_path
     else
@@ -75,7 +75,7 @@ class DiagnoQuestionsController < ApplicationController
     if @question.destroy
       flash[:notice] = "The data successfully deleted"
       #redirect_to pt_resources_path, notice: "The data has been destroyed."
-      redirect_to("/products")
+      redirect_to("/diagno_questions")
     else 
       flash[:error] = "The data could not be destroyed."
       render :index

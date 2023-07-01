@@ -44,5 +44,5 @@
                   //  = link_to "Show",diagno_question_path(a)
                   = link_to "Edit", edit_diagno_question_path(a)
                   |
-                  = link_to "Delete", diagno_question_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                  = button_to "Delete", diagno_question_path(a), method: :DELETE, form: {data: {turbo_confirm: "Are you sure to delete?"}}
                   

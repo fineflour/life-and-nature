@@ -39,5 +39,5 @@
                   //  = link_to "Show",diagno_question_path(a)
                   = link_to "Edit", edit_dgns_answer_path(a)
                   |
-                  = link_to "Delete", dgns_answer_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                  = button_to "Delete", dgns_answer_path(a), method: :delete, form: {data: {turbo_confirm: "Are you sure to delete?"}}
                   

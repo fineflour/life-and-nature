@@ -40,3 +40,10 @@
           .form-group
             %p
               = @contact_list.message.html_safe
+
+        .col-lg-12
+          .form-group
+            %p
+              = @contact_list.message.html_safe
+
+          = link_to "go back to list",'javascript:history.back()', class: "btn btn-outline-secondary btn-sm"

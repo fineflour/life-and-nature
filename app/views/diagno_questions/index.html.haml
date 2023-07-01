@@ -28,7 +28,7 @@
               %td
                 Actions
             - @questions.each do |a|
-              %tr.b-0.border-top{:id => "question#{a.id}"}
+              %tr.b-0.border-top
                 %td.b-0
                   = link_to a.question, edit_diagno_question_path(a)
                 %td.b-0
@@ -44,5 +44,5 @@
                   //  = link_to "Show",diagno_question_path(a)
                   = link_to "Edit", edit_diagno_question_path(a)
                   |
-                  = link_to "Delete", diagno_question_path(a), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+                  = button_to "Delete", diagno_question_path(a), method: :delete, form: {data: {turbo_confirm: "Are you sure to delete?"}}
                   

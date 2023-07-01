@@ -29,6 +29,6 @@
           %tr
             %td.has-text-centered
               = link_to "Edit", edit_questions_and_answer_path(a),  class: "btn btn-info"
-              = link_to "Delete", questions_and_answer_path(a),  class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure to delete?"}
+              = button_to "Delete", questions_and_answer_path(a),  class: "btn btn-danger", method: :delete, data: {turbo_confirm: "Are you sure to delete?"}
 - else
   = render partial: "qna_table"

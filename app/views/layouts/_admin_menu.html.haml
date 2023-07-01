@@ -4,10 +4,9 @@
       .row
         .col-lg-12
           You are logged in as 
-          = current_user[:fullname]  +' | Role: '+ current_user[:role]  
-          | 
-          = link_to "Log out", destroy_user_session_path, method: :delete
-          >>
+          = current_user[:fullname]  +' | Role: '+ current_user[:role]
+          |
+          = button_to ">> Log Out", destroy_user_session_path, method: :delete, data:{ confirm: "Are you sure?" } 
         .col-lg-12
           %h6.tpadding-2 
             = link_to "Users", users_path

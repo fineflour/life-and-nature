@@ -70,8 +70,9 @@ class ContactsController < ApplicationController
     menu_values
     @contact_list= Contact.find(params[:id])
 #    authorize @contact_list
+#    binding.pry
     if @contact_list.destroy
-      redirect_to contacts_path, notice: "Your request has been idone."
+      redirect_to contacts_path, notice: "Your request has been done."
     else
       flash[:error] = "Your request can not be done."
       render :index
