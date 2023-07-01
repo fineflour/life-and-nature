@@ -13,6 +13,9 @@ class SitesController < ApplicationController
       galleries
     end
 
+    if params[:menu_values] ==  '600'
+      @contact_list = Contact.new
+    end
 
 
     if params[:menu_values] ==  '203'

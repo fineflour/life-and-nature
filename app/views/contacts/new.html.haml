@@ -4,14 +4,14 @@
     .inner
       .row
         .col-lg-6
+          = render "form", contact_list: @contact_list
+        .col-lg-6
           .contact-us-left
             / Start Google-map
             #myMap
               %img{:src => "/assets/gmap-520N.jpg"}/
               %img{:src => "/assets/520-building.jpg"}/
             / /End Google-map
-        .col-lg-6
-          = render "form", contact_list: @contact_list
     .contact-info
       .row
         / single-info
