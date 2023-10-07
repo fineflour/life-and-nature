@@ -82,4 +82,11 @@ class SitesController < ApplicationController
     QuestionsAndAnswer.order("id")
     #QuestionsAndAnswer.order("id").paginate(page: params[:page])
   end
+
+
+  def save_appnt
+    respond_to do |format|
+      format.html { render "contacts/success"}
+    end
+  end
 end

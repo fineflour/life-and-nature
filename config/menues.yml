@@ -292,7 +292,7 @@
 - id: 800 
   id_no: 10000
   category: 
-  name: 'Price & Insurance'
+  name: 'Service Price'
   link: '' 
   active: false
   note: 
