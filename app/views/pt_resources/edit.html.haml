@@ -1,2 +1,6 @@
-.grid_100.has-text-justified.is-margin-top-2
-  = render "form", pt_resource: @pt_resource
+.grid_100.has-text-centered.is-margin-top-2
+  .container
+    %div.grid_subtitle.has-text-centered
+      %h2.is-4 EDIT ARTICLE
+      .dez-separator.bg-primary.style-liner
+    = render "form", pt_resource: @pt_resource

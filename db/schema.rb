@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_20_224613) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_223433) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -137,6 +137,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_224613) do
     t.boolean "public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image", default: "none.png"
+    t.boolean "isnew", default: false
+    t.integer "view", default: 0
   end
 
   create_table "questions_and_answers", force: :cascade do |t|

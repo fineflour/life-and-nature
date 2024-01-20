@@ -1,0 +1,26 @@
+.single-widget.recent-post
+  %h3.title
+    Recent post
+  - @recent_blog.each do |b|
+    -if b.isnew
+      .single-post
+        .image
+          %img.card-img{:alt => "service", :src => "#{ENV['IMG_PATH']}blogs/" +  b["image"]}
+        .content
+          %h5
+            %a{href: "#"} 
+              = b.title
+            %ul.comment
+              %li.fa.fa-calendar
+                = b.created_at.strftime("%m/%d/%Y")
+              %li.fa.fa-commenting-o
+                = b.view
+
+          -if user_signed_in? && current_user[:role]=="admin"  
+            = link_to "Show",pt_resource_path(b)
+            |
+            = link_to "Edit", edit_pt_resource_path(b)
+            |
+            = link_to "Delete", pt_resource_path(b), :method => :DELETE, data: {confirm: "Are you sure to delete?"}
+
+

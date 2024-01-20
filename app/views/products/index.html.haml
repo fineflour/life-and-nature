@@ -56,4 +56,8 @@
                     = link_to "Edit", edit_product_path(a)
                     |
                     = button_to "Delete", product_path(a), :method => :DELETE, data: {turbo_confirm: "Are you sure to delete?"}
-                  
+    .row
+      .col-lg-12
+        .pagination
+          %ul.pagination-list
+            = will_paginate @pt_resource, renderer: BootstrapPagination::Rails  

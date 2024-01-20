@@ -97,4 +97,5 @@ gem "font-awesome-sass", "~> 6.2.1"
 
 gem 'devise'
 gem 'pundit'
+gem 'will_paginate-bootstrap4'
 

@@ -8,11 +8,8 @@
             We Care For You!
           %img{src: "/assets/section-img.png", alt: "#"}
           %p 
-            We are here for your ultimate journey.
+            We are here for your ultimate health journey.
 
--if user_signed_in? && current_user[:role]=="admin"  
-  = link_to "Add new blog", new_pt_resource_path
-  = render partial: "single_blog" 
--else
-  = render partial: "single_blog" 
-              
+        -if user_signed_in? && current_user[:role]=="admin"  
+          = link_to "Add new blog", new_pt_resource_path
+        = render partial: "single_blog" 

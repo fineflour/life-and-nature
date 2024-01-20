@@ -1,0 +1,6 @@
+.single-widget.search
+  .form
+    %form{"accept-charset" => "UTF-8", :action => "/pt_resources",local: true, :method => "get"}
+      %input{:placeholder => "Search Here...", :type => "text", :id => "query", :name => "query"}
+        = button_tag(type: 'submit', class: "button") do
+          %i.fa.fa-search

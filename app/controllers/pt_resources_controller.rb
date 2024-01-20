@@ -3,13 +3,8 @@ class PtResourcesController < ApplicationController
 
   def index
     menu_values
-
-    if current_user.try(:admin?) || params[:menu_values] == '400'
       @pt_resource =  pt_resource_for_index  
-    else
-      #@pt_resource = PtResource.getArticleList(params[:menu_values])
-      @pt_resource =  pt_resource_for_index  
-    end
+      @recent_blog  = pt_resource_for_recent
   end
 
   def show
@@ -33,7 +28,6 @@ class PtResourcesController < ApplicationController
 
   def create
     menu_values
-    #binding.pry
     @pt_resource = PtResource.new(pt_resource_params)
     if @pt_resource.save
       flash[:notice] = "Article has been created successfully!"
@@ -51,7 +45,6 @@ class PtResourcesController < ApplicationController
 
   def update
     menu_values
-    #binding.pry
     @pt_resource= PtResource.find(params[:id])
     @pt_resource.update(pt_resource_params)
 
@@ -76,37 +69,63 @@ class PtResourcesController < ApplicationController
     end
   end
 
-
-
   private 
 
   def dismiss_admin
     session[:admin] = false;
-   # binding.pry
     redirect_to pt_resources_path
   end
 
   def pt_resource_for_index
-    if @admin
-      PtResource.by_date.
-        # text_search(params[:query]).
-        includes(:blog_categories).
-        paginate(page: params[:page])
+    if current_user[:role]=="admin"  
+      if params[:query].present?
+        PtResource.by_date.
+          text_search(params[:query]).
+          paginate(page: params[:page])
+
+      elsif params[:category].present?
+        PtResource.by_date.
+          category(params[:category]).
+          paginate(page: params[:page])
+      else
+        PtResource.by_date.
+          paginate(page: params[:page])
+      end
+
     else
+      if params[:query].present?
+        PtResource.order("created_at DESC").
+          text_search(params[:query]).
+          where(active: true).
+          where(isnew: false).
+          paginate(page: params[:page])
 
-      PtResource.order("created_at DESC").
-        where(active: true).
-        includes(:blog_categories).
-        #includes(:products, :orderproducts, :orderproduct_transitions).
-        # text_search(params[:query]).
-        paginate(page: params[:page])
+      elsif params[:category].present?
+        PtResource.order("created_at DESC").
+          where(active: true).
+          where(isnew: false).
+          category(params[:category]).
+          paginate(page: params[:page])
 
+      else
+        PtResource.order("created_at DESC").
+          where(active: true).
+          where(isnew: false).
+          paginate(page: params[:page])
+      end
     end
+  end
+
+  def pt_resource_for_recent
+    PtResource.by_date.
+      # text_search(params[:query]).
+      where(isnew: true).
+      includes(:blog_categories)
   end
 
   def pt_resource_params
     params.require(:pt_resource)
-      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active, :public,
+      .permit(:category, :menu_id, :title, :body, :link, :attached, :link, :active, :public, :isnew, :image,
               :category_ids => [],
               :menu_ids => []
              )
@@ -130,7 +149,7 @@ class PtResourcesController < ApplicationController
 
   def security_key(key)
     if key == ENV["ADMIN_PASSWORD"]
-        #Rails.application.credentials.admin_key
+      #Rails.application.credentials.admin_key
       @admin = true
       session[:admin] =  true
     end

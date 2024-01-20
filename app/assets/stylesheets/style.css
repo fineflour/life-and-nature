@@ -4287,3 +4287,9 @@ ADDED from Bootstrapr 5
 .right {
   text-align: right!important;
 }
+
+.is-margin-top-2{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
