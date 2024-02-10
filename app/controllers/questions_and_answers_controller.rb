@@ -93,8 +93,8 @@ class QuestionsAndAnswersController < ApplicationController
   def qna_params
 
    #binding.pry
-    params.require(:diagno_question_and_answer).permit(:diagno_question_id, :dgns_answer_id)
-    #params.require(:qna).permit(:qnestion, :answer, :view_count, :view)
+    #params.require(:diagno_question_and_answer).permit(:diagno_question_id, :dgns_answer_id)
+    params.require(:questions_and_answer).permit(:qnestion, :answer, :view_count, :view)
   end
 
 
