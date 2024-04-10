@@ -3,7 +3,7 @@ class CreatePtResources < ActiveRecord::Migration[7.0]
     create_table :pt_resources do |t|
       t.string :title,       null: false, default: ""
       t.text :body,   null: false, default: ""
-      t.string :category,  null: false, default: "Article"
+      t.string :category,  null: false, default: ""
       t.string :menu_id,  null: false, default: ""
       t.string :link,  null: true
       t.string :attached, null: true

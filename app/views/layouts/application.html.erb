@@ -4,7 +4,6 @@
     <% if not current_page?(root_url) || params['menu_values'] == '1000' || request.path.include?('landings') %> 
         <%= render partial: '/layouts/title', :local => {:menues => @menu_values}  %>
     <% end %>
-    <title>Life & Nature Acupuncture and Holistic Medicine</title>
     <link rel="canonical" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>

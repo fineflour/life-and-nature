@@ -3,7 +3,7 @@
     .row
       .col-lg-12
         .form-group
-          = f.input :category, collection: PtResource::CATEGORY_LIST,label: false,  prompt: "Select Category"
+          = f.input :category, collection: Category::is_blog,label: false,  prompt: "Select Category"
     .row
       .col-lg-12
         .form-group
