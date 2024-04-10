@@ -301,7 +301,7 @@
 - id: 800 
   id_no: 10000
   category: 
-  name: 'Service Price'
+  name: 'Price & Insurance'
   link: '' 
   active: false
   note: 
