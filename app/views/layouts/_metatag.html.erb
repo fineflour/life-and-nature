@@ -1,5 +1,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name='copyright' content=''>
-<meta name="description" content="Life and Naturure help people who suffer from chronic disease with natural and holistic approach">
+<meta name='copyright' content='@ Copyright 2025. All Rights Reserved by Life and Nature'>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<% if not current_page?(root_url) || params['menu_values'] == '1000' || request.path.include?('landings') %> 
+  <%= render partial: '/layouts/meta_description', :local => {:menues => @menu_values}  %>
+
+<% else %>
+<meta name="description" content="Acupuncture, Medical CalOptima, Natural Skin care, Natural medicine, non invasive, holistic medicine natural pain killer, chronic pain, severe pain, best acupuncture, anaheim, orange county, Personal injury acupuncture">
+
+<% end %>
+

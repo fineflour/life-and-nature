@@ -5,7 +5,7 @@
         <%= render partial: '/layouts/title', :local => {:menues => @menu_values}  %>
     <% end %>
     <link rel="canonical" href="<%= "http://#{request.host + url_for(:page => params[:page]) }" %>">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--meta name="viewport" content="width=device-width,initial-scale=1"-->
     <%= csrf_meta_tags %>
     <!--%= csp_meta_tag %-->
 
